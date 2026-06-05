@@ -1,65 +1,164 @@
-import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div>
+
+      <section className="hero">
+
+        <div className="archive-status">
+          ARCHIVE STATUS // ACTIVE
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <h1 className="hero-title">
+          NOTHING IS INVENTED.
+          <br />
+          ONLY RECOVERED.
+        </h1>
+
+        <p className="hero-subtitle">
+          The Public Archive
+        </p>
+
+        <p className="hero-description">
+          Records. Books. Artifacts. Recovery.
+        </p>
+
+      </section>
+
+      <section className="stats-grid">
+
+        <div className="stat-card">
+          <span>RECORDS PRESERVED</span>
+          <h2>010</h2>
         </div>
-      </main>
+
+        <div className="stat-card">
+          <span>COLLECTIONS</span>
+          <h2>001</h2>
+        </div>
+
+        <div className="stat-card">
+          <span>BOOKS RELEASED</span>
+          <h2>002</h2>
+        </div>
+
+        <div className="stat-card">
+          <span>NODE STATUS</span>
+          <h2>ACTIVE</h2>
+        </div>
+
+      </section>
+
+      <section className="collection-section">
+
+        <h3>
+          ACTIVE COLLECTION
+        </h3>
+
+        <Link
+          href="/records"
+          className="collection-card"
+        >
+
+          <div className="collection-label">
+            FOUNDATIONAL HISTORY COLLECTION
+          </div>
+
+          <div className="collection-meta">
+
+            <div>
+              <span>STATUS</span>
+              <p>COMPLETE</p>
+            </div>
+
+            <div>
+              <span>RECORDS</span>
+              <p>010</p>
+            </div>
+
+            <div>
+              <span>CLASSIFICATION</span>
+              <p>FOUNDATIONAL</p>
+            </div>
+
+            <div>
+              <span>PRESERVATION</span>
+              <p>PERMANENT</p>
+            </div>
+
+          </div>
+
+          <div className="collection-enter">
+            ENTER COLLECTION →
+          </div>
+
+        </Link>
+
+      </section>
+
+      <section className="timeline-section">
+
+        <div className="timeline-header">
+          ARCHIVE HISTORY
+        </div>
+
+        <div className="timeline">
+
+          <Link href="/records/001" className="timeline-item">
+            <span>REC-001</span>
+            <h4>The Collapse of Exchange</h4>
+          </Link>
+
+          <Link href="/records/002" className="timeline-item">
+            <span>REC-002</span>
+            <h4>The First Archivists</h4>
+          </Link>
+
+          <Link href="/records/003" className="timeline-item">
+            <span>REC-003</span>
+            <h4>The Era of Fragmentation</h4>
+          </Link>
+
+          <Link href="/records/004" className="timeline-item">
+            <span>REC-004</span>
+            <h4>The Recovery Principle</h4>
+          </Link>
+
+          <Link href="/records/005" className="timeline-item">
+            <span>REC-005</span>
+            <h4>The First Stewardship Network</h4>
+          </Link>
+
+          <Link href="/records/006" className="timeline-item">
+            <span>REC-006</span>
+            <h4>Why Belonging Cannot Be Purchased</h4>
+          </Link>
+
+          <Link href="/records/007" className="timeline-item">
+            <span>REC-007</span>
+            <h4>The Appointment Tradition</h4>
+          </Link>
+
+          <Link href="/records/008" className="timeline-item">
+            <span>REC-008</span>
+            <h4>The Formation of the First Node</h4>
+          </Link>
+
+          <Link href="/records/009" className="timeline-item">
+            <span>REC-009</span>
+            <h4>The Preservation Mandate</h4>
+          </Link>
+
+          <Link href="/records/010" className="timeline-item">
+            <span>REC-010</span>
+            <h4>The Recovery Era</h4>
+          </Link>
+
+        </div>
+
+      </section>
+
     </div>
   );
 }
