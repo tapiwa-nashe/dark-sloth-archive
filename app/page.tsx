@@ -1,4 +1,10 @@
 import Link from "next/link";
+import {
+  ScanSearch,
+  Folder,
+  BookOpen,
+  Fingerprint,
+} from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -6,12 +12,50 @@ export default function HomePage() {
 
       <section className="hero">
 
+        <div className="hero-background">
+
+          <div className="hero-layer hero-layer-far">
+            REC-021 • REC-022 • REC-023 • REC-024 • RUNE-001 • RUNE-002 •
+            BLACK VAULT • ENTRY 013 • ARCHIVE NODE • EXPEDITION 07 •
+            STATUS VERIFIED • RECOVERED FRAGMENT • OBSERVATION •
+          </div>
+
+          <div className="hero-layer hero-layer-mid">
+            THE WILDS ARE NEVER FULLY MAPPED
+            <br />
+            PRESENCE
+            <br />
+            PATIENCE
+            <br />
+            SILENCE
+            <br />
+            DISCERNMENT
+            <br />
+            HUMILITY
+            <br />
+            CLARITY
+          </div>
+
+          <div className="hero-layer hero-layer-near">
+            BLACK VAULT
+            <br />
+            ENTRY 013
+            <br />
+            RECOVERED
+            <br />
+            ARCH-0001
+          </div>
+
+        </div>
+
         <div className="archive-status">
           ARCHIVE STATUS // ACTIVE
         </div>
 
         <h1 className="hero-title">
-          NOTHING IS INVENTED.
+          NOTHING IS
+          <br />
+          INVENTED.
           <br />
           ONLY RECOVERED.
         </h1>
@@ -21,139 +65,133 @@ export default function HomePage() {
         </p>
 
         <p className="hero-description">
-          Records. Books. Artifacts. Recovery.
+          Records. Books. Dossiers. Recovery.
         </p>
 
       </section>
 
       <section className="stats-grid">
 
-        <div className="stat-card">
-          <span>RECORDS PRESERVED</span>
-          <h2>010</h2>
-        </div>
-
-        <div className="stat-card">
+        <Link href="/collections" className="stat-card">
+          <ScanSearch className="stat-icon" size={22} strokeWidth={1.5} />
           <span>COLLECTIONS</span>
+          <h2>005</h2>
+          <p>Active Collections</p>
+        </Link>
+
+        <Link href="/dossiers" className="stat-card">
+          <Folder className="stat-icon" size={22} strokeWidth={1.5} />
+          <span>DOSSIERS</span>
           <h2>001</h2>
-        </div>
+          <p>Active Investigation</p>
+        </Link>
 
-        <div className="stat-card">
-          <span>BOOKS RELEASED</span>
-          <h2>002</h2>
-        </div>
+        <Link href="/books" className="stat-card">
+          <BookOpen className="stat-icon" size={22} strokeWidth={1.5} />
+          <span>BOOKS</span>
+          <h2>003</h2>
+          <p>Published Volumes</p>
+        </Link>
 
-        <div className="stat-card">
-          <span>NODE STATUS</span>
-          <h2>ACTIVE</h2>
-        </div>
+        <Link href="/dossier" className="stat-card">
+          <Fingerprint className="stat-icon" size={22} strokeWidth={1.5} />
+          <span>ARCHIVE ID</span>
+          <h2>0001</h2>
+          <p>Root Record</p>
+        </Link>
 
       </section>
 
       <section className="collection-section">
 
         <h3>
-          ACTIVE COLLECTION
+          ARCHIVE GATEWAYS
         </h3>
 
-        <Link
-          href="/records"
-          className="collection-card"
-        >
+        <div className="grid gap-6">
 
-          <div className="collection-label">
-            FOUNDATIONAL HISTORY COLLECTION
-          </div>
-
-          <div className="collection-meta">
-
-            <div>
-              <span>STATUS</span>
-              <p>COMPLETE</p>
+          <Link href="/collections" className="collection-card">
+            <div className="collection-label">
+              COLLECTIONS
             </div>
 
-            <div>
-              <span>RECORDS</span>
-              <p>010</p>
+            <div className="collection-meta">
+              <div>
+                <span>RECORDS</span>
+                <p>048</p>
+              </div>
+
+              <div>
+                <span>COLLECTIONS</span>
+                <p>005</p>
+              </div>
             </div>
 
-            <div>
-              <span>CLASSIFICATION</span>
-              <p>FOUNDATIONAL</p>
+            <div className="collection-enter">
+              ENTER COLLECTIONS →
+            </div>
+          </Link>
+
+          <Link href="/dossiers" className="collection-card">
+            <div className="collection-label">
+              DOSSIERS
             </div>
 
-            <div>
-              <span>PRESERVATION</span>
-              <p>PERMANENT</p>
+            <div className="collection-meta">
+              <div>
+                <span>STATUS</span>
+                <p>ACTIVE</p>
+              </div>
+
+              <div>
+                <span>DOSSIERS</span>
+                <p>001</p>
+              </div>
             </div>
 
-          </div>
+            <div className="collection-enter">
+              ENTER DOSSIERS →
+            </div>
+          </Link>
 
-          <div className="collection-enter">
-            ENTER COLLECTION →
-          </div>
+          <Link href="/books" className="collection-card">
+            <div className="collection-label">
+              BOOKS
+            </div>
 
-        </Link>
+            <div className="collection-meta">
+              <div>
+                <span>VOLUMES</span>
+                <p>003</p>
+              </div>
+
+              <div>
+                <span>STATUS</span>
+                <p>PUBLISHED</p>
+              </div>
+            </div>
+
+            <div className="collection-enter">
+              ENTER LIBRARY →
+            </div>
+          </Link>
+
+        </div>
 
       </section>
 
       <section className="timeline-section">
 
         <div className="timeline-header">
-          ARCHIVE HISTORY
+          ARCHIVE NOTICE
         </div>
 
-        <div className="timeline">
+        <div className="max-w-3xl text-zinc-400 leading-relaxed">
 
-          <Link href="/records/001" className="timeline-item">
-            <span>REC-001</span>
-            <h4>The Collapse of Exchange</h4>
-          </Link>
-
-          <Link href="/records/002" className="timeline-item">
-            <span>REC-002</span>
-            <h4>The First Archivists</h4>
-          </Link>
-
-          <Link href="/records/003" className="timeline-item">
-            <span>REC-003</span>
-            <h4>The Era of Fragmentation</h4>
-          </Link>
-
-          <Link href="/records/004" className="timeline-item">
-            <span>REC-004</span>
-            <h4>The Recovery Principle</h4>
-          </Link>
-
-          <Link href="/records/005" className="timeline-item">
-            <span>REC-005</span>
-            <h4>The First Stewardship Network</h4>
-          </Link>
-
-          <Link href="/records/006" className="timeline-item">
-            <span>REC-006</span>
-            <h4>Why Belonging Cannot Be Purchased</h4>
-          </Link>
-
-          <Link href="/records/007" className="timeline-item">
-            <span>REC-007</span>
-            <h4>The Appointment Tradition</h4>
-          </Link>
-
-          <Link href="/records/008" className="timeline-item">
-            <span>REC-008</span>
-            <h4>The Formation of the First Node</h4>
-          </Link>
-
-          <Link href="/records/009" className="timeline-item">
-            <span>REC-009</span>
-            <h4>The Preservation Mandate</h4>
-          </Link>
-
-          <Link href="/records/010" className="timeline-item">
-            <span>REC-010</span>
-            <h4>The Recovery Era</h4>
-          </Link>
+          <p>Artifacts preserve fragments.</p>
+          <p>Books preserve pathways.</p>
+          <p>Dossiers preserve connections.</p>
+          <p>The Archive reveals itself through progressive recovery.</p>
 
         </div>
 

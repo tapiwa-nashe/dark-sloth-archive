@@ -9,23 +9,31 @@ export default function ArchiveNav() {
       </Link>
 
       <Link href="/collections">
-        HISTORY
+        COLLECTIONS
+      </Link>
+
+      <Link href="/dossiers">
+        DOSSIERS
       </Link>
 
       <Link href="/books">
         BOOKS
       </Link>
 
+      <Link href="/studios">
+        STUDIOS
+      </Link>
+
       <Link href="/recoveries">
         RECOVERIES
       </Link>
 
-      <Link href="/identity">
-        IDENTITY
+      <Link href="/studios">
+        HELMR HUGR
       </Link>
 
       <Link href="/dossier">
-        DOSSIER
+        ARCHIVE ID
       </Link>
 
       <Link href="/platform">

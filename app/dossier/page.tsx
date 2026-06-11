@@ -1,15 +1,15 @@
 export default function DossierPage() {
   return (
-    <div>
+    <div className="archive-derived-page">
 
       <div className="page-header">
 
         <div className="section-label">
-          DOSSIER
+          ARCHIVE ID
         </div>
 
         <h1 className="page-title">
-          PARTICIPANT RECORD
+          ARCH-0001
         </h1>
 
       </div>
@@ -28,12 +28,12 @@ export default function DossierPage() {
 
         <div>
           <span>RANK</span>
-          <p>INITIATE</p>
+          <p>ROOT GUARDIAN</p>
         </div>
 
         <div>
           <span>RECOVERIES</span>
-          <p>000</p>
+          <p>048</p>
         </div>
 
         <div>
@@ -43,7 +43,7 @@ export default function DossierPage() {
 
         <div>
           <span>CONTRIBUTIONS</span>
-          <p>000</p>
+          <p>051</p>
         </div>
 
       </div>

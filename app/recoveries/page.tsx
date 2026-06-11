@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function RecoveriesPage() {
   return (
-    <div>
+    <div className="archive-derived-page">
 
       <div className="page-header">
 

@@ -6,6 +6,20 @@ import { getRecordContent } from "../../../lib/archive";
 
 import { notFound } from "next/navigation";
 
+function getCollectionNumber(id: string) {
+  const number = Number(id);
+
+  if (number <= 10) return "COLLECTION_001";
+  if (number <= 15) return "COLLECTION_002";
+  if (number <= 20) return "COLLECTION_003";
+  if (number <= 26) return "COLLECTION_004";
+  if (number <= 36) return "COLLECTION_005";
+  if (number <= 39) return "COLLECTION_007";
+  if (number <= 45) return "COLLECTION_004";
+
+  return "ARCHIVE COLLECTION";
+}
+
 export default async function RecordPage({
   params,
 }: {
@@ -13,28 +27,20 @@ export default async function RecordPage({
     id: string;
   }>;
 }) {
-
   const { id } = await params;
 
-  const recordIndex =
-    records.findIndex(
-      (r) => r.id === id
-    );
+  const recordIndex = records.findIndex((r) => r.id === id);
 
   if (recordIndex === -1) {
     notFound();
   }
 
-  const record =
-    records[recordIndex];
+  const record = records[recordIndex];
 
-  const content =
-    getRecordContent(id);
+  const { data, content } = getRecordContent(id);
 
   const previous =
-    recordIndex > 0
-      ? records[recordIndex - 1]
-      : null;
+    recordIndex > 0 ? records[recordIndex - 1] : null;
 
   const next =
     recordIndex < records.length - 1
@@ -43,12 +49,24 @@ export default async function RecordPage({
 
   return (
     <div>
+      <div className="mb-10">
+        <p className="mb-4 text-xs tracking-[0.4em] text-zinc-500">
+          {getCollectionNumber(record.id)}
+        </p>
+
+        <p className="mb-8 text-sm tracking-[0.3em] text-zinc-500">
+          {record.collection}
+        </p>
+
+        <h1 className="record-title">
+          {data.title || record.title}
+        </h1>
+      </div>
 
       <div className="record-dossier">
-
         <div>
           <span>RECORD ID</span>
-          <p>REC-{record.id}</p>
+          <p>{data.id || `REC-${record.id}`}</p>
         </div>
 
         <div>
@@ -63,19 +81,17 @@ export default async function RecordPage({
 
         <div>
           <span>COLLECTION</span>
-          <p>{record.collection}</p>
+          <p>{data.collection || record.collection}</p>
         </div>
-
       </div>
 
+      <hr className="my-12 border-zinc-800" />
+
       <div className="record-markdown">
-        <ReactMarkdown>
-          {content}
-        </ReactMarkdown>
+        <ReactMarkdown>{content}</ReactMarkdown>
       </div>
 
       <div className="record-navigation">
-
         {previous ? (
           <Link
             href={`/records/${previous.id}`}
@@ -97,9 +113,7 @@ export default async function RecordPage({
         ) : (
           <div />
         )}
-
       </div>
-
     </div>
   );
 }

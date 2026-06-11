@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { records } from "../../../lib/records";
 
+const collectionRecords = records.filter((record) => {
+  const id = Number(record.id);
+  return id >= 1 && id <= 10;
+});
+
 export default function FoundationalHistoryPage() {
   return (
     <div>
@@ -23,7 +28,7 @@ export default function FoundationalHistoryPage() {
 
       <div className="record-list">
 
-        {records.map((record) => (
+        {collectionRecords.map((record) => (
           <Link
             key={record.id}
             href={`/records/${record.id}`}

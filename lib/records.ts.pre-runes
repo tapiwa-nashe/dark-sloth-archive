@@ -1,0 +1,181 @@
+export const records = [
+  {
+    id: "001",
+    title: "The Collapse of Exchange",
+    classification: "FOUNDATIONAL HISTORY",
+    collection: "FOUNDATIONAL HISTORY COLLECTION",
+    recovered: "UNKNOWN",
+    status: "VERIFIED",
+  },
+
+  {
+    id: "002",
+    title: "The First Archivists",
+    classification: "FOUNDATIONAL HISTORY",
+    collection: "FOUNDATIONAL HISTORY COLLECTION",
+    recovered: "UNKNOWN",
+    status: "VERIFIED",
+  },
+
+  {
+    id: "003",
+    title: "The Era of Fragmentation",
+    classification: "FOUNDATIONAL HISTORY",
+    collection: "FOUNDATIONAL HISTORY COLLECTION",
+    recovered: "UNKNOWN",
+    status: "VERIFIED",
+  },
+
+  {
+    id: "004",
+    title: "The Recovery Principle",
+    classification: "FOUNDATIONAL HISTORY",
+    collection: "FOUNDATIONAL HISTORY COLLECTION",
+    recovered: "UNKNOWN",
+    status: "VERIFIED",
+  },
+
+  {
+    id: "005",
+    title: "The First Stewardship Network",
+    classification: "FOUNDATIONAL HISTORY",
+    collection: "FOUNDATIONAL HISTORY COLLECTION",
+    recovered: "UNKNOWN",
+    status: "VERIFIED",
+  },
+
+  {
+    id: "006",
+    title: "Why Belonging Cannot Be Purchased",
+    classification: "FOUNDATIONAL HISTORY",
+    collection: "FOUNDATIONAL HISTORY COLLECTION",
+    recovered: "UNKNOWN",
+    status: "VERIFIED",
+  },
+
+  {
+    id: "007",
+    title: "The Appointment Tradition",
+    classification: "FOUNDATIONAL HISTORY",
+    collection: "FOUNDATIONAL HISTORY COLLECTION",
+    recovered: "UNKNOWN",
+    status: "VERIFIED",
+  },
+
+  {
+    id: "008",
+    title: "The Formation of the First Node",
+    classification: "FOUNDATIONAL HISTORY",
+    collection: "FOUNDATIONAL HISTORY COLLECTION",
+    recovered: "UNKNOWN",
+    status: "VERIFIED",
+  },
+
+  {
+    id: "009",
+    title: "The Preservation Mandate",
+    classification: "FOUNDATIONAL HISTORY",
+    collection: "FOUNDATIONAL HISTORY COLLECTION",
+    recovered: "UNKNOWN",
+    status: "VERIFIED",
+  },
+
+  {
+    id: "010",
+    title: "The Recovery Era",
+    classification: "FOUNDATIONAL HISTORY",
+    collection: "FOUNDATIONAL HISTORY COLLECTION",
+    recovered: "UNKNOWN",
+    status: "VERIFIED",
+  },
+
+  {
+    id: "011",
+    title: "Why Recovery Matters",
+    classification: "ARCHIVE PHILOSOPHY",
+    collection: "ARCHIVE PHILOSOPHY",
+    recovered: "UNKNOWN",
+    status: "VERIFIED",
+  },
+
+  {
+    id: "012",
+    title: "The Meaning of Stewardship",
+    classification: "ARCHIVE PHILOSOPHY",
+    collection: "ARCHIVE PHILOSOPHY",
+    recovered: "UNKNOWN",
+    status: "VERIFIED",
+  },
+
+  {
+    id: "013",
+    title: "Memory and Continuity",
+    classification: "ARCHIVE PHILOSOPHY",
+    collection: "ARCHIVE PHILOSOPHY",
+    recovered: "UNKNOWN",
+    status: "VERIFIED",
+  },
+
+  {
+    id: "014",
+    title: "The Nature of Belonging",
+    classification: "ARCHIVE PHILOSOPHY",
+    collection: "ARCHIVE PHILOSOPHY",
+    recovered: "UNKNOWN",
+    status: "VERIFIED",
+  },
+
+  {
+    id: "015",
+    title: "Why Civilization Requires Participation",
+    classification: "ARCHIVE PHILOSOPHY",
+    collection: "ARCHIVE PHILOSOPHY",
+    recovered: "UNKNOWN",
+    status: "VERIFIED",
+  },
+
+  {
+    id: "016",
+    title: "Move Slowly Enough To Notice Life",
+    classification: "RECOVERY LAW",
+    collection: "THE RECOVERY LAWS",
+    recovered: "UNKNOWN",
+    status: "VERIFIED",
+  },
+
+  {
+    id: "017",
+    title: "Nothing Is Invented. Only Recovered.",
+    classification: "RECOVERY LAW",
+    collection: "THE RECOVERY LAWS",
+    recovered: "UNKNOWN",
+    status: "VERIFIED",
+  },
+
+  {
+    id: "018",
+    title: "Knowledge Has Weight.",
+    classification: "RECOVERY LAW",
+    collection: "THE RECOVERY LAWS",
+    recovered: "UNKNOWN",
+    status: "VERIFIED",
+  },
+
+  {
+    id: "019",
+    title: "The Wilds Are Never Fully Mapped.",
+    classification: "RECOVERY LAW",
+    collection: "THE RECOVERY LAWS",
+    recovered: "UNKNOWN",
+    status: "VERIFIED",
+  },
+
+  {
+    id: "020",
+    title: "Access May Be Recovered Through Many Paths. Belonging Can Only Be Earned.",
+    classification: "RECOVERY LAW",
+    collection: "THE RECOVERY LAWS",
+    recovered: "UNKNOWN",
+    status: "VERIFIED",
+  },
+];
