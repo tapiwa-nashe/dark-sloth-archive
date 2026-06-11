@@ -5,12 +5,19 @@ export default function DossierPage() {
       <div className="page-header">
 
         <div className="section-label">
-          ARCHIVE ID
+          ARCHIVE IDENTITY
         </div>
 
         <h1 className="page-title">
           ARCH-0001
         </h1>
+
+        <p className="page-description">
+          Archive Identity is the persistent record layer of the Archive.
+          Each participant will eventually possess a unique identity preserving
+          recoveries, contributions, observations, and progression.
+          The identity displayed below is a reference record.
+        </p>
 
       </div>
 

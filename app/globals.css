@@ -1881,3 +1881,11 @@ body {
     url("/archive/hero-background.jpg") !important;
 }
 
+
+.page-description {
+  max-width: 720px;
+  color: #888;
+  line-height: 1.8;
+  margin-top: 24px;
+}
+
