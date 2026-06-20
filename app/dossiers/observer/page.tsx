@@ -14,7 +14,7 @@ export default function ObserverDossierPage() {
   return (
     <main className="archive-derived-page mx-auto max-w-6xl px-6 py-16">
 
-      <header className="mb-16">
+      <header className="mb-12">
 
         <p className="mb-4 text-xs tracking-[0.4em] text-zinc-500">
           DOSSIER-001
@@ -31,7 +31,7 @@ export default function ObserverDossierPage() {
 
       </header>
 
-      <section className="mb-16 border-t border-b border-zinc-800 py-8">
+      <section className="mb-12 border-t border-b border-zinc-800 py-8">
 
         <div className="grid gap-6 md:grid-cols-2">
 
@@ -92,13 +92,13 @@ export default function ObserverDossierPage() {
 
       </section>
 
-      <section className="mb-20">
+      <section className="mb-14">
 
         <h2 className="mb-6 text-3xl font-semibold">
           RECOVERED FRAGMENT
         </h2>
 
-        <div className="max-w-4xl border border-zinc-800 p-8">
+        <div className="max-w-4xl border border-zinc-800 p-6">
 
           <p className="text-xs tracking-[0.35em] text-zinc-500 mb-6">
             ARCHIVE FRAGMENT // REC-016
@@ -117,7 +117,7 @@ export default function ObserverDossierPage() {
 
       </section>
 
-      <section className="mb-20">
+      <section className="mb-14">
 
         <h2 className="text-3xl font-semibold mb-2">
           EVIDENCE CHAIN
@@ -129,7 +129,7 @@ export default function ObserverDossierPage() {
 
         <div className="overflow-x-auto">
 
-          <div className="flex items-center gap-4 min-w-max pb-4">
+          <div className="flex items-center gap-4 min-w-max pb-2">
 
             {evidenceChain.map((item, index) => (
               <div key={item.id} className="flex items-center gap-4">
@@ -165,7 +165,7 @@ export default function ObserverDossierPage() {
 
       </section>
 
-      <section className="mb-16">
+      <section className="mb-12">
 
         <h2 className="mb-6 text-3xl font-semibold">
           RELATED DOSSIERS
@@ -175,7 +175,7 @@ export default function ObserverDossierPage() {
 
           <Link
             href="#"
-            className="block border-b border-zinc-800 pb-4 hover:border-zinc-500 transition"
+            className="block border-b border-zinc-800 pb-2 hover:border-zinc-500 transition"
           >
             <p className="text-red-400 text-sm tracking-[0.3em] mb-2">
               DOS-002
@@ -192,7 +192,7 @@ export default function ObserverDossierPage() {
 
           <Link
             href="#"
-            className="block border-b border-zinc-800 pb-4 hover:border-zinc-500 transition"
+            className="block border-b border-zinc-800 pb-2 hover:border-zinc-500 transition"
           >
             <p className="text-blue-400 text-sm tracking-[0.3em] mb-2">
               DOS-003
@@ -211,7 +211,7 @@ export default function ObserverDossierPage() {
 
       </section>
 
-      <section className="mb-16">
+      <section className="mb-12">
 
         <h2 className="mb-6 text-3xl font-semibold">
           ARCHIVE ASSESSMENT
@@ -219,24 +219,24 @@ export default function ObserverDossierPage() {
 
         <div className="max-w-3xl">
 
-          <div className="space-y-5">
+          <div className="space-y-2">
 
-            <div className="flex justify-between border-b border-zinc-800 pb-3">
+            <div className="flex justify-between border-b border-zinc-800 pb-2">
               <span className="text-zinc-500">Confidence</span>
               <span className="text-green-400 font-semibold">72%</span>
             </div>
 
-            <div className="flex justify-between border-b border-zinc-800 pb-3">
+            <div className="flex justify-between border-b border-zinc-800 pb-2">
               <span className="text-zinc-500">Risk</span>
               <span className="font-semibold">LOW</span>
             </div>
 
-            <div className="flex justify-between border-b border-zinc-800 pb-3">
+            <div className="flex justify-between border-b border-zinc-800 pb-2">
               <span className="text-zinc-500">Verification</span>
               <span className="text-pink-400 font-semibold">PARTIAL</span>
             </div>
 
-            <div className="flex justify-between pb-3">
+            <div className="flex justify-between pb-2">
               <span className="text-zinc-500">Classification</span>
               <span className="text-blue-400 font-semibold">
                 FOUNDATIONAL
@@ -249,13 +249,13 @@ export default function ObserverDossierPage() {
 
       </section>
 
-      <section className="mb-16 max-w-4xl">
+      <section className="mb-12 max-w-4xl">
 
         <h2 className="mb-6 text-3xl font-semibold">
           INVESTIGATION REPORT
         </h2>
 
-        <div className="space-y-5 text-zinc-400 leading-relaxed">
+        <div className="space-y-2 text-zinc-400 leading-relaxed">
 
           <p>Every recovery begins with observation.</p>
 
