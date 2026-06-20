@@ -31,7 +31,7 @@ export default function ObserverDossierPage() {
 
       </header>
 
-      <section className="mb-12 grid gap-10 border-t border-b border-zinc-800 py-8 lg:grid-cols-[260px_1fr]">
+      <section className="lg:grid-cols-[340px_1fr] mb-10 grid gap-8 border-t border-b border-zinc-800 py-6 lg:grid-cols-[340px_1fr]">
 
         <div className="gird grid-cols-2 gap-x-3 gap-y-3">
 
