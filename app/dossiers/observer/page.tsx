@@ -48,8 +48,7 @@ export default function ObserverDossierPage() {
             <p className="text-xs tracking-[0.3em] text-zinc-500 mb-2">
               STATUS
             </p>
-            <p className="font-semibold text-pink-400">
-              ACTIVE INVESTIGATION
+            <p className="font-semibold text-amber-400">ACTIVE INVESTIGATION
             </p>
           </div>
 
