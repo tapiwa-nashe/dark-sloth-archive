@@ -68,9 +68,85 @@ export default function HomePage() {
           Records. Books. Dossiers. Recovery.
         </p>
 
+      
+</section>
+
+      <section
+        style={{
+          maxWidth: "1400px",
+          margin: "-220px auto 40px auto",
+          padding: "0 0px",
+          position: "relative",
+          zIndex: 10,
+        }}
+      >
+        <div
+          style={{
+            border: "1px solid rgba(255,255,255,0.12)",
+            borderRadius: "12px",
+            background: "rgba(0,0,0,0.72)",
+            backdropFilter: "blur(8px)",
+            padding: "32px",
+          }}
+        >
+          <div
+            style={{
+              fontSize: "11px",
+              letterSpacing: "0.35em",
+              textTransform: "uppercase",
+              color: "#777",
+              marginBottom: "20px",
+            }}
+          >
+            Begin Here
+          </div>
+
+          <h2
+            style={{
+              fontSize: "40px",
+              fontWeight: 700,
+              marginBottom: "24px",
+              lineHeight: 1.1,
+            }}
+          >
+            First Recovery Protocol
+          </h2>
+
+          <p
+            style={{
+              fontSize: "18px",
+              color: "#aaa",
+              maxWidth: "900px",
+              lineHeight: 1.8,
+              marginBottom: "36px",
+            }}
+          >
+            Before the Archive is read, it may be entered.
+            Every Seeker begins with a Recovery.
+          </p>
+
+          <Link
+            href="/first-recovery"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              border: "1px solid rgba(255,255,255,0.3)",
+              padding: "18px 32px",
+              fontSize: "12px",
+              letterSpacing: "0.25em",
+              textTransform: "uppercase",
+              textDecoration: "none",
+              color: "#fff",
+            }}
+          >
+            Begin Your First Recovery →
+          </Link>
+        </div>
       </section>
 
       <section className="stats-grid">
+
 
         <Link href="/collections" className="stat-card">
           <ScanSearch className="stat-icon" size={22} strokeWidth={1.5} />
@@ -89,8 +165,8 @@ export default function HomePage() {
         <Link href="/books" className="stat-card">
           <BookOpen className="stat-icon" size={22} strokeWidth={1.5} />
           <span>BOOKS</span>
-          <h2>003</h2>
-          <p>Published Volumes</p>
+          <h2>012</h2>
+          <p>Recovered Volumes</p>
         </Link>
 
         <Link href="/dossier" className="stat-card">
@@ -162,12 +238,12 @@ export default function HomePage() {
             <div className="collection-meta">
               <div>
                 <span>VOLUMES</span>
-                <p>003</p>
+                <p>012</p>
               </div>
 
               <div>
                 <span>STATUS</span>
-                <p>PUBLISHED</p>
+                <p>RECOVERED</p>
               </div>
             </div>
 
