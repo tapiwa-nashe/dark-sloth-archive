@@ -48,7 +48,7 @@ export default function ObserverDossierPage() {
             <p className="text-xs tracking-[0.3em] text-zinc-500 mb-2">
               STATUS
             </p>
-            <p className="font-semibold text-amber-400">
+            <p className="font-semibold text-pink-400">
               ACTIVE INVESTIGATION
             </p>
           </div>
@@ -66,7 +66,7 @@ export default function ObserverDossierPage() {
             <p className="text-xs tracking-[0.3em] text-zinc-500 mb-2">
               VERIFICATION
             </p>
-            <p className="font-semibold text-amber-400">
+            <p className="font-semibold text-pink-400">
               PARTIAL
             </p>
           </div>
@@ -234,7 +234,7 @@ export default function ObserverDossierPage() {
 
             <div className="flex justify-between border-b border-zinc-800 pb-3">
               <span className="text-zinc-500">Verification</span>
-              <span className="text-amber-400 font-semibold">PARTIAL</span>
+              <span className="text-pink-400 font-semibold">PARTIAL</span>
             </div>
 
             <div className="flex justify-between pb-3">
