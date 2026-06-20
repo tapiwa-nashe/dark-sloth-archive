@@ -128,46 +128,6 @@ export default function ObserverDossierPage() {
 
       <section className="mb-20">
 
-        <h2 className="mb-8 text-3xl font-semibold">
-          EVIDENCE CHAIN
-        </h2>
-
-        <div className="max-w-3xl space-y-4">
-
-          {evidenceChain.map((item, index) => (
-            <div key={item.id}>
-
-              <div className="border border-zinc-800 p-5">
-
-                <p className="text-xs tracking-[0.3em] text-zinc-500 mb-2">
-                  EVIDENCE
-                </p>
-
-                <h3 className="text-xl font-semibold">
-                  {item.label}
-                </h3>
-
-                <p className="text-zinc-400 mt-2">
-                  {item.title}
-                </p>
-
-              </div>
-
-              {index < evidenceChain.length - 1 && (
-                <div className="flex justify-center py-2 text-zinc-600 text-2xl">
-                  ↓
-                </div>
-              )}
-
-            </div>
-          ))}
-
-        </div>
-
-      </section>
-
-      <section className="mb-20">
-
         <h2 className="mb-6 text-3xl font-semibold">
           RECOVERED FRAGMENT
         </h2>
@@ -186,6 +146,54 @@ export default function ObserverDossierPage() {
             Earliest known formulation of the Observer Principle.
             Recovery source remains under investigation.
           </p>
+
+        </div>
+
+      </section>
+
+      <section className="mb-20">
+
+        <h2 className="text-3xl font-semibold mb-2">
+          EVIDENCE CHAIN
+        </h2>
+
+        <p className="text-zinc-500 mb-8">
+          7 RELATED RECORDS
+        </p>
+
+        <div className="overflow-x-auto">
+
+          <div className="flex items-center gap-4 min-w-max pb-4">
+
+            {evidenceChain.map((item, index) => (
+              <div key={item.id} className="flex items-center gap-4">
+
+                <div className="w-[260px] border border-zinc-800 p-5">
+
+                  <p className="text-xs tracking-[0.3em] text-zinc-500 mb-2">
+                    EVIDENCE
+                  </p>
+
+                  <h3 className="text-xl font-semibold">
+                    {item.label}
+                  </h3>
+
+                  <p className="text-zinc-400 mt-2">
+                    {item.title}
+                  </p>
+
+                </div>
+
+                {index < evidenceChain.length - 1 && (
+                  <div className="text-zinc-600 text-2xl">
+                    →
+                  </div>
+                )}
+
+              </div>
+            ))}
+
+          </div>
 
         </div>
 
@@ -243,45 +251,27 @@ export default function ObserverDossierPage() {
           ARCHIVE ASSESSMENT
         </h2>
 
-        <div className="max-w-3xl border border-zinc-800 p-6">
+        <div className="max-w-3xl">
 
           <div className="space-y-5">
 
-            <div className="flex items-center justify-between border-b border-zinc-900 pb-3">
-              <span className="text-zinc-500 tracking-wide">
-                Confidence
-              </span>
-
-              <span className="text-green-400 font-semibold">
-                72%
-              </span>
+            <div className="flex justify-between border-b border-zinc-800 pb-3">
+              <span className="text-zinc-500">Confidence</span>
+              <span className="text-green-400 font-semibold">72%</span>
             </div>
 
-            <div className="flex items-center justify-between border-b border-zinc-900 pb-3">
-              <span className="text-zinc-500 tracking-wide">
-                Risk
-              </span>
-
-              <span className="font-semibold">
-                LOW
-              </span>
+            <div className="flex justify-between border-b border-zinc-800 pb-3">
+              <span className="text-zinc-500">Risk</span>
+              <span className="font-semibold">LOW</span>
             </div>
 
-            <div className="flex items-center justify-between border-b border-zinc-900 pb-3">
-              <span className="text-zinc-500 tracking-wide">
-                Verification
-              </span>
-
-              <span className="text-amber-400 font-semibold">
-                PARTIAL
-              </span>
+            <div className="flex justify-between border-b border-zinc-800 pb-3">
+              <span className="text-zinc-500">Verification</span>
+              <span className="text-amber-400 font-semibold">PARTIAL</span>
             </div>
 
-            <div className="flex items-center justify-between">
-              <span className="text-zinc-500 tracking-wide">
-                Classification
-              </span>
-
+            <div className="flex justify-between pb-3">
+              <span className="text-zinc-500">Classification</span>
               <span className="text-blue-400 font-semibold">
                 FOUNDATIONAL
               </span>
