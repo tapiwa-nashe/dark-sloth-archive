@@ -93,39 +93,6 @@ export default function ObserverDossierPage() {
 
       </section>
 
-      <section className="mb-16 max-w-4xl">
-
-        <h2 className="mb-6 text-3xl font-semibold">
-          INVESTIGATION SUMMARY
-        </h2>
-
-        <div className="space-y-5 text-zinc-400 leading-relaxed">
-
-          <p>Every recovery begins with observation.</p>
-
-          <p>
-            Before meaning can be recovered, attention must arrive.
-          </p>
-
-          <p>
-            This dossier gathers evidence suggesting that attention,
-            presence, silence, and discernment are not supporting
-            practices but foundational conditions for Recovery itself.
-          </p>
-
-          <p>
-            Multiple records indicate that failures of observation
-            consistently precede failures of interpretation.
-          </p>
-
-          <p>
-            Investigation remains active.
-          </p>
-
-        </div>
-
-      </section>
-
       <section className="mb-20">
 
         <h2 className="mb-6 text-3xl font-semibold">
@@ -278,6 +245,39 @@ export default function ObserverDossierPage() {
             </div>
 
           </div>
+
+        </div>
+
+      </section>
+
+      <section className="mb-16 max-w-4xl">
+
+        <h2 className="mb-6 text-3xl font-semibold">
+          INVESTIGATION REPORT
+        </h2>
+
+        <div className="space-y-5 text-zinc-400 leading-relaxed">
+
+          <p>Every recovery begins with observation.</p>
+
+          <p>
+            Before meaning can be recovered, attention must arrive.
+          </p>
+
+          <p>
+            This dossier gathers evidence suggesting that attention,
+            presence, silence, and discernment are not supporting
+            practices but foundational conditions for Recovery itself.
+          </p>
+
+          <p>
+            Multiple records indicate that failures of observation
+            consistently precede failures of interpretation.
+          </p>
+
+          <p>
+            Investigation remains active.
+          </p>
 
         </div>
 
