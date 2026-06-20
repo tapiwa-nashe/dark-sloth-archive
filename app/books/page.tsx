@@ -17,7 +17,6 @@ const codexBooks: Book[] = [
       "A field record of systems that collapse beneath the weight of their own contradictions. The first recovered observations from the Wilds.",
     amazon: "https://www.amazon.com/dp/B0H2YKNXXX",
     cover: "/books/dissolution-cycle.jpg",
-    cover: "/books/dissolution-cycle.jpg",
   },
   {
     number: "Book II",
@@ -25,7 +24,6 @@ const codexBooks: Book[] = [
     description:
       "An introduction to the principles, symbols, and structures through which meaning may be recovered, preserved, and carried forward.",
     amazon: "https://www.amazon.com/dp/B0H3HF9S8C",
-    cover: "/books/language-of-recovery.jpg",
     cover: "/books/language-of-recovery.jpg",
   },
   {
@@ -35,7 +33,6 @@ const codexBooks: Book[] = [
       "Expedition records from the frontier beyond certainty, where memory, observation, and reality refuse to remain separate.",
     amazon: "https://www.amazon.com/dp/B0H4Q4LRTG",
     cover: "/books/whispering-wilds.jpg",
-    cover: "/books/whispering-wilds.jpg",
   },
   {
     number: "Book IV",
@@ -43,7 +40,6 @@ const codexBooks: Book[] = [
     description:
       "A study of the deeper structures beneath symbols themselves. Not what the runes say, but why they speak.",
     amazon: "https://www.amazon.com/dp/B0H4XCCZ7W",
-    cover: "/books/language-beneath-the-runes.jpg",
     cover: "/books/language-beneath-the-runes.jpg",
   },
   {
@@ -53,7 +49,6 @@ const codexBooks: Book[] = [
       "Recovered fragments from the layers beneath civilization. Foundations, patterns, and continuities that persist beneath visible history.",
     amazon: "https://www.amazon.com/dp/B0H5X6N61Z",
     cover: "/books/substrate-records.jpg",
-    cover: "/books/substrate-records.jpg",
   },
   {
     number: "Book VI",
@@ -61,7 +56,6 @@ const codexBooks: Book[] = [
     description:
       "An investigation into the Archive's deepest recoveries, forbidden records, and the questions that should perhaps remain unanswered.",
     amazon: "https://www.amazon.com/dp/B0H5ZYNF96",
-    cover: "/books/black-vault.jpg",
     cover: "/books/black-vault.jpg",
   },
 ];
@@ -74,7 +68,6 @@ const archiveDocuments: Book[] = [
       "The foundational charter of the Archive. Definitions, principles, rights, responsibilities, and the civilizational purpose of Recovery.",
     amazon: "https://www.amazon.com/dp/B0H5FTLWQ9",
     cover: "/books/archive-constitution.jpg",
-    cover: "/books/archive-constitution.jpg",
   },
   {
     number: "Volume II",
@@ -82,7 +75,6 @@ const archiveDocuments: Book[] = [
     description:
       "Practical guidance for participants, Seekers, Archivists, Guardians, and all who choose to engage in Recovery.",
     amazon: "https://www.amazon.com/dp/B0GX7N8RNM",
-    cover: "/books/archive-field-manual.jpg",
     cover: "/books/archive-field-manual.jpg",
   },
   {
@@ -92,7 +84,6 @@ const archiveDocuments: Book[] = [
       "A doctrine of protection. The preservation of Recoveries, participants, memory, infrastructure, and continuity across generations.",
     amazon: "https://www.amazon.com/dp/B0H5MR7JJF",
     cover: "/books/guardians-handbook.jpg",
-    cover: "/books/guardians-handbook.jpg",
   },
   {
     number: "Volume IV",
@@ -100,7 +91,6 @@ const archiveDocuments: Book[] = [
     description:
       "A guide to observation, documentation, classification, and stewardship. The craft of preserving meaning against dissolution.",
     amazon: "https://www.amazon.com/dp/B0H5RM3Q7M",
-    cover: "/books/archivists-handbook.jpg",
     cover: "/books/archivists-handbook.jpg",
   },
   {
@@ -110,7 +100,6 @@ const archiveDocuments: Book[] = [
       "Standards, classifications, and protocols governing the creation, preservation, and interpretation of Recovery Records.",
     amazon: "https://www.amazon.com/dp/B0GZK83YTY",
     cover: "/books/recovery-record-standards.jpg",
-    cover: "/books/recovery-record-standards.jpg",
   },
   {
     number: "Volume VI",
@@ -118,7 +107,6 @@ const archiveDocuments: Book[] = [
     description:
       "The official framework for dossiers, investigations, relationships, evidence chains, and continuity verification within the Archive.",
     amazon: "https://www.amazon.com/dp/B0H5VP1KWG",
-    cover: "/books/dossier-protocols.jpg",
     cover: "/books/dossier-protocols.jpg",
   },
 ];
