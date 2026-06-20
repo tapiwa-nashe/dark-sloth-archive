@@ -1,18 +1,18 @@
 import Link from "next/link";
 
-const relatedRecords = [
-  { id: "016", label: "REC-016", title: "Move Slowly Enough To Notice Life", type: "Recovery Law" },
-  { id: "021", label: "RUNE-001", title: "Presence", type: "Core Rune" },
-  { id: "040", label: "REC-040", title: "The Cost of Distraction", type: "Rune Recovery Record" },
-  { id: "046", label: "REC-046", title: "The Discipline of Attention", type: "Rune Recovery Record" },
-  { id: "023", label: "RUNE-003", title: "Silence", type: "Core Rune" },
-  { id: "048", label: "REC-048", title: "Listening Beneath Noise", type: "Rune Recovery Record" },
-  { id: "024", label: "RUNE-004", title: "Discernment", type: "Core Rune" },
+const evidenceChain = [
+  { id: "016", label: "REC-016", title: "Move Slowly Enough To Notice Life" },
+  { id: "021", label: "RUNE-001", title: "Presence" },
+  { id: "040", label: "REC-040", title: "The Cost of Distraction" },
+  { id: "046", label: "REC-046", title: "The Discipline of Attention" },
+  { id: "023", label: "RUNE-003", title: "Silence" },
+  { id: "048", label: "REC-048", title: "Listening Beneath Noise" },
+  { id: "024", label: "RUNE-004", title: "Discernment" },
 ];
 
 export default function ObserverDossierPage() {
   return (
-    <main className="mx-auto max-w-6xl px-6 py-16">
+    <main className="archive-derived-page mx-auto max-w-6xl px-6 py-16">
 
       <header className="mb-16">
 
@@ -21,117 +21,228 @@ export default function ObserverDossierPage() {
         </p>
 
         <h1 className="mb-6 text-5xl font-bold">
-          The Observer
+          THE OBSERVER EFFECT
         </h1>
 
-        <p className="max-w-3xl text-zinc-400 leading-relaxed">
-          A foundational investigation into attention, presence,
-          silence, discernment, and the first discipline of recovery.
+        <p className="max-w-3xl text-zinc-400 leading-relaxed mb-8">
+          An active investigation into attention, presence, silence,
+          discernment, and the foundational conditions required for Recovery.
         </p>
+
+        <div className="grid gap-4 md:grid-cols-4">
+
+          <div className="border border-zinc-800 p-4">
+            <p className="text-xs tracking-[0.3em] text-zinc-500 mb-2">
+              ARCHIVE ID
+            </p>
+            <p className="font-semibold">DOS-001</p>
+          </div>
+
+          <div className="border border-zinc-800 p-4">
+            <p className="text-xs tracking-[0.3em] text-zinc-500 mb-2">
+              EVIDENCE CHAINS
+            </p>
+            <p className="font-semibold">7</p>
+          </div>
+
+          <div className="border border-zinc-800 p-4">
+            <p className="text-xs tracking-[0.3em] text-zinc-500 mb-2">
+              RELATED RECOVERIES
+            </p>
+            <p className="font-semibold">7</p>
+          </div>
+
+          <div className="border border-zinc-800 p-4">
+            <p className="text-xs tracking-[0.3em] text-zinc-500 mb-2">
+              LAST REVIEW
+            </p>
+            <p className="font-semibold text-amber-400">ACTIVE</p>
+          </div>
+
+        </div>
 
       </header>
 
-      <section className="mb-16 grid gap-4 md:grid-cols-2">
+      <section className="mb-16 grid gap-4 md:grid-cols-4">
 
-        <div className="border border-zinc-800 p-5">
-          <p className="mb-2 text-xs tracking-[0.3em] text-zinc-500">
+        <div className="border border-amber-700/50 bg-amber-950/20 p-5">
+          <p className="mb-2 text-xs tracking-[0.3em] text-amber-500">
+            STATUS
+          </p>
+          <p className="font-semibold text-amber-300">
+            ACTIVE INVESTIGATION
+          </p>
+        </div>
+
+        <div className="border border-blue-700/50 bg-blue-950/20 p-5">
+          <p className="mb-2 text-xs tracking-[0.3em] text-blue-500">
             CLASSIFICATION
           </p>
-          <p className="font-semibold">
-            FOUNDATIONAL DOSSIER
+          <p className="font-semibold text-blue-300">
+            FOUNDATIONAL
           </p>
         </div>
 
-        <div className="border border-zinc-800 p-5">
-          <p className="mb-2 text-xs tracking-[0.3em] text-zinc-500">
-            PRIMARY THEME
+        <div className="border border-amber-700/50 bg-amber-950/20 p-5">
+          <p className="mb-2 text-xs tracking-[0.3em] text-amber-500">
+            VERIFICATION
           </p>
-          <p className="font-semibold">
-            OBSERVATION
-          </p>
-        </div>
-
-        <div className="border border-zinc-800 p-5">
-          <p className="mb-2 text-xs tracking-[0.3em] text-zinc-500">
-            RELATED RUNES
-          </p>
-          <p className="font-semibold">
-            Presence / Silence / Discernment
+          <p className="font-semibold text-amber-300">
+            PARTIAL
           </p>
         </div>
 
-        <div className="border border-zinc-800 p-5">
-          <p className="mb-2 text-xs tracking-[0.3em] text-zinc-500">
-            ARCHIVE STATUS
+        <div className="border border-green-700/50 bg-green-950/20 p-5">
+          <p className="mb-2 text-xs tracking-[0.3em] text-green-500">
+            CONFIDENCE
           </p>
-          <p className="font-semibold">
-            ACTIVE
+          <p className="font-semibold text-green-300">
+            72%
           </p>
         </div>
 
       </section>
 
-      <section className="mb-16 max-w-3xl space-y-5 text-zinc-400 leading-relaxed">
+      <section className="mb-16 max-w-4xl">
 
-        <h2 className="text-2xl font-semibold text-white">
-          Overview
+        <h2 className="mb-6 text-3xl font-semibold">
+          INVESTIGATION SUMMARY
         </h2>
 
-        <p>
-          Every recovery begins with observation.
-        </p>
+        <div className="space-y-5 text-zinc-400 leading-relaxed">
 
-        <p>
-          Before meaning can be recovered,
-          attention must arrive.
-        </p>
+          <p>Every recovery begins with observation.</p>
 
-        <p>
-          The Observer dossier gathers records concerned with the first
-          discipline of recovery: noticing what is present before attempting
-          to interpret it.
-        </p>
+          <p>
+            Before meaning can be recovered, attention must arrive.
+          </p>
 
-        <p>
-          Presence opens the field.
-          Silence clears the field.
-          Discernment teaches the observer what carries weight inside it.
-        </p>
+          <p>
+            This dossier gathers evidence suggesting that attention,
+            presence, silence, and discernment are not supporting
+            practices but foundational conditions for Recovery itself.
+          </p>
 
-        <p>
-          The Archive does not treat observation as passive.
-          Observation is the beginning of participation.
-        </p>
+          <p>
+            Multiple records indicate that failures of observation
+            consistently precede failures of interpretation.
+          </p>
+
+          <p>Investigation remains active.</p>
+
+        </div>
+
+      </section>
+
+      <section className="mb-20">
+
+        <h2 className="mb-8 text-3xl font-semibold">
+          EVIDENCE CHAIN
+        </h2>
+
+        <div className="overflow-x-auto">
+
+          <div className="flex items-center gap-4 min-w-max pb-2">
+
+            {evidenceChain.map((item, index) => (
+              <div key={item.id} className="flex items-center gap-4">
+
+                <div className="w-[240px] border border-zinc-800 bg-black/40 p-4">
+                  <p className="text-xs tracking-[0.3em] text-zinc-500 mb-2">
+                    EVIDENCE
+                  </p>
+
+                  <h3 className="text-lg font-semibold">
+                    {item.label}
+                  </h3>
+
+                  <p className="text-zinc-400 mt-2 text-sm">
+                    {item.title}
+                  </p>
+                </div>
+
+                {index < evidenceChain.length - 1 && (
+                  <div className="text-zinc-600 text-2xl">
+                    →
+                  </div>
+                )}
+
+              </div>
+            ))}
+
+          </div>
+
+        </div>
 
       </section>
 
       <section className="mb-16">
 
-        <h2 className="mb-6 text-2xl font-semibold">
-          Suggested Reading Order
+        <h2 className="mb-6 text-3xl font-semibold">
+          RELATED DOSSIERS
         </h2>
 
-        <div className="grid gap-4">
+        <div className="grid gap-4 md:grid-cols-2">
 
-          {relatedRecords.map((record, index) => (
-            <Link
-              key={record.id}
-              href={`/records/${record.id}`}
-              className="group border border-zinc-800 p-5 transition hover:border-zinc-500"
-            >
-              <p className="mb-2 text-xs tracking-[0.3em] text-zinc-500">
-                STEP {String(index + 1).padStart(2, "0")} // {record.type}
-              </p>
+          <Link
+            href="#"
+            className="border border-red-900/50 bg-red-950/20 p-5 transition hover:border-red-500"
+          >
+            <p className="text-xs tracking-[0.3em] text-red-500 mb-2">
+              DOS-002
+            </p>
 
-              <h3 className="mb-2 text-xl font-semibold">
-                {record.label} — {record.title}
-              </h3>
+            <h3 className="text-xl font-semibold">
+              The Black Vault
+            </h3>
+          </Link>
 
-              <p className="text-zinc-400">
-                Open related record.
-              </p>
-            </Link>
-          ))}
+          <Link
+            href="#"
+            className="border border-blue-900/50 bg-blue-950/20 p-5 transition hover:border-blue-500"
+          >
+            <p className="text-xs tracking-[0.3em] text-blue-500 mb-2">
+              DOS-003
+            </p>
+
+            <h3 className="text-xl font-semibold">
+              The Language Beneath The Runes
+            </h3>
+          </Link>
+
+        </div>
+
+      </section>
+
+      <section className="mb-16">
+
+        <h2 className="mb-6 text-3xl font-semibold">
+          ARCHIVE ASSESSMENT
+        </h2>
+
+        <div className="grid gap-4 md:grid-cols-4">
+
+          <div className="border border-zinc-800 p-5">
+            <p className="text-zinc-500 text-xs mb-2">CONFIDENCE</p>
+            <p className="text-3xl font-bold">72%</p>
+          </div>
+
+          <div className="border border-zinc-800 p-5">
+            <p className="text-zinc-500 text-xs mb-2">RISK</p>
+            <p className="text-3xl font-bold">LOW</p>
+          </div>
+
+          <div className="border border-zinc-800 p-5">
+            <p className="text-zinc-500 text-xs mb-2">STATUS</p>
+            <p className="text-2xl font-bold">PARTIAL</p>
+          </div>
+
+          <div className="border border-zinc-800 p-5">
+            <p className="text-zinc-500 text-xs mb-2">TYPE</p>
+            <p className="text-2xl font-bold break-words">
+              FOUNDATIONAL
+            </p>
+          </div>
 
         </div>
 
@@ -140,13 +251,13 @@ export default function ObserverDossierPage() {
       <section className="border border-zinc-800 p-6">
 
         <p className="mb-3 text-xs tracking-[0.3em] text-zinc-500">
-          ARCHIVE NOTE
+          FIELD NOTE
         </p>
 
         <p className="max-w-3xl text-zinc-400 leading-relaxed">
-          This dossier functions as an introductory pathway into the Archive.
-          It should be reviewed before deeper investigations into recovery,
-          belonging, memory, or dissolution.
+          The pattern has now appeared across multiple independent recoveries.
+          Correlation no longer appears accidental. Observation continues to
+          emerge as a prerequisite for meaningful recovery.
         </p>
 
       </section>
