@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import ArchiveNav from "../components/ArchiveNav";
 
@@ -29,6 +30,20 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
       <body>
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-CVZDE6P2GN"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-CVZDE6P2GN');
+          `}
+        </Script>
 
         <ArchiveNav />
 
