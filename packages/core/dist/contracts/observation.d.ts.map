@@ -1,0 +1,1 @@
+{"version":3,"file":"observation.d.ts","sourceRoot":"","sources":["../../src/contracts/observation.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,WAAW;IAE1B,EAAE,EAAE,MAAM,CAAC;IAEX,WAAW,EAAE,MAAM,CAAC;IAEpB,MAAM,EAAE,MAAM,CAAC;IAEf,UAAU,EAAE,MAAM,CAAC;IAEnB,SAAS,EAAE,IAAI,CAAC;CAEjB"}

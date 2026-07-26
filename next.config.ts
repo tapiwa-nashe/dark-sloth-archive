@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
+
 const nextConfig: NextConfig = {
-  /* config options here */
+
+  transpilePackages: [
+    "publishing-studio"
+  ],
+
 };
 
 export default nextConfig;

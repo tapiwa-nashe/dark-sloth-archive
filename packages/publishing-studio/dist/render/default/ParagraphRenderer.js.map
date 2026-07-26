@@ -1,0 +1,1 @@
+{"version":3,"file":"ParagraphRenderer.js","sourceRoot":"","sources":["../../../src/render/default/ParagraphRenderer.ts"],"names":[],"mappings":"AAIA,MAAM,OAAO,iBAAiB;IAG5B,QAAQ,CACN,KAAkB;QAGlB,OAAO,KAAK,CAAC,IAAI,KAAK,WAAW,CAAC;IAEpC,CAAC;IAED,MAAM,CACJ,KAAkB,EAClB,OAAsB;QAGtB,eAAe;QACf,2CAA2C;IAE7C,CAAC;CAEF"}

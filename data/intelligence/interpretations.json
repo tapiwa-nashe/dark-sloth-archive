@@ -1,0 +1,177 @@
+[
+  {
+    "id": "INT-CONCEPT_000001",
+    "subject": "CONCEPT_000001",
+    "type": "CONTEXT_RECONSTRUCTION",
+    "summary": "ARCHIVE PHILOSOPHY is a BOOK entity. It was created through a connected system. It references 5 connected recovery records.",
+    "createdAt": "2026-07-26T04:28:17.701Z"
+  },
+  {
+    "id": "INT-CONCEPT_000001-1785041623048",
+    "subject": "CONCEPT_000001",
+    "type": "CONTEXT_RECONSTRUCTION",
+    "summary": "ARCHIVE PHILOSOPHY is a BOOK entity. It was created through a connected system. It references 5 connected recovery records.",
+    "createdAt": "2026-07-26T04:53:43.048Z"
+  },
+  {
+    "id": "INT-CONCEPT_000001-1785041623049",
+    "subject": "CONCEPT_000001",
+    "type": "RELATIONSHIP_ANALYSIS",
+    "summary": "ARCHIVE PHILOSOPHY has 6 connected relationships.",
+    "createdAt": "2026-07-26T04:53:43.049Z"
+  },
+  {
+    "id": "INT-CONCEPT_000001-1785041623049",
+    "subject": "CONCEPT_000001",
+    "type": "HISTORICAL_SUMMARY",
+    "summary": "ARCHIVE PHILOSOPHY is recorded in the Archive as a BOOK entity.",
+    "createdAt": "2026-07-26T04:53:43.049Z"
+  },
+  {
+    "id": "INT-CONCEPT_000001-1785041623049",
+    "subject": "CONCEPT_000001",
+    "type": "INTELLIGENCE_SYNTHESIS",
+    "summary": "ARCHIVE PHILOSOPHY is a BOOK entity. It was created through a connected system. It references 5 connected recovery records. ARCHIVE PHILOSOPHY has 6 connected relationships. ARCHIVE PHILOSOPHY is recorded in the Archive as a BOOK entity.",
+    "createdAt": "2026-07-26T04:53:43.049Z"
+  },
+  {
+    "id": "INT-CONCEPT_000001-1785041863718",
+    "subject": "CONCEPT_000001",
+    "type": "CONTEXT_RECONSTRUCTION",
+    "summary": "ARCHIVE PHILOSOPHY is a BOOK entity. It was created through a connected system. It references 5 connected recovery records.",
+    "createdAt": "2026-07-26T04:57:43.718Z"
+  },
+  {
+    "id": "INT-CONCEPT_000001-1785041863719",
+    "subject": "CONCEPT_000001",
+    "type": "RELATIONSHIP_ANALYSIS",
+    "summary": "ARCHIVE PHILOSOPHY has 6 connected relationships.",
+    "createdAt": "2026-07-26T04:57:43.719Z"
+  },
+  {
+    "id": "INT-CONCEPT_000001-1785041863719",
+    "subject": "CONCEPT_000001",
+    "type": "HISTORICAL_SUMMARY",
+    "summary": "ARCHIVE PHILOSOPHY is recorded in the Archive as a BOOK entity.",
+    "createdAt": "2026-07-26T04:57:43.719Z"
+  },
+  {
+    "id": "INT-CONCEPT_000001-1785041863720",
+    "subject": "CONCEPT_000001",
+    "type": "INTELLIGENCE_SYNTHESIS",
+    "summary": "ARCHIVE PHILOSOPHY is a BOOK entity. It was created through a connected system. It references 5 connected recovery records. ARCHIVE PHILOSOPHY has 6 connected relationships. ARCHIVE PHILOSOPHY is recorded in the Archive as a BOOK entity.",
+    "createdAt": "2026-07-26T04:57:43.720Z"
+  },
+  {
+    "id": "INT-CONCEPT_000001-1785042006844",
+    "subject": "CONCEPT_000001",
+    "type": "CONTEXT_RECONSTRUCTION",
+    "summary": "ARCHIVE PHILOSOPHY is a BOOK entity. It was created through a connected system. It references 5 connected recovery records.",
+    "createdAt": "2026-07-26T05:00:06.844Z"
+  },
+  {
+    "id": "INT-CONCEPT_000001-1785042006860",
+    "subject": "CONCEPT_000001",
+    "type": "RELATIONSHIP_ANALYSIS",
+    "summary": "ARCHIVE PHILOSOPHY has 6 connected relationships.",
+    "createdAt": "2026-07-26T05:00:06.860Z"
+  },
+  {
+    "id": "INT-CONCEPT_000001-1785042006860",
+    "subject": "CONCEPT_000001",
+    "type": "HISTORICAL_SUMMARY",
+    "summary": "ARCHIVE PHILOSOPHY is recorded in the Archive as a BOOK entity.",
+    "createdAt": "2026-07-26T05:00:06.860Z"
+  },
+  {
+    "id": "INT-CONCEPT_000001-1785042006861",
+    "subject": "CONCEPT_000001",
+    "type": "INTELLIGENCE_SYNTHESIS",
+    "summary": "ARCHIVE PHILOSOPHY is a BOOK entity. It was created through a connected system. It references 5 connected recovery records. ARCHIVE PHILOSOPHY has 6 connected relationships. ARCHIVE PHILOSOPHY is recorded in the Archive as a BOOK entity.",
+    "createdAt": "2026-07-26T05:00:06.861Z"
+  },
+  {
+    "id": "INT-CONCEPT_000001-1785043667981",
+    "subject": "CONCEPT_000001",
+    "type": "CONTEXT_RECONSTRUCTION",
+    "summary": "ARCHIVE PHILOSOPHY is a BOOK entity. It was created through a connected system. It references 5 connected recovery records.",
+    "createdAt": "2026-07-26T05:27:47.981Z"
+  },
+  {
+    "id": "INT-CONCEPT_000001-1785043667983",
+    "subject": "CONCEPT_000001",
+    "type": "RELATIONSHIP_ANALYSIS",
+    "summary": "ARCHIVE PHILOSOPHY has 6 connected relationships.",
+    "createdAt": "2026-07-26T05:27:47.983Z"
+  },
+  {
+    "id": "INT-CONCEPT_000001-1785043667983",
+    "subject": "CONCEPT_000001",
+    "type": "HISTORICAL_SUMMARY",
+    "summary": "ARCHIVE PHILOSOPHY is recorded in the Archive as a BOOK entity.",
+    "createdAt": "2026-07-26T05:27:47.983Z"
+  },
+  {
+    "id": "INT-CONCEPT_000001-1785043667984",
+    "subject": "CONCEPT_000001",
+    "type": "INTELLIGENCE_SYNTHESIS",
+    "summary": "ARCHIVE PHILOSOPHY is a BOOK entity. It was created through a connected system. It references 5 connected recovery records. ARCHIVE PHILOSOPHY has 6 connected relationships. ARCHIVE PHILOSOPHY is recorded in the Archive as a BOOK entity.",
+    "createdAt": "2026-07-26T05:27:47.984Z"
+  },
+  {
+    "id": "INT-CONCEPT_000001-1785044795756",
+    "subject": "CONCEPT_000001",
+    "type": "CONTEXT_RECONSTRUCTION",
+    "summary": "ARCHIVE PHILOSOPHY is a BOOK entity. It was created through a connected system. It references 5 connected recovery records.",
+    "createdAt": "2026-07-26T05:46:35.756Z"
+  },
+  {
+    "id": "INT-CONCEPT_000001-1785044795757",
+    "subject": "CONCEPT_000001",
+    "type": "RELATIONSHIP_ANALYSIS",
+    "summary": "ARCHIVE PHILOSOPHY has 6 connected relationships.",
+    "createdAt": "2026-07-26T05:46:35.757Z"
+  },
+  {
+    "id": "INT-CONCEPT_000001-1785044795757",
+    "subject": "CONCEPT_000001",
+    "type": "HISTORICAL_SUMMARY",
+    "summary": "ARCHIVE PHILOSOPHY is recorded in the Archive as a BOOK entity.",
+    "createdAt": "2026-07-26T05:46:35.757Z"
+  },
+  {
+    "id": "INT-CONCEPT_000001-1785044795758",
+    "subject": "CONCEPT_000001",
+    "type": "INTELLIGENCE_SYNTHESIS",
+    "summary": "ARCHIVE PHILOSOPHY is a BOOK entity. It was created through a connected system. It references 5 connected recovery records. ARCHIVE PHILOSOPHY has 6 connected relationships. ARCHIVE PHILOSOPHY is recorded in the Archive as a BOOK entity.",
+    "createdAt": "2026-07-26T05:46:35.758Z"
+  },
+  {
+    "id": "INT-CONCEPT_000001-1785045643958",
+    "subject": "CONCEPT_000001",
+    "type": "CONTEXT_RECONSTRUCTION",
+    "summary": "ARCHIVE PHILOSOPHY is a BOOK entity. It was created through a connected system. It references 6 connected recovery records.",
+    "createdAt": "2026-07-26T06:00:43.958Z"
+  },
+  {
+    "id": "INT-CONCEPT_000001-1785045643959",
+    "subject": "CONCEPT_000001",
+    "type": "RELATIONSHIP_ANALYSIS",
+    "summary": "ARCHIVE PHILOSOPHY has 7 connected relationships.",
+    "createdAt": "2026-07-26T06:00:43.959Z"
+  },
+  {
+    "id": "INT-CONCEPT_000001-1785045643960",
+    "subject": "CONCEPT_000001",
+    "type": "HISTORICAL_SUMMARY",
+    "summary": "ARCHIVE PHILOSOPHY is recorded in the Archive as a BOOK entity.",
+    "createdAt": "2026-07-26T06:00:43.960Z"
+  },
+  {
+    "id": "INT-CONCEPT_000001-1785045643960",
+    "subject": "CONCEPT_000001",
+    "type": "INTELLIGENCE_SYNTHESIS",
+    "summary": "ARCHIVE PHILOSOPHY is a BOOK entity. It was created through a connected system. It references 6 connected recovery records. ARCHIVE PHILOSOPHY has 7 connected relationships. ARCHIVE PHILOSOPHY is recorded in the Archive as a BOOK entity.",
+    "createdAt": "2026-07-26T06:00:43.960Z"
+  }
+]

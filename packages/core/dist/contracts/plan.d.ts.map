@@ -1,0 +1,1 @@
+{"version":3,"file":"plan.d.ts","sourceRoot":"","sources":["../../src/contracts/plan.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,IAAI;IAEnB,EAAE,EAAE,MAAM,CAAC;IAEX,MAAM,EAAE,MAAM,CAAC;IAEf,KAAK,EAAE,MAAM,EAAE,CAAC;IAEhB,UAAU,EAAE,MAAM,CAAC;IAEnB,SAAS,EAAE,IAAI,CAAC;CAEjB"}

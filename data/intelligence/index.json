@@ -1,0 +1,18 @@
+[
+  {
+    "subject": "CONCEPT_000001",
+    "interpretationCount": 4,
+    "types": [
+      "CONTEXT_RECONSTRUCTION",
+      "RELATIONSHIP_ANALYSIS",
+      "HISTORICAL_SUMMARY",
+      "INTELLIGENCE_SYNTHESIS"
+    ],
+    "latest": {
+      "subject": "CONCEPT_000001",
+      "type": "INTELLIGENCE_SYNTHESIS",
+      "summary": "ARCHIVE PHILOSOPHY is a BOOK entity. It was created through a connected system. It references 6 connected recovery records. ARCHIVE PHILOSOPHY has 7 connected relationships. ARCHIVE PHILOSOPHY is recorded in the Archive as a BOOK entity."
+    },
+    "updatedAt": "2026-07-26T06:00:43.961Z"
+  }
+]

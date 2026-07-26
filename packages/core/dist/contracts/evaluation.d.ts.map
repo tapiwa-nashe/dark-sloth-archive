@@ -1,0 +1,1 @@
+{"version":3,"file":"evaluation.d.ts","sourceRoot":"","sources":["../../src/contracts/evaluation.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,UAAU;IAEzB,EAAE,EAAE,MAAM,CAAC;IAEX,OAAO,EAAE,OAAO,CAAC;IAEjB,KAAK,EAAE,MAAM,CAAC;IAEd,OAAO,EAAE,MAAM,CAAC;IAEhB,SAAS,EAAE,IAAI,CAAC;CAEjB"}

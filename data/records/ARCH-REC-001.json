@@ -1,0 +1,14 @@
+{
+  "id": "ARCH-REC-001",
+  "title": "The First Living Archive Recovery",
+  "version": "2.0",
+  "status": "PUBLIC_RELEASE",
+  "description": "The first operational recovery of the Dark Sloth Archive as an interconnected knowledge system.",
+  "systems": [
+    "Archive Website",
+    "Publishing Studio V1",
+    "Knowledge Graph Foundation",
+    "Archive Intelligence Foundation"
+  ],
+  "date": "2026-07-26"
+}

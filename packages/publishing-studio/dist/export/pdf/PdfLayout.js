@@ -1,0 +1,9 @@
+export const PAGE_WIDTH = 595;
+export const PAGE_HEIGHT = 842;
+export const LEFT_MARGIN = 50;
+export const RIGHT_MARGIN = 50;
+export const TOP_MARGIN = 42;
+export const BOTTOM_MARGIN = 50;
+export const CONTENT_WIDTH = PAGE_WIDTH - LEFT_MARGIN - RIGHT_MARGIN;
+export const START_Y = PAGE_HEIGHT - TOP_MARGIN;
+//# sourceMappingURL=PdfLayout.js.map

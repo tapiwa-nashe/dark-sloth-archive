@@ -1,0 +1,135 @@
+[
+  {
+    "id": "9c6ccd16-4a0d-4b59-84cd-dd5071bdfa62",
+    "canonicalId": "CONCEPT_000001",
+    "primaryName": "ARCHIVE PHILOSOPHY",
+    "aliases": [],
+    "entityIds": [
+      "edb3f23c-967e-431a-969f-4d7c714fb1b5"
+    ],
+    "references": [
+      {
+        "value": "ARCHIVE PHILOSOPHY",
+        "sourceRecordId": "ARCH-EDITION-ARCHIVE-PHILOSOPHY",
+        "createdAt": "2026-07-26T03:57:29.007Z"
+      }
+    ],
+    "confidence": 1,
+    "createdAt": "2026-07-26T03:57:29.007Z",
+    "updatedAt": "2026-07-26T03:57:29.007Z"
+  },
+  {
+    "id": "5f47d580-e5c3-4042-982e-a876ad272870",
+    "canonicalId": "CONCEPT_000002",
+    "primaryName": "Publishing Studio V1",
+    "aliases": [],
+    "entityIds": [
+      "6f5f8069-19ac-444f-9b14-a4172e45f9bf"
+    ],
+    "references": [
+      {
+        "value": "Publishing Studio V1",
+        "sourceRecordId": "ARCH-EDITION-ARCHIVE-PHILOSOPHY",
+        "createdAt": "2026-07-26T03:57:29.008Z"
+      }
+    ],
+    "confidence": 1,
+    "createdAt": "2026-07-26T03:57:29.008Z",
+    "updatedAt": "2026-07-26T03:57:29.008Z"
+  },
+  {
+    "id": "57242813-d012-487f-98b5-689d95831204",
+    "canonicalId": "CONCEPT_000003",
+    "primaryName": "REC-011",
+    "aliases": [],
+    "entityIds": [
+      "f24587cc-aa96-44ff-8b88-99945661886d"
+    ],
+    "references": [
+      {
+        "value": "REC-011",
+        "sourceRecordId": "ARCH-EDITION-ARCHIVE-PHILOSOPHY",
+        "createdAt": "2026-07-26T03:57:29.008Z"
+      }
+    ],
+    "confidence": 1,
+    "createdAt": "2026-07-26T03:57:29.008Z",
+    "updatedAt": "2026-07-26T03:57:29.008Z"
+  },
+  {
+    "id": "4fa0bd50-c8ef-436f-b187-1b46f4cd88a3",
+    "canonicalId": "CONCEPT_000004",
+    "primaryName": "REC-012",
+    "aliases": [],
+    "entityIds": [
+      "adf4e593-34d3-441b-a1cd-4528e779fc2f"
+    ],
+    "references": [
+      {
+        "value": "REC-012",
+        "sourceRecordId": "ARCH-EDITION-ARCHIVE-PHILOSOPHY",
+        "createdAt": "2026-07-26T03:57:29.008Z"
+      }
+    ],
+    "confidence": 1,
+    "createdAt": "2026-07-26T03:57:29.008Z",
+    "updatedAt": "2026-07-26T03:57:29.008Z"
+  },
+  {
+    "id": "27e308f1-62dd-4c87-8f60-2eb9c6882f91",
+    "canonicalId": "CONCEPT_000005",
+    "primaryName": "REC-013",
+    "aliases": [],
+    "entityIds": [
+      "c2b75a6e-af92-49de-858b-b4a092ba785d"
+    ],
+    "references": [
+      {
+        "value": "REC-013",
+        "sourceRecordId": "ARCH-EDITION-ARCHIVE-PHILOSOPHY",
+        "createdAt": "2026-07-26T03:57:29.008Z"
+      }
+    ],
+    "confidence": 1,
+    "createdAt": "2026-07-26T03:57:29.008Z",
+    "updatedAt": "2026-07-26T03:57:29.008Z"
+  },
+  {
+    "id": "2b7ba553-d527-4300-8e20-264755391b04",
+    "canonicalId": "CONCEPT_000006",
+    "primaryName": "REC-014",
+    "aliases": [],
+    "entityIds": [
+      "bbcd6301-22db-43f7-a480-fee18a772ab4"
+    ],
+    "references": [
+      {
+        "value": "REC-014",
+        "sourceRecordId": "ARCH-EDITION-ARCHIVE-PHILOSOPHY",
+        "createdAt": "2026-07-26T03:57:29.008Z"
+      }
+    ],
+    "confidence": 1,
+    "createdAt": "2026-07-26T03:57:29.008Z",
+    "updatedAt": "2026-07-26T03:57:29.008Z"
+  },
+  {
+    "id": "1325032a-6081-4d32-b818-b46165cc2b78",
+    "canonicalId": "CONCEPT_000007",
+    "primaryName": "REC-015",
+    "aliases": [],
+    "entityIds": [
+      "27112537-0536-4f2d-b45d-7e2786e3c349"
+    ],
+    "references": [
+      {
+        "value": "REC-015",
+        "sourceRecordId": "ARCH-EDITION-ARCHIVE-PHILOSOPHY",
+        "createdAt": "2026-07-26T03:57:29.008Z"
+      }
+    ],
+    "confidence": 1,
+    "createdAt": "2026-07-26T03:57:29.008Z",
+    "updatedAt": "2026-07-26T03:57:29.008Z"
+  }
+]

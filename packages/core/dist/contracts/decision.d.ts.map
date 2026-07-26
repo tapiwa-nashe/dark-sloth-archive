@@ -1,0 +1,1 @@
+{"version":3,"file":"decision.d.ts","sourceRoot":"","sources":["../../src/contracts/decision.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,QAAQ;IAEvB,EAAE,EAAE,MAAM,CAAC;IAEX,MAAM,EAAE,MAAM,CAAC;IAEf,SAAS,EAAE,MAAM,CAAC;IAElB,UAAU,EAAE,MAAM,CAAC;IAEnB,SAAS,EAAE,IAAI,CAAC;CAEjB"}

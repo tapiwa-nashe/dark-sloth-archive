@@ -1,0 +1,29 @@
+[
+  {
+    "subject": "CONCEPT_000001",
+    "from": "INTELLIGENCE_SYNTHESIS",
+    "to": "INTELLIGENCE_SYNTHESIS",
+    "change": "REINFORCED",
+    "previous": "ARCHIVE PHILOSOPHY is a BOOK entity. It was created through a connected system. It references 5 connected recovery records. ARCHIVE PHILOSOPHY has 6 connected relationships. ARCHIVE PHILOSOPHY is recorded in the Archive as a BOOK entity.",
+    "current": "ARCHIVE PHILOSOPHY is a BOOK entity. It was created through a connected system. It references 5 connected recovery records. ARCHIVE PHILOSOPHY has 6 connected relationships. ARCHIVE PHILOSOPHY is recorded in the Archive as a BOOK entity.",
+    "timestamp": "2026-07-26T05:27:47.985Z"
+  },
+  {
+    "subject": "CONCEPT_000001",
+    "from": "INTELLIGENCE_SYNTHESIS",
+    "to": "INTELLIGENCE_SYNTHESIS",
+    "change": "REINFORCED",
+    "previous": "ARCHIVE PHILOSOPHY is a BOOK entity. It was created through a connected system. It references 5 connected recovery records. ARCHIVE PHILOSOPHY has 6 connected relationships. ARCHIVE PHILOSOPHY is recorded in the Archive as a BOOK entity.",
+    "current": "ARCHIVE PHILOSOPHY is a BOOK entity. It was created through a connected system. It references 5 connected recovery records. ARCHIVE PHILOSOPHY has 6 connected relationships. ARCHIVE PHILOSOPHY is recorded in the Archive as a BOOK entity.",
+    "timestamp": "2026-07-26T05:46:35.759Z"
+  },
+  {
+    "subject": "CONCEPT_000001",
+    "from": "INTELLIGENCE_SYNTHESIS",
+    "to": "INTELLIGENCE_SYNTHESIS",
+    "change": "REINFORCED",
+    "previous": "ARCHIVE PHILOSOPHY is a BOOK entity. It was created through a connected system. It references 6 connected recovery records. ARCHIVE PHILOSOPHY has 7 connected relationships. ARCHIVE PHILOSOPHY is recorded in the Archive as a BOOK entity.",
+    "current": "ARCHIVE PHILOSOPHY is a BOOK entity. It was created through a connected system. It references 6 connected recovery records. ARCHIVE PHILOSOPHY has 7 connected relationships. ARCHIVE PHILOSOPHY is recorded in the Archive as a BOOK entity.",
+    "timestamp": "2026-07-26T06:00:43.961Z"
+  }
+]

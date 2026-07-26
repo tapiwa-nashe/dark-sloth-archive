@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 
+import { getArchiveBooks } from "@/lib/books/editionBooks";
+
 type Book = {
   number: string;
   title: string;
@@ -112,6 +114,10 @@ const archiveDocuments: Book[] = [
 ];
 
 export default function BooksPage() {
+
+  const generatedEditions =
+    getArchiveBooks();
+
   return (
     <main className="archive-derived-page text-white px-6 py-20">
       <section className="relative z-10 max-w-6xl mx-auto">
@@ -142,6 +148,87 @@ export default function BooksPage() {
           subtitle="Constitutional, operational, guardian, archivist, record, and dossier frameworks of the Archive."
           books={archiveDocuments}
         />
+
+        {
+          generatedEditions.length > 0 && (
+
+            <section className="mb-20">
+
+              <div className="mb-8">
+
+                <p className="font-mono text-xs tracking-[0.25em] text-neutral-500 uppercase mb-3">
+                  Publishing Studio
+                </p>
+
+                <h2 className="text-3xl md:text-5xl font-semibold mb-4">
+                  Generated Editions
+                </h2>
+
+                <p className="text-neutral-400 leading-8 max-w-3xl">
+                  Editions assembled through the Archive Publishing Studio engine.
+                </p>
+
+              </div>
+
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+                {
+                  generatedEditions.map(
+                    (book) => (
+
+                      <Link
+                        key={book.id}
+                        href={`/studios/publishing/${encodeURIComponent(book.title)}`}
+                        className="border border-neutral-800 bg-black/70 rounded-lg p-5 hover:border-neutral-500 transition"
+                      >
+
+                        <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-neutral-600 mb-4">
+                          Generated Edition
+                        </p>
+
+
+                        <h3 className="text-xl font-semibold mb-4">
+                          {book.title}
+                        </h3>
+
+
+                        <p className="text-neutral-400 text-sm mb-2">
+                          Engine: {book.engine}
+                        </p>
+
+
+                        <p className="text-neutral-500 text-sm mb-2">
+                          Collection: {book.title}
+                        </p>
+
+
+                        <p className="text-neutral-500 text-sm mb-3">
+                          Records:
+                          {" "}
+                          {book.records?.length ?? 0}
+                        </p>
+
+
+                        <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-neutral-500">
+                          Status: {book.status}
+                        </p>
+
+
+                      </Link>
+
+                    )
+                  )
+                }
+
+              </div>
+
+            </section>
+
+          )
+        }
+
+
 
         <div className="mt-20 border border-neutral-800 bg-black/70 p-8 rounded-lg backdrop-blur-sm">
           <p className="font-mono text-xs tracking-[0.28em] text-neutral-500 uppercase mb-4">

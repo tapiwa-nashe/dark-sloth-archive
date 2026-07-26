@@ -1,0 +1,16 @@
+{
+  "name": "@dark-sloth/identity",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@dark-sloth/types": "1.0.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts"
+}

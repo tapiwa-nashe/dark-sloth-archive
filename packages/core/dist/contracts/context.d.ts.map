@@ -1,0 +1,1 @@
+{"version":3,"file":"context.d.ts","sourceRoot":"","sources":["../../src/contracts/context.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EACV,WAAW,EACZ,MAAM,kBAAkB,CAAC;AAG1B,MAAM,WAAW,OAAO;IAEtB,YAAY,EAAE,WAAW,EAAE,CAAC;IAE5B,SAAS,EAAE,IAAI,CAAC;CAEjB"}
