@@ -4,6 +4,10 @@ import {
   getEdition
 } from "@/lib/publishing/edition";
 
+import GenerateEditionButton from "@/components/publishing/GenerateEditionButton";
+
+export const dynamic = "force-dynamic";
+
 
 type Props = {
 
@@ -70,6 +74,145 @@ export default async function EditionPage(
         <h1 className="text-5xl font-bold mb-6">
           {publication.title}
         </h1>
+
+
+        {
+          publication.manifest && (
+
+            <section className="border border-neutral-800 bg-neutral-950 rounded-xl p-8 mb-10">
+
+              <h2 className="text-xl font-semibold mb-6">
+                Edition Summary
+              </h2>
+
+
+              <div className="space-y-3 text-neutral-400">
+
+                <p>
+                  Collection:
+                  {" "}
+                  {publication.manifest.collection}
+                </p>
+
+
+                <p>
+                  Engine:
+                  {" "}
+                  {publication.manifest.engine}
+                </p>
+
+
+                <p>
+                  Status:
+                  {" "}
+                  {publication.manifest.status}
+                </p>
+
+
+                <p>
+                  Source Records:
+                  {" "}
+                  {publication.manifest.records?.length ?? 0}
+                </p>
+
+
+                <p>
+                  Artifacts:
+                  {" "}
+                  {publication.manifest.outputs?.length ?? 0}
+                </p>
+
+
+                <p>
+                  Generated:
+                  {" "}
+                  {publication.manifest.generated}
+                </p>
+
+              </div>
+
+            </section>
+
+          )
+        }
+
+
+        {
+          publication.manifest && (
+
+            <section className="border border-neutral-800 bg-neutral-950 rounded-xl p-8 mb-10">
+
+              <h2 className="text-xl font-semibold mb-6">
+                Edition Summary
+              </h2>
+
+
+              <div className="space-y-3 text-neutral-400">
+
+                <p>
+                  Collection:
+                  {" "}
+                  {publication.manifest.collection}
+                </p>
+
+
+                <p>
+                  Engine:
+                  {" "}
+                  {publication.manifest.engine}
+                </p>
+
+
+                <p>
+                  Status:
+                  {" "}
+                  {publication.manifest.status}
+                </p>
+
+
+                <p>
+                  Source Records:
+                  {" "}
+                  {publication.manifest.records?.length ?? 0}
+                </p>
+
+
+                <p>
+                  Artifacts:
+                  {" "}
+                  {publication.manifest.outputs?.length ?? 0}
+                </p>
+
+
+                <p>
+                  Generated:
+                  {" "}
+                  {publication.manifest.generated}
+                </p>
+
+              </div>
+
+            </section>
+
+          )
+        }
+
+
+        <div className="border border-neutral-800 bg-neutral-950 rounded-xl p-8 mb-10">
+
+          <h2 className="text-xl font-semibold mb-6">
+            Publishing Controls
+          </h2>
+
+          <p className="text-neutral-400 mb-6">
+            Generate Archive edition artifacts from this collection.
+          </p>
+
+          <GenerateEditionButton
+            collection={publication.title}
+          />
+
+        </div>
 
 
         <div className="border border-neutral-800 bg-neutral-950 rounded-xl p-8 mb-10">

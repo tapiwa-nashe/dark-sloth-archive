@@ -59,7 +59,7 @@ export default function PublishingStudioPage() {
 
                 <Link
                   key={collection}
-                  href={`/api/publishing/${encodeURIComponent(collection)}`}
+                  href={`/studios/publishing/${encodeURIComponent(collection)}`}
                   className="border border-neutral-800 bg-neutral-950 rounded-lg p-6 hover:border-neutral-500 transition"
                 >
 

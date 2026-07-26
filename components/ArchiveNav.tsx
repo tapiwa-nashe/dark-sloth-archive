@@ -20,6 +20,10 @@ export default function ArchiveNav() {
         BOOKS
       </Link>
 
+      <Link href="/studios/publishing">
+        PUBLISHING STUDIO
+      </Link>
+
       <Link href="/studios">
         STUDIOS
       </Link>
