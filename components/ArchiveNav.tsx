@@ -1,49 +1,114 @@
 import Link from "next/link";
 
-export default function ArchiveNav() {
-  return (
-    <nav className="archive-nav">
 
-      <Link href="/">
-        ARCHIVE
-      </Link>
+const items = [
 
-      <Link href="/collections">
-        COLLECTIONS
-      </Link>
+{
+label:"ARCHIVE HOME",
+icon:"⌂",
+href:"/"
+},
 
-      <Link href="/dossiers">
-        DOSSIERS
-      </Link>
+{
+label:"COLLECTIONS",
+icon:"▰",
+href:"/collections"
+},
 
-      <Link href="/books">
-        BOOKS
-      </Link>
+{
+label:"RECORDS",
+icon:"▤",
+href:"/records"
+},
 
-      <Link href="/studios/publishing">
-        PUBLISHING STUDIO
-      </Link>
+{
+label:"RECOVERIES",
+icon:"◇",
+href:"/recoveries"
+},
 
-      <Link href="/studios">
-        STUDIOS
-      </Link>
+{
+label:"BOOKS",
+icon:"▱",
+href:"/books"
+},
 
-      <Link href="/recoveries">
-        RECOVERIES
-      </Link>
+{
+label:"CREATOR ENGINE",
+icon:"◉",
+href:"/creator/publishing"
+},
 
-      <Link href="/studios">
-        HELMR HUGR
-      </Link>
+{
+label:"PUBLISHING STUDIO",
+icon:"▣",
+href:"/studios/publishing"
+},
 
-      <Link href="/dossier">
-        ARCHIVE ID
-      </Link>
+{
+label:"STUDIOS",
+icon:"◌",
+href:"/studios"
+},
 
-      <Link href="/platform">
-        PLATFORM
-      </Link>
+{
+label:"ARCHIVE ID",
+icon:"◎",
+href:"/dossier"
+},
 
-    </nav>
-  );
+{
+label:"PLATFORM",
+icon:"◈",
+href:"/platform"
+}
+
+];
+
+
+export default function ArchiveNav(){
+
+return (
+
+<aside className="archive-sidebar">
+
+
+<div className="archive-trigger">
+☰
+</div>
+
+
+<div className="archive-menu">
+
+
+{items.map(item=>(
+
+<Link
+key={item.href}
+href={item.href}
+className="archive-link"
+>
+
+<i>
+{item.icon}
+</i>
+
+
+<strong>
+{item.label}
+</strong>
+
+
+</Link>
+
+))}
+
+
+</div>
+
+
+</aside>
+
+)
+
 }

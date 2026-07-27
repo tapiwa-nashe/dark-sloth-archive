@@ -1889,3 +1889,2949 @@ body {
   margin-top: 24px;
 }
 
+
+
+/* ---------------------- ARCHIVE SHELL LAYER FIX ---------------------- */
+
+.archive-nav {
+  position: relative !important;
+  z-index: 100 !important;
+}
+
+
+.container {
+  position: relative !important;
+  z-index: 20 !important;
+}
+
+
+main {
+  position: relative !important;
+  z-index: 20 !important;
+}
+
+
+
+
+/* ---------------------- ARCHIVE NAVIGATION V2 ---------------------- */
+
+.archive-nav {
+
+  padding:
+    32px 64px !important;
+
+  gap:
+    36px !important;
+
+  flex-wrap:
+    wrap;
+
+}
+
+
+.archive-nav a {
+
+  font-size:
+    14px !important;
+
+  letter-spacing:
+    2.5px !important;
+
+}
+
+
+
+
+/* ---------------- ARCHIVE SHELL VERTICAL NAVIGATION ---------------- */
+
+
+.archive-shell {
+
+  min-height:100vh;
+
+  display:flex;
+
+}
+
+
+.archive-sidebar {
+
+  width:280px;
+
+  min-height:100vh;
+
+  position:fixed;
+
+  left:0;
+
+  top:0;
+
+  padding:48px 32px;
+
+  border-right:1px solid #222;
+
+  background:rgba(0,0,0,0.75);
+
+  backdrop-filter:blur(12px);
+
+  z-index:200;
+
+}
+
+
+.archive-sidebar-title {
+
+  font-size:18px;
+
+  letter-spacing:4px;
+
+  margin-bottom:60px;
+
+}
+
+
+.archive-nav {
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:22px;
+
+  padding:0;
+
+  border:0;
+
+}
+
+
+.archive-nav-section {
+
+  margin-top:28px;
+
+  margin-bottom:4px;
+
+  color:#666;
+
+  font-size:10px;
+
+  letter-spacing:3px;
+
+}
+
+
+.archive-nav a {
+
+  color:white;
+
+  text-decoration:none;
+
+  font-size:15px;
+
+  letter-spacing:2px;
+
+  transition:opacity .2s ease;
+
+}
+
+
+.archive-nav a:hover {
+
+  opacity:.55;
+
+}
+
+
+.archive-main {
+
+  margin-left:280px;
+
+  width:calc(100% - 280px);
+
+  position:relative;
+
+  z-index:20;
+
+}
+
+
+
+@media(max-width:900px){
+
+  .archive-sidebar {
+
+    position:relative;
+
+    width:100%;
+
+    min-height:auto;
+
+  }
+
+
+  .archive-shell {
+
+    display:block;
+
+  }
+
+
+  .archive-main {
+
+    margin-left:0;
+
+    width:100%;
+
+  }
+
+}
+
+
+
+
+/* ---------------- ARCHIVE OVERLAY NAVIGATION FIX ---------------- */
+
+
+.archive-shell {
+
+  min-height:100vh;
+
+  display:block;
+
+}
+
+
+.archive-sidebar {
+
+  position:fixed !important;
+
+  left:0;
+
+  top:0;
+
+  width:280px;
+
+  height:100vh;
+
+  padding:48px 32px;
+
+  border-right:1px solid rgba(255,255,255,0.12);
+
+  background:rgba(0,0,0,0.35);
+
+  backdrop-filter:blur(10px);
+
+  z-index:300;
+
+}
+
+
+.archive-main {
+
+  margin-left:0 !important;
+
+  width:100% !important;
+
+  min-height:100vh;
+
+  position:relative;
+
+  z-index:20;
+
+}
+
+
+/* allow hero to occupy full page */
+
+.hero,
+.archive-home {
+
+  position:relative;
+
+  z-index:20;
+
+}
+
+
+/* background stays behind everything */
+
+.hero-background {
+
+  z-index:1 !important;
+
+}
+
+
+
+
+/* ---------------- ARCHIVE SIDEBAR REFINEMENT ---------------- */
+
+
+.archive-sidebar {
+
+  width:240px !important;
+
+  height:100vh;
+
+  overflow-y:auto;
+
+  overflow-x:hidden;
+
+  padding:40px 24px !important;
+
+  background:
+    rgba(0,0,0,0.72) !important;
+
+  backdrop-filter:none !important;
+
+  -webkit-backdrop-filter:none !important;
+
+  border-right:
+    1px solid rgba(255,255,255,0.12);
+
+}
+
+
+.archive-sidebar-title {
+
+  font-size:16px !important;
+
+  letter-spacing:5px !important;
+
+  line-height:1.6;
+
+  margin-bottom:50px !important;
+
+}
+
+
+.archive-nav {
+
+  gap:18px !important;
+
+}
+
+
+.archive-nav-section {
+
+  margin-top:32px !important;
+
+  color:
+    rgba(255,255,255,0.35) !important;
+
+}
+
+
+.archive-nav a {
+
+  font-size:14px !important;
+
+  letter-spacing:3px !important;
+
+  line-height:1.4;
+
+}
+
+
+/* scrollbar styling */
+
+.archive-sidebar::-webkit-scrollbar {
+
+  width:4px;
+
+}
+
+
+.archive-sidebar::-webkit-scrollbar-thumb {
+
+  background:
+    rgba(255,255,255,0.25);
+
+}
+
+
+
+@media(max-width:900px){
+
+  .archive-sidebar {
+
+    width:100% !important;
+
+    height:auto;
+
+    position:relative !important;
+
+  }
+
+}
+
+
+
+
+/* ---------------- TRUE ARCHIVE OVERLAY ---------------- */
+
+
+.archive-sidebar {
+
+  position:fixed !important;
+
+  left:0;
+
+  top:0;
+
+  height:100vh;
+
+  width:240px;
+
+  z-index:999;
+
+}
+
+
+.archive-canvas {
+
+  position:relative;
+
+  min-height:100vh;
+
+  width:100%;
+
+  z-index:10;
+
+}
+
+
+/* remove old layout push */
+
+.archive-main {
+
+  margin-left:0 !important;
+
+  width:100% !important;
+
+}
+
+
+
+
+/* ==================================
+   DARK SLOTH ARCHIVE INTERFACE SHELL
+================================== */
+
+
+.archive-main {
+
+  margin-left:260px;
+
+  min-height:100vh;
+
+  position:relative;
+
+}
+
+
+
+.archive-sidebar {
+
+  position:fixed;
+
+  left:0;
+
+  top:0;
+
+  width:260px;
+
+  height:100vh;
+
+  z-index:999;
+
+
+  background:
+
+    linear-gradient(
+      rgba(5,5,5,.82),
+      rgba(5,5,5,.94)
+    );
+
+
+  backdrop-filter:blur(8px);
+
+
+  border-right:
+
+    1px solid rgba(255,255,255,.12);
+
+
+  display:flex;
+
+  flex-direction:column;
+
+
+  padding:40px 28px;
+
+
+  overflow-y:auto;
+
+  overflow-x:hidden;
+
+}
+
+
+
+.archive-logo {
+
+  font-size:22px;
+
+  letter-spacing:8px;
+
+  line-height:1.6;
+
+  margin-bottom:70px;
+
+}
+
+
+
+.archive-section {
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:22px;
+
+  margin-bottom:55px;
+
+}
+
+
+
+.archive-section span {
+
+  font-size:10px;
+
+  letter-spacing:5px;
+
+  color:#777;
+
+  margin-bottom:10px;
+
+}
+
+
+
+.archive-section a {
+
+  color:white;
+
+  text-decoration:none;
+
+  font-size:13px;
+
+  letter-spacing:4px;
+
+  transition:.3s;
+
+}
+
+
+
+.archive-section a:hover {
+
+  opacity:.55;
+
+  padding-left:8px;
+
+}
+
+
+
+.archive-footer-mark {
+
+  margin-top:auto;
+
+  border-top:
+
+    1px solid rgba(255,255,255,.1);
+
+  padding-top:30px;
+
+  font-size:10px;
+
+  letter-spacing:4px;
+
+  color:#666;
+
+}
+
+
+
+.hero-background {
+
+  position:absolute;
+
+  inset:0;
+
+  z-index:0;
+
+}
+
+
+
+.hero {
+
+  position:relative;
+
+  z-index:2;
+
+  min-height:100vh;
+
+}
+
+
+
+@media(max-width:900px){
+
+  .archive-sidebar {
+
+    position:relative;
+
+    width:100%;
+
+    height:auto;
+
+  }
+
+
+  .archive-main {
+
+    margin-left:0;
+
+  }
+
+}
+
+
+
+/* ==================================
+   ARCHIVE SIDEBAR VISUAL FIX
+================================== */
+
+
+.archive-sidebar {
+
+  width:230px !important;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,0.78),
+      rgba(0,0,0,0.45),
+      rgba(0,0,0,0.15)
+    ) !important;
+
+
+  backdrop-filter:none !important;
+
+  -webkit-backdrop-filter:none !important;
+
+
+  border-right:
+
+    1px solid rgba(255,255,255,0.08);
+
+
+  padding:
+
+    36px 24px !important;
+
+}
+
+
+
+.archive-main {
+
+  margin-left:0 !important;
+
+}
+
+
+
+.archive-sidebar::after {
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+
+    linear-gradient(
+      rgba(0,0,0,0.20),
+      transparent
+    );
+
+  pointer-events:none;
+
+}
+
+
+
+.archive-sidebar > * {
+
+  position:relative;
+
+  z-index:2;
+
+}
+
+
+
+.archive-logo {
+
+  font-size:18px !important;
+
+  letter-spacing:7px !important;
+
+}
+
+
+
+.archive-section a {
+
+  font-size:12px !important;
+
+  letter-spacing:3.5px !important;
+
+}
+
+
+
+
+
+/* ==================================
+   ARCHIVE RAIL FINAL VISUAL PASS
+================================== */
+
+
+.archive-sidebar {
+
+  width:230px !important;
+
+  background:
+
+    rgba(0,0,0,0.18) !important;
+
+
+  backdrop-filter:none !important;
+
+  -webkit-backdrop-filter:none !important;
+
+
+  border-right:
+
+    1px solid rgba(255,255,255,0.10);
+
+
+  box-shadow:
+
+    25px 0 60px rgba(0,0,0,0.45);
+
+
+}
+
+
+
+.archive-sidebar::before {
+
+  display:none !important;
+
+}
+
+
+
+.archive-sidebar::after {
+
+  display:none !important;
+
+}
+
+
+
+.archive-sidebar > * {
+
+  position:relative;
+
+  z-index:2;
+
+}
+
+
+
+/* remove any old blur classes */
+
+
+.hero-layer {
+
+  filter:none !important;
+
+}
+
+
+
+
+/* ==================================
+   COLLAPSING ARCHIVE COMMAND RAIL
+================================== */
+
+
+.archive-sidebar {
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+height:100vh;
+
+width:72px;
+
+
+z-index:999;
+
+
+background:
+
+rgba(0,0,0,0.35);
+
+
+border-right:
+
+1px solid rgba(255,255,255,.12);
+
+
+overflow:hidden;
+
+
+transition:
+
+width .35s ease;
+
+
+padding:
+
+35px 14px;
+
+
+}
+
+
+.archive-sidebar:hover {
+
+width:280px;
+
+
+background:
+
+rgba(0,0,0,0.75);
+
+
+}
+
+
+
+.archive-logo {
+
+white-space:nowrap;
+
+opacity:0;
+
+transition:.3s;
+
+
+}
+
+
+.archive-sidebar:hover .archive-logo {
+
+opacity:1;
+
+}
+
+
+
+.archive-nav-group {
+
+margin-bottom:45px;
+
+}
+
+
+.archive-nav-group span {
+
+
+display:none;
+
+
+font-size:10px;
+
+letter-spacing:5px;
+
+color:#777;
+
+
+margin-bottom:20px;
+
+
+}
+
+
+
+.archive-sidebar:hover .archive-nav-group span {
+
+display:block;
+
+}
+
+
+
+.archive-nav-group a {
+
+
+height:44px;
+
+
+display:flex;
+
+align-items:center;
+
+
+gap:22px;
+
+
+color:white;
+
+text-decoration:none;
+
+
+}
+
+
+
+.archive-nav-group i {
+
+
+font-style:normal;
+
+
+font-size:22px;
+
+
+width:35px;
+
+text-align:center;
+
+
+}
+
+
+
+.archive-nav-group strong {
+
+
+opacity:0;
+
+
+white-space:nowrap;
+
+
+font-size:13px;
+
+letter-spacing:3px;
+
+
+transition:.25s;
+
+
+}
+
+
+
+.archive-sidebar:hover strong {
+
+
+opacity:1;
+
+
+}
+
+
+
+.archive-main {
+
+
+margin-left:0 !important;
+
+
+}
+
+
+
+
+/* =====================================
+   ARCHIVE RETRACTING COMMAND RAIL
+===================================== */
+
+
+.archive-sidebar {
+
+  position:fixed;
+
+  left:0;
+
+  top:0;
+
+  width:72px;
+
+  height:100vh;
+
+  z-index:999;
+
+
+  overflow:hidden;
+
+
+  background:
+
+    rgba(0,0,0,0.55);
+
+
+  border-right:
+
+    1px solid rgba(255,255,255,0.12);
+
+
+  padding:
+
+    35px 14px;
+
+
+  transition:
+
+    width .35s ease,
+    background .35s ease;
+
+
+}
+
+
+
+/* EXPANDED STATE */
+
+
+.archive-sidebar:hover {
+
+  width:280px;
+
+
+  background:
+
+    rgba(0,0,0,0.82);
+
+
+}
+
+
+
+/* LOGO */
+
+
+.archive-logo {
+
+  white-space:nowrap;
+
+  opacity:0;
+
+  transform:translateX(-20px);
+
+
+  transition:
+
+    opacity .25s ease,
+    transform .35s ease;
+
+
+}
+
+
+.archive-sidebar:hover .archive-logo {
+
+  opacity:1;
+
+  transform:translateX(0);
+
+
+}
+
+
+
+/* GROUPS */
+
+
+.archive-nav-group {
+
+  margin-bottom:45px;
+
+}
+
+
+
+.archive-nav-group span {
+
+  opacity:0;
+
+  white-space:nowrap;
+
+
+  transition:.3s;
+
+
+}
+
+
+
+.archive-sidebar:hover 
+.archive-nav-group span {
+
+  opacity:1;
+
+}
+
+
+
+/* LINKS */
+
+
+.archive-nav-group a {
+
+
+  display:flex;
+
+  align-items:center;
+
+
+  height:45px;
+
+
+  color:white;
+
+  text-decoration:none;
+
+
+  gap:20px;
+
+
+}
+
+
+
+/* ICONS */
+
+
+.archive-nav-group i {
+
+  flex:none;
+
+  width:35px;
+
+
+  font-style:normal;
+
+  font-size:20px;
+
+  text-align:center;
+
+
+}
+
+
+
+/* TEXT */
+
+
+.archive-nav-group strong {
+
+
+  opacity:0;
+
+  transform:translateX(-15px);
+
+
+  white-space:nowrap;
+
+
+  transition:
+
+    opacity .25s ease,
+    transform .35s ease;
+
+
+}
+
+
+
+.archive-sidebar:hover 
+.archive-nav-group strong {
+
+
+  opacity:1;
+
+  transform:translateX(0);
+
+
+}
+
+
+
+/* MAIN CONTENT */
+
+
+.archive-main {
+
+  margin-left:0 !important;
+
+}
+
+
+
+
+
+/* =====================================
+   TEMPORARY CLEAN UI DEBUG MODE
+   REMOVE HERO BACKGROUND
+===================================== */
+
+
+.hero-background {
+
+  display:none !important;
+
+}
+
+
+.archive-derived-page {
+
+  background-image:none !important;
+
+}
+
+
+body {
+
+  background:#050505 !important;
+
+}
+
+
+
+
+
+/* =====================================
+   FORCE SIDEBAR COLLAPSE TEST
+===================================== */
+
+
+.archive-sidebar {
+
+  width:64px !important;
+
+  transition:
+
+    width .35s ease !important;
+
+
+}
+
+
+.archive-sidebar:hover {
+
+  width:280px !important;
+
+
+}
+
+
+
+.archive-nav-group strong,
+.archive-logo,
+.archive-nav-group span {
+
+
+  opacity:0;
+
+  transition:
+
+    opacity .2s ease;
+
+
+}
+
+
+
+.archive-sidebar:hover
+.archive-nav-group strong,
+.archive-sidebar:hover
+.archive-logo,
+.archive-sidebar:hover
+.archive-nav-group span {
+
+
+  opacity:1;
+
+
+}
+
+
+
+
+
+
+
+/* =====================================
+   ARCHIVE CONTENT SHELL SPACING
+===================================== */
+
+
+.archive-main {
+
+  margin-left:96px !important;
+
+  min-height:100vh;
+
+  position:relative;
+
+
+  transition:
+
+    margin-left .35s ease;
+
+
+}
+
+
+
+/* keep content readable on smaller screens */
+
+@media(max-width:900px){
+
+
+  .archive-main {
+
+    margin-left:0 !important;
+
+  }
+
+
+}
+
+
+
+
+
+/* =====================================
+   GLOBAL ARCHIVE CONTENT CLEARANCE
+   NAVIGATION RAIL SAFE AREA
+===================================== */
+
+
+.archive-main {
+
+  padding-left:140px !important;
+
+  box-sizing:border-box;
+
+  min-height:100vh;
+
+
+}
+
+
+
+/* pages that use centered containers */
+
+.container,
+.hero,
+.archive-home,
+.archive-header,
+.record-markdown,
+.collection-section,
+.timeline-section {
+
+
+  max-width:1200px;
+
+}
+
+
+
+/* prevent hero/page sections from escaping rail */
+
+.archive-main > * {
+
+
+  position:relative;
+
+
+}
+
+
+
+/* mobile */
+
+@media(max-width:900px){
+
+
+.archive-main {
+
+  padding-left:24px !important;
+
+}
+
+
+}
+
+
+
+
+/* =====================================
+   ARCHIVE RAIL FINAL SPACING PASS
+===================================== */
+
+
+/* keep page away from collapsed rail */
+
+.archive-main {
+
+  padding-left:180px !important;
+
+}
+
+
+
+/* collapsed navigation */
+
+.archive-nav {
+
+  background:#000 !important;
+
+  box-shadow:none !important;
+
+  backdrop-filter:none !important;
+
+}
+
+
+
+/* remove blur/fog effects from collapsed state */
+
+.archive-nav::before {
+
+  display:none !important;
+
+}
+
+
+
+/* preserve readability */
+
+.archive-main h1,
+.archive-main h2,
+.archive-main h3,
+.archive-main p {
+
+  position:relative;
+
+  z-index:2;
+
+}
+
+
+
+/* desktop spacing */
+
+@media(min-width:1200px){
+
+  .archive-main {
+
+    padding-left:210px !important;
+
+  }
+
+}
+
+
+
+/* mobile */
+
+@media(max-width:900px){
+
+  .archive-main {
+
+    padding-left:24px !important;
+
+  }
+
+}
+
+
+
+
+/* =====================================
+   ARCHIVE CANVAS SAFE ZONE
+   FORCE CONTENT AWAY FROM COMMAND RAIL
+===================================== */
+
+
+.archive-main {
+
+  margin-left:0 !important;
+
+  padding-left:260px !important;
+
+  box-sizing:border-box !important;
+
+  width:100% !important;
+
+}
+
+
+
+/* hero sections */
+
+.archive-main .hero,
+.archive-main .archive-home,
+.archive-main .hero-section {
+
+  padding-left:0 !important;
+
+}
+
+
+
+/* headings and page blocks */
+
+.archive-main > section,
+.archive-main > div {
+
+  box-sizing:border-box;
+
+}
+
+
+
+/* desktop refinement */
+
+@media(min-width:1400px){
+
+  .archive-main {
+
+    padding-left:300px !important;
+
+  }
+
+}
+
+
+
+@media(max-width:900px){
+
+  .archive-main {
+
+    padding-left:24px !important;
+
+  }
+
+}
+
+
+
+
+
+/* =====================================
+   THREE STAGE ARCHIVE NAVIGATION
+===================================== */
+
+
+.archive-sidebar {
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+height:100vh;
+
+width:36px;
+
+background:#000;
+
+z-index:1000;
+
+overflow:hidden;
+
+transition:
+
+width .35s ease;
+
+
+}
+
+
+
+/* STAGE 0 */
+
+.archive-trigger {
+
+position:absolute;
+
+top:50%;
+
+left:8px;
+
+font-size:20px;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+
+
+.archive-nav-icons,
+.archive-nav-icons strong,
+.archive-nav-icons span {
+
+opacity:0;
+
+}
+
+
+
+/* STAGE 1 */
+
+.archive-sidebar:hover {
+
+width:72px;
+
+
+}
+
+
+
+.archive-sidebar:hover
+.archive-nav-icons {
+
+
+opacity:1;
+
+
+}
+
+
+
+.archive-nav-group a {
+
+
+display:flex;
+
+align-items:center;
+
+height:44px;
+
+color:white;
+
+text-decoration:none;
+
+
+}
+
+
+
+.archive-nav-group i {
+
+
+font-style:normal;
+
+font-size:20px;
+
+width:36px;
+
+text-align:center;
+
+
+}
+
+
+
+.archive-nav-group strong {
+
+
+white-space:nowrap;
+
+margin-left:12px;
+
+font-size:12px;
+
+letter-spacing:3px;
+
+
+opacity:0;
+
+
+}
+
+
+
+/* STAGE 2 */
+
+.archive-nav-group a:hover strong {
+
+
+opacity:1;
+
+
+}
+
+
+
+.archive-sidebar:has(.archive-nav-group a:hover) {
+
+
+width:260px;
+
+
+}
+
+
+
+.archive-nav-group span {
+
+
+display:block;
+
+font-size:9px;
+
+letter-spacing:5px;
+
+color:#777;
+
+margin:25px 0 12px 18px;
+
+
+}
+
+
+
+
+/* =====================================
+   ARCHIVE THREE STAGE NAVIGATION FIX
+===================================== */
+
+
+.archive-sidebar {
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+height:100vh;
+
+width:36px;
+
+background:#000;
+
+z-index:9999;
+
+overflow:hidden;
+
+transition:
+
+width .3s ease;
+
+
+}
+
+
+
+/* trigger */
+
+.archive-trigger {
+
+position:absolute;
+
+top:28px;
+
+left:10px;
+
+font-size:18px;
+
+color:white;
+
+z-index:3;
+
+
+}
+
+
+
+/* first reveal zone */
+
+.archive-sidebar:hover {
+
+
+width:72px;
+
+
+}
+
+
+
+/* menu */
+
+
+.archive-menu {
+
+margin-top:70px;
+
+opacity:0;
+
+transition:.3s;
+
+
+}
+
+
+
+.archive-sidebar:hover
+.archive-menu {
+
+
+opacity:1;
+
+
+}
+
+
+
+.archive-link {
+
+
+height:42px;
+
+display:flex;
+
+align-items:center;
+
+color:white;
+
+text-decoration:none;
+
+
+}
+
+
+
+.archive-link i {
+
+
+width:36px;
+
+text-align:center;
+
+font-style:normal;
+
+font-size:18px;
+
+
+}
+
+
+
+.archive-link strong {
+
+
+opacity:0;
+
+margin-left:16px;
+
+white-space:nowrap;
+
+font-size:12px;
+
+letter-spacing:3px;
+
+transition:.25s;
+
+
+}
+
+
+
+/* second reveal */
+
+.archive-sidebar:has(.archive-link:hover){
+
+
+width:260px;
+
+
+}
+
+
+
+.archive-sidebar:has(.archive-link:hover)
+.archive-link strong {
+
+
+opacity:1;
+
+
+}
+
+
+
+.archive-logo {
+
+
+font-size:16px;
+
+letter-spacing:5px;
+
+line-height:1.7;
+
+margin-bottom:40px;
+
+}
+
+
+
+
+
+/* =====================================
+   STAGE 1 NAVIGATION CONTROL
+   TRIGGER -> ICONS ONLY
+===================================== */
+
+
+.archive-sidebar {
+
+  width:36px !important;
+
+  height:100vh !important;
+
+  overflow:hidden !important;
+
+  background:#000 !important;
+
+  transition:
+
+    width .3s ease !important;
+
+}
+
+
+
+/* trigger position */
+
+.archive-trigger {
+
+  position:fixed !important;
+
+  top:28px !important;
+
+  left:8px !important;
+
+  z-index:20 !important;
+
+}
+
+
+
+/* hidden by default */
+
+.archive-menu {
+
+  opacity:0 !important;
+
+  pointer-events:none !important;
+
+  margin-top:90px !important;
+
+}
+
+
+
+/* first reveal */
+
+.archive-sidebar:hover {
+
+  width:72px !important;
+
+}
+
+
+
+/* show icons */
+
+.archive-sidebar:hover .archive-menu {
+
+  opacity:1 !important;
+
+  pointer-events:auto !important;
+
+}
+
+
+
+/* hide text for stage 1 */
+
+.archive-sidebar:hover .archive-link strong {
+
+  display:none !important;
+
+}
+
+
+
+/* hide logo and labels for stage 1 */
+
+.archive-sidebar:hover .archive-logo,
+.archive-sidebar:hover .archive-menu span {
+
+  display:none !important;
+
+}
+
+
+
+/* icon alignment */
+
+.archive-link {
+
+  width:72px !important;
+
+  height:44px !important;
+
+  display:flex !important;
+
+  justify-content:center !important;
+
+  align-items:center !important;
+
+}
+
+
+
+.archive-link i {
+
+  font-style:normal !important;
+
+  font-size:18px !important;
+
+}
+
+
+
+
+
+/* ==========================================
+   STAGE 1.1 ICON RAIL POLISH
+   ICONS ONLY
+========================================== */
+
+
+.archive-sidebar {
+
+  display:block !important;
+
+}
+
+
+.archive-menu {
+
+  position:absolute !important;
+
+  top:70px !important;
+
+  left:0 !important;
+
+  width:72px !important;
+
+  margin:0 !important;
+
+  padding:0 !important;
+
+}
+
+
+.archive-link {
+
+  display:flex !important;
+
+  justify-content:center !important;
+
+  align-items:center !important;
+
+  width:72px !important;
+
+  height:52px !important;
+
+  padding:0 !important;
+
+  margin:0 !important;
+
+}
+
+
+.archive-link i {
+
+  display:flex !important;
+
+  justify-content:center !important;
+
+  align-items:center !important;
+
+  width:24px !important;
+
+  height:24px !important;
+
+  font-style:normal !important;
+
+  font-size:20px !important;
+
+  line-height:1 !important;
+
+  color:#ffffff !important;
+
+}
+
+
+.archive-link strong {
+
+  display:none !important;
+
+}
+
+
+
+/* remove old glow positioning */
+
+.archive-link:hover {
+
+  background:transparent !important;
+
+}
+
+
+.archive-link:hover i {
+
+  transform:scale(1.15);
+
+}
+
+
+
+
+
+/* ==========================================
+   STAGE 2
+   ARCHIVE SIDEBAR GLASS SURFACE
+========================================== */
+
+
+.archive-sidebar {
+
+  background:
+    rgba(0,0,0,0.18) !important;
+
+  backdrop-filter:
+    blur(4px) !important;
+
+  -webkit-backdrop-filter:
+    blur(4px) !important;
+
+  border-right:
+    1px solid rgba(255,255,255,0.08) !important;
+
+}
+
+
+/* collapsed state */
+
+.archive-sidebar:not(:hover) {
+
+  background:
+    transparent !important;
+
+  backdrop-filter:
+    none !important;
+
+}
+
+
+/* expanded state */
+
+.archive-sidebar:hover {
+
+  background:
+    rgba(0,0,0,0.35) !important;
+
+  backdrop-filter:
+    blur(8px) !important;
+
+  -webkit-backdrop-filter:
+    blur(8px) !important;
+
+}
+
+
+
+
+/* ==========================================
+   STAGE 2.1
+   TRUE INVISIBLE COLLAPSED RAIL
+========================================== */
+
+
+.archive-sidebar:not(:hover) {
+
+  background: transparent !important;
+
+  border-right: none !important;
+
+  box-shadow: none !important;
+
+  backdrop-filter: none !important;
+
+  -webkit-backdrop-filter: none !important;
+
+}
+
+
+.archive-sidebar:not(:hover)::before,
+.archive-sidebar:not(:hover)::after {
+
+  display:none !important;
+
+}
+
+
+.archive-sidebar:not(:hover) .archive-menu {
+
+  background: transparent !important;
+
+}
+
+
+.archive-sidebar:not(:hover) .archive-link {
+
+  background: transparent !important;
+
+}
+
+
+
+
+/* ==========================================
+   STAGE 3
+   ICON -> FULL LABEL EXPANSION
+========================================== */
+
+
+/* keep menu collapsed by default */
+
+.archive-menu {
+
+  transition:
+    width 260ms ease,
+    background 260ms ease;
+
+}
+
+
+
+/* icon rail state */
+
+.archive-sidebar:hover .archive-menu {
+
+  width:72px !important;
+
+}
+
+
+
+/* expand when hovering icon area */
+
+.archive-sidebar:has(.archive-link:hover) .archive-menu {
+
+  width:280px !important;
+
+  background:
+    rgba(0,0,0,0.82) !important;
+
+  backdrop-filter:
+    blur(12px) !important;
+
+  -webkit-backdrop-filter:
+    blur(12px) !important;
+
+  border-right:
+    1px solid rgba(255,255,255,0.08) !important;
+
+}
+
+
+
+/* keep icon column fixed */
+
+.archive-link {
+
+  justify-content:flex-start !important;
+
+  gap:22px !important;
+
+  padding-left:24px !important;
+
+}
+
+
+
+/* reveal words */
+
+.archive-sidebar:has(.archive-link:hover) strong {
+
+  display:block !important;
+
+  opacity:1 !important;
+
+  transform:translateX(0) !important;
+
+}
+
+
+
+/* hidden labels */
+
+.archive-link strong {
+
+  opacity:0 !important;
+
+  transform:translateX(-20px) !important;
+
+  transition:
+
+    opacity 180ms ease,
+
+    transform 180ms ease !important;
+
+  white-space:nowrap !important;
+
+}
+
+
+
+
+
+/* ==========================================
+   STAGE 3 FIX
+   FORCE ICON HOVER LABEL REVEAL
+========================================== */
+
+
+/* default hidden labels */
+
+.archive-link strong {
+
+  display:block !important;
+
+  opacity:0 !important;
+
+  visibility:hidden !important;
+
+  transform:translateX(-18px) !important;
+
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease,
+    visibility 200ms ease !important;
+
+  white-space:nowrap !important;
+
+}
+
+
+
+/* expand panel when hovering a navigation item */
+
+.archive-sidebar:has(.archive-link:hover) {
+
+  width:280px !important;
+
+}
+
+
+
+/* reveal labels */
+
+.archive-sidebar:has(.archive-link:hover) .archive-link strong {
+
+  opacity:1 !important;
+
+  visibility:visible !important;
+
+  transform:translateX(0) !important;
+
+}
+
+
+
+/* keep icon position stable */
+
+.archive-sidebar:has(.archive-link:hover) .archive-link {
+
+  width:280px !important;
+
+  justify-content:flex-start !important;
+
+}
+
+
+
+.archive-sidebar:has(.archive-link:hover) .archive-menu {
+
+  width:280px !important;
+
+}
+
+
+
+
+/* ==========================================
+   STAGE 3 FIX
+   FORCE ICON HOVER LABEL REVEAL
+========================================== */
+
+
+/* default hidden labels */
+
+.archive-link strong {
+
+  display:block !important;
+
+  opacity:0 !important;
+
+  visibility:hidden !important;
+
+  transform:translateX(-18px) !important;
+
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease,
+    visibility 200ms ease !important;
+
+  white-space:nowrap !important;
+
+}
+
+
+
+/* expand panel when hovering a navigation item */
+
+.archive-sidebar:has(.archive-link:hover) {
+
+  width:280px !important;
+
+}
+
+
+
+/* reveal labels */
+
+.archive-sidebar:has(.archive-link:hover) .archive-link strong {
+
+  opacity:1 !important;
+
+  visibility:visible !important;
+
+  transform:translateX(0) !important;
+
+}
+
+
+
+/* keep icon position stable */
+
+.archive-sidebar:has(.archive-link:hover) .archive-link {
+
+  width:280px !important;
+
+  justify-content:flex-start !important;
+
+}
+
+
+
+.archive-sidebar:has(.archive-link:hover) .archive-menu {
+
+  width:280px !important;
+
+}
+
+
+
+
+/* ==========================================
+   ARCHIVE NAV POLISH
+========================================== */
+
+
+.archive-trigger {
+
+  position:absolute !important;
+
+  top:28px !important;
+
+  left:8px !important;
+
+  width:32px !important;
+
+  height:32px !important;
+
+  display:flex !important;
+
+  align-items:center !important;
+
+  justify-content:center !important;
+
+  z-index:50 !important;
+
+}
+
+
+.archive-menu {
+
+  padding-top:70px !important;
+
+}
+
+
+.archive-link {
+
+  height:54px !important;
+
+  padding-left:18px !important;
+
+  gap:20px !important;
+
+}
+
+
+.archive-link i {
+
+  width:24px !important;
+
+  min-width:24px !important;
+
+  text-align:center !important;
+
+  font-size:18px !important;
+
+}
+
+
+.archive-link strong {
+
+  letter-spacing:4px !important;
+
+  font-size:12px !important;
+
+}
+
+
+.archive-sidebar:has(.archive-link:hover) .archive-link:hover {
+
+  background:
+    rgba(255,255,255,0.04) !important;
+
+}
+
+
+.archive-sidebar:has(.archive-link:hover) .archive-link:hover i {
+
+  transform:scale(1.12);
+
+}
+
+
+
+
+/* ==========================================
+   ARCHIVE NAV MICRO POLISH
+   ICON RAIL COMPRESSION
+========================================== */
+
+
+.archive-menu {
+
+  padding-top:48px !important;
+
+}
+
+
+.archive-link {
+
+  height:42px !important;
+
+}
+
+
+.archive-link i {
+
+  font-size:16px !important;
+
+  transform:scale(0.95);
+
+}
+
+
+.archive-link:hover i {
+
+  transform:scale(1.08);
+
+}
+
+
+/* keep expanded labels readable */
+
+.archive-link strong {
+
+  line-height:1 !important;
+
+}
+
+
+
+
+
+
+/* ==========================================
+   CANONICAL HERO SYSTEM V1
+========================================== */
+
+.hero {
+  position: relative;
+  min-height: 760px;
+  overflow: hidden;
+}
+
+
+.hero-background {
+
+  position: absolute !important;
+
+  inset: 0 !important;
+
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.78),
+      rgba(0,0,0,0.90)
+    ),
+    url("/archive/hero-background.jpg") !important;
+
+
+  background-size:
+    cover !important;
+
+
+  background-position:
+    center !important;
+
+
+  background-repeat:
+    no-repeat !important;
+
+
+  pointer-events:
+    none !important;
+
+
+  z-index:
+    0 !important;
+
+}
+
+
+.hero > *:not(.hero-background) {
+
+  position:
+    relative;
+
+  z-index:
+    2;
+
+}
+
+
+.archive-status,
+.hero-title,
+.hero-subtitle,
+.hero-description {
+
+  position:
+    relative;
+
+  z-index:
+    3;
+
+}
+
+
+
+/* =====================================
+   CLEAN ARCHIVE HERO V1
+   ISOLATED FROM OLD HERO SYSTEM
+===================================== */
+
+.archive-hero {
+
+  position:relative;
+  min-height:760px;
+  overflow:hidden;
+
+}
+
+
+.archive-hero-background {
+
+  position:absolute;
+  inset:0;
+
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.70),
+      rgba(0,0,0,0.88)
+    ),
+    url("/archive/hero-background.jpg");
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  z-index:0;
+
+}
+
+
+.archive-hero-content {
+
+  position:relative;
+  z-index:2;
+
+  padding-top:40px;
+
+}
+
+
+.archive-hero-content h1 {
+
+  font-size:clamp(64px,10vw,140px);
+  line-height:.95;
+  font-weight:700;
+  max-width:900px;
+
+}
+
+
+.archive-hero-subtitle {
+
+  margin-top:32px;
+  font-size:28px;
+
+}
+
+
+.archive-hero-description {
+
+  color:#888;
+  margin-top:10px;
+
+}
+
+
+
+/* =====================================
+   ARCHIVE HERO FIXED BACKGROUND
+===================================== */
+
+.archive-hero-background {
+
+  position:fixed;
+
+  inset:0;
+
+  height:100vh;
+  width:100vw;
+
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.70),
+      rgba(0,0,0,0.88)
+    ),
+    url("/archive/hero-background.jpg");
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  z-index:0;
+
+}
+
+
+.archive-hero {
+
+  position:relative;
+
+  min-height:760px;
+
+}
+
+
+.archive-hero-content {
+
+  position:relative;
+
+  z-index:2;
+
+}
+
+
+
+/* =====================================
+   HOMEPAGE CARD BOUNDARIES RESTORE
+===================================== */
+
+
+.stat-card {
+
+  display:block;
+
+  border:1px solid rgba(255,255,255,0.14);
+
+  border-radius:10px;
+
+  padding:32px;
+
+  background:
+    rgba(0,0,0,0.35);
+
+  text-decoration:none;
+
+  color:white;
+
+  transition:
+    border-color .25s ease,
+    background .25s ease,
+    transform .25s ease;
+
+}
+
+
+.stat-card:hover {
+
+  border-color:rgba(255,255,255,0.35);
+
+  background:
+    rgba(255,255,255,0.04);
+
+  transform:translateY(-2px);
+
+}
+
+
+.stat-card p {
+
+  color:#888;
+
+}
+
+
+.stat-icon {
+
+  margin-bottom:24px;
+
+  opacity:.85;
+
+}
+
+
+.collection-card {
+
+  border-color:rgba(255,255,255,0.14);
+
+}
+
+
+
+
+/* =====================================
+   ARCHIVE GATEWAY INTERACTION POLISH
+===================================== */
+
+
+.collection-card {
+
+  border:1px solid rgba(255,255,255,0.14);
+
+  border-radius:10px;
+
+  background:
+    rgba(0,0,0,0.28);
+
+  transition:
+    border-color .25s ease,
+    background .25s ease,
+    transform .25s ease;
+
+}
+
+
+.collection-card:hover {
+
+  border-color:
+    rgba(255,255,255,0.45);
+
+  background:
+    rgba(255,255,255,0.035);
+
+  transform:
+    translateY(-2px);
+
+}
+
+
+.collection-card:hover .collection-enter {
+
+  letter-spacing:
+    0.35em;
+
+}
+
+

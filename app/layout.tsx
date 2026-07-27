@@ -1,5 +1,7 @@
 import "./globals.css";
 
+import ArchiveNav from "@/components/ArchiveNav";
+
 
 export const metadata = {
 
@@ -12,60 +14,13 @@ export const metadata = {
 };
 
 
-
-const navigation = [
-
-  {
-    name:"Archive",
-    href:"/"
-  },
-
-  {
-    name:"Books",
-    href:"/books"
-  },
-
-  {
-    name:"Collections",
-    href:"/collections"
-  },
-
-  {
-    name:"Records",
-    href:"/records"
-  },
-
-  {
-    name:"Recoveries",
-    href:"/recoveries"
-  },
-
-  {
-    name:"Identity",
-    href:"/identity"
-  },
-
-  {
-    name:"Platform",
-    href:"/platform"
-  },
-
-  {
-    name:"Creator",
-    href:"/creator/publishing"
-  }
-
-];
-
-
-
 export default function RootLayout(
   {
     children
   }:{
     children:React.ReactNode
   }
-) {
+){
 
   return (
 
@@ -73,36 +28,13 @@ export default function RootLayout(
 
       <body>
 
-        <header>
+        <ArchiveNav />
 
-          <nav>
-
-            {
-              navigation.map(
-                item => (
-
-                  <a
-                    key={item.href}
-                    href={item.href}
-                  >
-                    {item.name}
-                  </a>
-
-                )
-              )
-            }
-
-          </nav>
-
-        </header>
-
-
-        <main>
+        <main className="archive-main">
 
           {children}
 
         </main>
-
 
       </body>
 

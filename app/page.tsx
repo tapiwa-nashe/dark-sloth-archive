@@ -6,70 +6,13 @@ import {
   Fingerprint,
 } from "lucide-react";
 
+import ArchiveHero from "@/components/ArchiveHero";
+
 export default function HomePage() {
   return (
     <div>
 
-      <section className="hero">
-
-        <div className="hero-background">
-
-          <div className="hero-layer hero-layer-far">
-            REC-021 • REC-022 • REC-023 • REC-024 • RUNE-001 • RUNE-002 •
-            BLACK VAULT • ENTRY 013 • ARCHIVE NODE • EXPEDITION 07 •
-            STATUS VERIFIED • RECOVERED FRAGMENT • OBSERVATION •
-          </div>
-
-          <div className="hero-layer hero-layer-mid">
-            THE WILDS ARE NEVER FULLY MAPPED
-            <br />
-            PRESENCE
-            <br />
-            PATIENCE
-            <br />
-            SILENCE
-            <br />
-            DISCERNMENT
-            <br />
-            HUMILITY
-            <br />
-            CLARITY
-          </div>
-
-          <div className="hero-layer hero-layer-near">
-            BLACK VAULT
-            <br />
-            ENTRY 013
-            <br />
-            RECOVERED
-            <br />
-            ARCH-0001
-          </div>
-
-        </div>
-
-        <div className="archive-status">
-          ARCHIVE STATUS // ACTIVE
-        </div>
-
-        <h1 className="hero-title">
-          NOTHING IS
-          <br />
-          INVENTED.
-          <br />
-          ONLY RECOVERED.
-        </h1>
-
-        <p className="hero-subtitle">
-          The Public Archive
-        </p>
-
-        <p className="hero-description">
-          Records. Books. Dossiers. Recovery.
-        </p>
-
-      
-</section>
+      <ArchiveHero />
 
       <section
         style={{
