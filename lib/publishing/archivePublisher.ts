@@ -7,7 +7,7 @@ import {
   DocxExporter,
   PdfExporter,
   PublicationRunner,
-} from "publishing-studio";
+} from "@/lib/publishing/publishingStudio";
 
 import {
   records

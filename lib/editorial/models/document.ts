@@ -17,7 +17,13 @@ export interface ArchiveDocument {
 
   chapters:{
 
+    number:number;
+
     title:string;
+
+    recovery?:string;
+
+    openingQuestion?:string;
 
     content:string;
 

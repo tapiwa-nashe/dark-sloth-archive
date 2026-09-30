@@ -11,18 +11,13 @@ export function formatArchiveEdition(
 ):ArchiveDocument {
 
 
-  let content =
+  const content =
     manuscript.content
       .replace(
         /^Title:.*$/im,
         ""
       )
       .trim();
-
-
-
-  const lines =
-    content.split("\n");
 
 
 
@@ -47,48 +42,154 @@ export function formatArchiveEdition(
 
 
 
-  const chapterMatches =
-    content.split(
-      /(?=^CHAPTER\s|^Chapter\s)/im
-    );
+  const chapterSections =
+    content
+      .split(
+        /(?=^CHAPTER\s+\d+)/im
+      )
+      .filter(
+        section =>
+          section.trim()
+      );
 
 
 
   const chapters =
-    chapterMatches
-      .map(
-        section => {
-
-          const sectionLines =
-            section
-              .trim()
-              .split("\n");
+    chapterSections.map(
+      (section,index)=>{
 
 
-          const title =
-            sectionLines.shift()
-              ?.trim()
-            ??
-            "Untitled Chapter";
+        const lines =
+          section
+            .trim()
+            .split("\n")
+            .map(
+              line =>
+                line.trim()
+            )
+            .filter(Boolean);
 
 
-          return {
 
-            title,
+        const chapterLine =
+          lines.shift()
+          ??
+          `CHAPTER ${index + 1}`;
 
-            content:
-              sectionLines
-                .join("\n")
-                .trim()
 
-          };
+
+        const number =
+          Number(
+            chapterLine
+              .match(/\d+/)?.[0]
+          )
+          ||
+          index + 1;
+
+
+
+        const recoveryIndex =
+          lines.findIndex(
+            line =>
+              /^#+\s*Recovery\s+/i.test(line)
+          );
+
+
+
+        const recovery =
+          recoveryIndex >= 0
+            ? lines[recoveryIndex]
+            : undefined;
+
+
+
+        if(recoveryIndex >= 0){
+
+          lines.splice(
+            recoveryIndex,
+            1
+          );
 
         }
-      )
-      .filter(
-        chapter =>
-          chapter.content.length > 0
-      );
+
+
+
+        const titleIndex =
+          lines.findIndex(
+            line =>
+              /^#+\s*(?!Recovery|Opening Question)/i.test(line)
+          );
+
+
+
+        const title =
+          titleIndex >= 0
+            ? lines[titleIndex]
+                .replace(/^#+\s*/,"")
+            : "Untitled Chapter";
+
+
+
+        if(titleIndex >= 0){
+
+          lines.splice(
+            titleIndex,
+            1
+          );
+
+        }
+
+
+
+        const openingIndex =
+          lines.findIndex(
+            line =>
+              /^#+\s*Opening Question/i.test(line)
+          );
+
+
+
+        let openingQuestion:string|undefined;
+
+
+
+        if(openingIndex >= 0){
+
+          openingQuestion =
+            lines
+              .slice(
+                openingIndex + 1,
+                openingIndex + 2
+              )
+              .join("");
+
+          lines.splice(
+            openingIndex,
+            2
+          );
+
+        }
+
+
+
+        return {
+
+          number,
+
+          title,
+
+          recovery,
+
+          openingQuestion,
+
+          content:
+            lines.join("\n\n")
+
+        };
+
+
+      }
+    );
 
 
 
