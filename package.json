@@ -9,7 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@dark-sloth/core": "0.1.0",
+    "@dark-sloth/core": "1.0.0",
     "@dark-sloth/navigation": "file:../dark-sloth-navigation-engine",
     "@dark-sloth/reader-types": "0.1.0",
     "@dark-sloth/runtime": "0.1.0",
