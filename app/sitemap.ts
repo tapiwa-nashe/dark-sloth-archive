@@ -7,6 +7,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "",
     "/collections",
+    "/atlas",
+    "/research",
     "/records",
     "/books",
     "/recoveries",

@@ -3,10 +3,12 @@ import {
   ArrowUpRight,
   BookOpen,
   Building2,
+  Compass,
   FileSearch,
   Fingerprint,
   Layers3,
   ScanSearch,
+  Scale,
   Users,
 } from "lucide-react";
 
@@ -16,8 +18,9 @@ import { collections } from "@/lib/collections";
 import { getPublicArchiveFeed } from "@/lib/public-content/client";
 
 const gateways = [
+  { number: "01", title: "Archive Atlas", description: "Navigate the public catalogue across collections, records, publications and released entities.", href: "/atlas", label: "Explore the Atlas", icon: Compass },
   {
-    number: "01",
+    number: "02",
     title: "Collections",
     description: "Explore curated bodies of records, source material and connected knowledge.",
     href: "/collections",
@@ -25,7 +28,7 @@ const gateways = [
     icon: Layers3,
   },
   {
-    number: "02",
+    number: "03",
     title: "Records",
     description: "Examine catalogue entries with source references, classification and provenance.",
     href: "/records",
@@ -33,7 +36,7 @@ const gateways = [
     icon: FileSearch,
   },
   {
-    number: "03",
+    number: "04",
     title: "Books",
     description: "Discover the published books and editions held in the Archive catalogue.",
     href: "/books",
@@ -41,7 +44,7 @@ const gateways = [
     icon: BookOpen,
   },
   {
-    number: "04",
+    number: "05",
     title: "Recoveries",
     description: "Follow evidence-led recoveries released through the public archive.",
     href: "/recoveries",
@@ -49,7 +52,7 @@ const gateways = [
     icon: ScanSearch,
   },
   {
-    number: "05",
+    number: "06",
     title: "People & Entities",
     description: "Explore public identity and entity records when approved for release.",
     href: "/entities",
@@ -57,7 +60,15 @@ const gateways = [
     icon: Fingerprint,
   },
   {
-    number: "06",
+    number: "07",
+    title: "Research & Method",
+    description: "Understand how the Archive handles sources, provenance, interpretation and public release.",
+    href: "/research",
+    label: "Read our method",
+    icon: Scale,
+  },
+  {
+    number: "08",
     title: "Partnerships",
     description: "Read about the proposed institutional partnership and shared-prosperity framework.",
     href: "/partnerships",
@@ -104,7 +115,7 @@ export default async function HomePage() {
             <p className="home-section-kicker">02 / THE PUBLIC CATALOGUE</p>
             <h2 id="home-catalogue-title">Enter the Archive</h2>
           </div>
-          <p>Six pathways into the institution. Each opens a different part of the public record.</p>
+          <p>Eight pathways into the institution. Each opens a different part of the public record.</p>
         </div>
         <div className="home-gateway-grid">
           {gateways.map((item) => {

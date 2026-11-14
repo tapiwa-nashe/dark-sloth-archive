@@ -1,23 +1,7 @@
 import Link from "next/link";
-
-export default function IdentityPage() {
-  return (
-    <main className="archive-derived-page mx-auto max-w-6xl px-6 py-16">
-      <header className="mb-12">
-        <p className="mb-4 text-xs tracking-[0.4em] text-zinc-500">ARCHIVE IDENTITY SYSTEM</p>
-        <h1 className="mb-6 text-5xl font-bold">Identity</h1>
-        <p className="max-w-3xl text-zinc-400 leading-relaxed">
-          Archive Identity is the participant identity layer. It preserves a participant’s verified relationship with the Archive, including authorised contributions, witnessing, and progression.
-        </p>
-      </header>
-      <section className="mb-8 border border-zinc-800 p-7">
-        <p className="text-xs tracking-[0.3em] text-zinc-500">PUBLIC / PRIVATE BOUNDARY</p>
-        <h2 className="mt-4 text-2xl font-semibold">Participant identities are not public catalogue records.</h2>
-        <p className="mt-4 max-w-3xl text-zinc-400 leading-relaxed">
-          Personal identity records, dossiers, and participation history belong to the authenticated Archive Platform. This public website does not expose participant identity data or present a sample identity as a verified person.
-        </p>
-      </section>
-      <Link href="/platform" className="inline-flex border border-zinc-700 px-5 py-3 text-xs tracking-[0.2em] uppercase transition hover:border-zinc-400">Enter the Archive Platform →</Link>
-    </main>
-  );
-}
+import { ArrowUpRight, Fingerprint, ShieldCheck } from "lucide-react";
+export default function IdentityPage(){return <main className="archive-derived-page archive-page-v2">
+<header className="archive-page-hero"><p className="archive-page-kicker">DARK SLOTH / INSTITUTIONAL IDENTITY</p><h1>Identity & Mark</h1><p className="archive-page-lede">The Archive's public identity expresses continuity, stewardship and the responsibility to preserve what can be supported by evidence.</p><div className="archive-page-meta"><span>INSTITUTIONAL IDENTITY</span><span>PUBLIC REFERENCE</span></div></header>
+<section className="archive-identity-feature"><div className="archive-identity-wordmark"><span>DARK SLOTH</span><strong>PUBLIC<br/>ARCHIVE</strong><small>ARCHIVE / PRESERVE / RECOVER</small></div><div><p className="archive-page-kicker">01 / THE INSTITUTION</p><h2>A public identity built around the work.</h2><p>The Dark Sloth Archive is the public knowledge institution: its collections, records, publications, research method and public releases form the visible institutional record.</p><Link href="/studios">Explore HELMR HUGR and the Studios <ArrowUpRight size={15}/></Link></div></section>
+<section className="archive-page-section archive-identity-grid"><article><ShieldCheck/><p className="archive-page-kicker">PUBLIC IDENTITY</p><h3>Institutional presence</h3><p>Public-facing marks, publications and collection identities represent the Archive and its documented work.</p></article><article><Fingerprint/><p className="archive-page-kicker">PARTICIPANT IDENTITY</p><h3>Private by default</h3><p>Individual Archive identities, dossiers and participation histories belong to the authenticated Platform. They are not automatically public catalogue entries.</p><Link href="/platform">About the Archive Platform <ArrowUpRight size={14}/></Link></article></section>
+</main>;}

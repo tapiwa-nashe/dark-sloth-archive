@@ -46,13 +46,13 @@ export default function FirstRecoveryPage() {
       setTimeout(() => {
         try {
           localStorage.setItem(
-            "dark_sloth_first_recovery",
+            "dark_sloth_first_recovery_draft",
             JSON.stringify({
               type: selectedType,
               what,
               why,
               lost,
-              recoveredAt: new Date().toISOString(),
+              savedLocallyAt: new Date().toISOString(),
             })
           );
         } catch {}
@@ -65,7 +65,7 @@ export default function FirstRecoveryPage() {
   }, [stage, selectedType, what, why, lost]);
 
   return (
-    <main className="archive-derived-page text-neutral-200 overflow-hidden">
+    <main className="archive-recovery-experience text-neutral-200 overflow-hidden">
       <ArchiveStatus />
 
       <section className="relative z-10 min-h-screen flex items-center justify-center px-6 py-16">
@@ -159,7 +159,7 @@ export default function FirstRecoveryPage() {
             </p>
 
             <h1 className="font-serif text-3xl md:text-4xl font-normal text-white mb-8">
-              Create your first Recovery Record.
+              Write your first Recovery Reflection.
             </h1>
 
             <div className="space-y-6">
@@ -190,7 +190,7 @@ export default function FirstRecoveryPage() {
               disabled={!canSubmit}
               className="ds-button mt-9 disabled:opacity-30 disabled:cursor-not-allowed"
             >
-              Submit Recovery
+              Save Draft on This Device
             </button>
           </div>
         )}
@@ -198,13 +198,13 @@ export default function FirstRecoveryPage() {
         {stage === "processing" && (
           <div className="max-w-xl w-full animate-fadeIn font-mono text-sm leading-loose">
             <p className={processingLine >= 1 ? "text-neutral-400" : "text-neutral-800"}>
-              Processing Recovery...
+              Saving your reflection on this device...
             </p>
             <p className={processingLine >= 2 ? "text-neutral-400" : "text-neutral-800"}>
-              Evaluating continuity value...
+              No submission is being sent to the Archive...
             </p>
             <p className={processingLine >= 3 ? "text-white" : "text-neutral-800"}>
-              Recovery acknowledged.
+              Local draft saved.
             </p>
           </div>
         )}
@@ -212,11 +212,11 @@ export default function FirstRecoveryPage() {
         {stage === "acknowledged" && (
           <div className="max-w-2xl text-center animate-fadeIn">
             <p className="font-mono text-[10px] tracking-[0.24em] uppercase text-neutral-400 mb-8">
-              Recovery Acknowledged
+              Draft Saved on This Device
             </p>
 
             <h1 className="font-serif text-4xl md:text-6xl font-normal text-white mb-8">
-              Welcome, Seeker.
+              Your reflection has been preserved here.
             </h1>
 
             <div className="font-serif italic text-xl md:text-2xl leading-loose text-neutral-300 mb-10">
@@ -226,10 +226,11 @@ export default function FirstRecoveryPage() {
 
             <div className="border border-neutral-800 bg-black/70 rounded-lg p-6 text-left mb-10 backdrop-blur-sm">
               <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-neutral-500 mb-3">
-                First Recovery Record
+                First Recovery Draft
               </p>
               <p className="text-white font-serif text-xl mb-2">{what}</p>
               <p className="text-neutral-400 text-sm leading-7">{why}</p>
+              <p className="mt-4 border-t border-neutral-800 pt-4 text-xs leading-6 text-neutral-500">This draft is stored only in this browser. It has not been submitted to the Archive, reviewed, assigned a canonical identifier or registered as an official Recovery Record.</p>
             </div>
 
             <button onClick={() => setStage("pathways")} className="ds-button">
@@ -249,7 +250,7 @@ export default function FirstRecoveryPage() {
             </h1>
 
             <p className="text-neutral-400 max-w-xl mb-10 leading-8">
-              Your first recovery has been acknowledged. The Archive is now open.
+              Your first reflection has been saved locally. You can continue exploring the public Archive.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

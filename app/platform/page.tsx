@@ -1,32 +1,8 @@
-export default function PlatformPage() {
-  return (
-    <main className="platform-page">
-
-      <div className="platform-bg"></div>
-
-      <section className="platform-hero">
-
-        <p className="platform-kicker">
-          DARK SLOTH // ARCHIVE PLATFORM
-        </p>
-
-        <h1 className="platform-heading">
-  <span className="platform-archive">ARCHIVE</span>
-  <span className="platform-platform">PLATFORM</span>
-</h1>
-
-        <p className="platform-subheading">
-          CIVILIZATION ENGINE
-        </p>
-
-        <p className="platform-body">
-          Records become memory.
-          Memory becomes structure.
-          Structure becomes civilization.
-        </p>
-
-      </section>
-
-    </main>
-  );
-}
+import Link from "next/link";
+import { ArrowUpRight, Fingerprint, Network, ShieldCheck, Users } from "lucide-react";
+export default function PlatformPage(){return <main className="archive-derived-page archive-page-v2">
+<header className="archive-page-hero"><p className="archive-page-kicker">DARK SLOTH / PARTICIPATION LAYER</p><h1>Archive Platform</h1><p className="archive-page-lede">The operational and participatory environment of Dark Sloth. It extends the public institution without replacing or absorbing the public Archive.</p><div className="archive-page-meta"><span>SEPARATE INSTITUTIONAL SYSTEM</span><span>AUTHORISED PARTICIPATION</span></div></header>
+<section className="archive-platform-intro"><div><p className="archive-page-kicker">THE TWO LAYERS</p><h2>The Archive is where knowledge is discovered. The Platform is where authorised participation takes place.</h2></div><p>The public website remains independently accessible. The Platform supports participant identity, contribution workflows, private dossiers, witnessing, annotations and institutional operations under their own permissions and governance.</p></section>
+<section className="archive-page-section archive-platform-grid"><article><Fingerprint/><p className="archive-page-kicker">01 / IDENTITY</p><h3>Participant identity</h3><p>Identity ownership, participation history and progression are handled in the authenticated environment, not exposed as public catalogue data.</p></article><article><Users/><p className="archive-page-kicker">02 / PARTICIPATION</p><h3>Contribution & witness</h3><p>Authorised participants engage with recovery records, annotations, witnessing and verification workflows according to their permissions.</p></article><article><Network/><p className="archive-page-kicker">03 / INSTITUTIONAL SYSTEMS</p><h3>Connected engines</h3><p>Operational tools support publishing, reading, knowledge organisation and other institutional processes. Their internal controls are not public website features.</p></article><article><ShieldCheck/><p className="archive-page-kicker">04 / BOUNDARIES</p><h3>Controlled public release</h3><p>Only approved public projections cross from Platform systems to the public Archive through explicit release boundaries.</p></article></section>
+<section className="archive-platform-footer"><div><p className="archive-page-kicker">PUBLIC INSTITUTION</p><h2>Continue exploring the Archive.</h2><p>Collections, records, books and public research remain available without requiring participant access.</p></div><Link href="/atlas">Explore the Archive Atlas <ArrowUpRight size={16}/></Link></section>
+</main>}

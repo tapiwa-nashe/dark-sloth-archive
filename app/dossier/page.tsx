@@ -1,23 +1,7 @@
 import Link from "next/link";
-
-export default function DossierPage() {
-  return (
-    <main className="archive-derived-page mx-auto max-w-6xl px-6 py-16">
-      <header className="mb-12">
-        <p className="mb-4 text-xs tracking-[0.4em] text-zinc-500">ARCHIVE DOSSIER SYSTEM</p>
-        <h1 className="mb-6 text-5xl font-bold">Dossiers</h1>
-        <p className="max-w-3xl text-zinc-400 leading-relaxed">
-          A dossier is an organised investigation that brings records, recoveries, relationships, observations, and open questions into a traceable evidence structure.
-        </p>
-      </header>
-      <section className="mb-8 border border-zinc-800 p-7">
-        <p className="text-xs tracking-[0.3em] text-zinc-500">DOSSIER PRINCIPLE</p>
-        <h2 className="mt-4 text-2xl font-semibold">A connection is not automatically a conclusion.</h2>
-        <p className="mt-4 max-w-3xl text-zinc-400 leading-relaxed">
-          Public dossiers distinguish source records from interpretation and unresolved questions. Participant-specific and restricted dossiers remain within the authenticated Platform.
-        </p>
-      </section>
-      <Link href="/dossiers" className="inline-flex border border-zinc-700 px-5 py-3 text-xs tracking-[0.2em] uppercase transition hover:border-zinc-400">Browse public dossiers →</Link>
-    </main>
-  );
-}
+import { ArrowUpRight, FileSearch } from "lucide-react";
+export default function DossierPage(){return <main className="archive-derived-page archive-page-v2">
+<header className="archive-page-hero"><p className="archive-page-kicker">PUBLIC INVESTIGATION / DOSSIER SYSTEM</p><h1>Dossiers</h1><p className="archive-page-lede">Structured investigations bring records, recoveries, relationships, observations and open questions into a traceable evidence structure.</p><div className="archive-page-meta"><span>PUBLIC DOSSIER INDEX</span><span>REFERENCE STATUS IS SHOWN</span></div></header>
+<section className="archive-page-section archive-dossier-feature"><div><p className="archive-page-kicker">DOSSIER-001 / REFERENCE DOSSIER</p><h2>The Observer</h2><p>Attention, Presence, Silence, Discernment and the foundations of recovery. This dossier is a structured reference for further source review, not a verified biography or a completed investigation.</p><span className="archive-status-review">REFERENCE / REVIEW REQUIRED</span><Link href="/dossiers/observer">Open dossier <ArrowUpRight size={15}/></Link></div><div className="archive-dossier-symbol"><FileSearch/><span>DOSSIER</span><strong>001</strong><small>OPEN QUESTIONS<br/>REMAIN VISIBLE</small></div></section>
+<section className="archive-page-section"><p className="archive-page-kicker">DOSSIER PRINCIPLE</p><h2>A connection is not automatically a conclusion.</h2><p className="archive-page-copy">Public dossiers distinguish source records from interpretation and unresolved questions. Participant-specific and restricted dossiers remain within the authenticated Platform. Additional dossiers will appear here only when their public scope and evidence status are established.</p></section>
+</main>;}

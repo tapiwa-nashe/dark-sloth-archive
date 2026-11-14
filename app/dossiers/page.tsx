@@ -1,61 +1,7 @@
 import Link from "next/link";
-
-const dossiers = [
-  {
-    id: "DOSSIER-001",
-    title: "The Observer",
-    description:
-      "Attention, Presence, Silence, Discernment, and the foundations of recovery.",
-    href: "/dossiers/observer",
-  },
-];
-
-export default function DossiersPage() {
-  return (
-    <main className="archive-derived-page mx-auto max-w-6xl px-6 py-16">
-
-      <header className="mb-16">
-
-        <p className="mb-4 text-xs tracking-[0.4em] text-zinc-500">
-          ARCHIVE DOSSIERS
-        </p>
-
-        <h1 className="mb-6 text-5xl font-bold">
-          Dossiers
-        </h1>
-
-        <p className="max-w-3xl text-zinc-400 leading-relaxed">
-          Structured investigations assembled from multiple records,
-          recoveries, and observations.
-        </p>
-
-      </header>
-
-      <section className="grid gap-6">
-
-        {dossiers.map((dossier) => (
-          <Link
-            key={dossier.id}
-            href={dossier.href}
-            className="group border border-zinc-800 p-6 transition hover:border-zinc-500"
-          >
-            <p className="mb-3 text-xs tracking-[0.3em] text-zinc-500">
-              {dossier.id}
-            </p>
-
-            <h2 className="mb-4 text-2xl font-semibold">
-              {dossier.title}
-            </h2>
-
-            <p className="text-zinc-400">
-              {dossier.description}
-            </p>
-
-          </Link>
-        ))}
-
-      </section>
-
-    </main>
-  );
-}
+import { ArrowUpRight, FileSearch } from "lucide-react";
+export default function DossiersPage(){return <main className="archive-derived-page archive-page-v2">
+<header className="archive-page-hero"><p className="archive-page-kicker">PUBLIC INVESTIGATION / DOSSIER INDEX</p><h1>Dossiers</h1><p className="archive-page-lede">Structured investigations assemble records, recoveries, observations and open questions into traceable evidence structures. Public dossiers show their current review status.</p><div className="archive-page-meta"><span>PUBLIC DOSSIER REGISTER</span><span>1 CATALOGUED REFERENCE</span></div></header>
+<section className="archive-page-section"><article className="archive-dossier-card"><div><p className="archive-page-kicker">DOSSIER-001 / REFERENCE DOSSIER</p><h2>The Observer</h2><p>Attention, Presence, Silence, Discernment and the foundations of recovery. A structured reference for further source review, not a verified biography or completed investigation.</p><span className="archive-status-review">REFERENCE / REVIEW REQUIRED</span><Link href="/dossiers/observer">Open dossier <ArrowUpRight size={15}/></Link></div><div><FileSearch/><strong>001</strong><small>OPEN QUESTIONS REMAIN VISIBLE</small></div></article></section>
+<p className="archive-page-caveat">A connection is not automatically a conclusion. Additional dossiers will appear only when their public scope and evidence status are established. Participant-specific and restricted dossiers remain within the authenticated Platform.</p>
+</main>}
