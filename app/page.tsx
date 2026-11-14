@@ -7,17 +7,53 @@ import {
 } from "lucide-react";
 
 import ArchiveHero from "@/components/ArchiveHero";
+import { records } from "@/lib/records";
+import { collections } from "@/lib/collections";
+import { getPublicArchiveFeed } from "@/lib/public-content/client";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const publicFeed = await getPublicArchiveFeed();
   return (
     <div>
 
       <ArchiveHero />
 
+      <section className="institution-introduction mx-auto max-w-6xl px-6 py-16" aria-labelledby="institution-introduction-title">
+        <div className="institution-introduction-grid">
+          <div>
+            <p className="mb-5 text-xs tracking-[0.35em] text-zinc-500">DARK SLOTH // INSTITUTIONAL PURPOSE</p>
+            <h2 id="institution-introduction-title" className="text-3xl font-semibold leading-tight md:text-5xl">
+              A living institution for the recovery, preservation and responsible interpretation of knowledge.
+            </h2>
+          </div>
+          <div className="space-y-5 text-base leading-8 text-zinc-400">
+            <p>
+              Dark Sloth Archive is a public knowledge institution. It brings records, books,
+              source material and recovered accounts into a structured environment where their
+              origins and limits can be examined.
+            </p>
+            <p>
+              We distinguish what is documented from what is interpreted, what remains a
+              hypothesis and what is not yet known. A record is not made true by its presence
+              in an archive; its evidence and provenance must remain open to scrutiny.
+            </p>
+            <p>
+              The public Archive is the place to discover this work. A separate Archive
+              Platform supports authorised participation, contribution and institutional
+              operations.
+            </p>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <Link href="/collections" className="inline-flex border border-zinc-600 px-5 py-3 text-xs tracking-[0.2em] uppercase transition hover:border-white">Explore the collections →</Link>
+              <Link href="/platform" className="inline-flex border border-zinc-800 px-5 py-3 text-xs tracking-[0.2em] uppercase text-zinc-300 transition hover:border-zinc-500">About the Platform →</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section
         style={{
           maxWidth: "1400px",
-          margin: "-220px auto 40px auto",
+          margin: "32px auto 40px auto",
           padding: "0 0px",
           position: "relative",
           zIndex: 10,
@@ -89,36 +125,33 @@ export default function HomePage() {
       </section>
 
       <section className="stats-grid">
-
-
         <Link href="/collections" className="stat-card">
           <ScanSearch className="stat-icon" size={22} strokeWidth={1.5} />
           <span>COLLECTIONS</span>
-          <h2>005</h2>
-          <p>Active Collections</p>
+          <h2>{String(collections.length).padStart(3, "0")}</h2>
+          <p>Catalogued Collections</p>
         </Link>
 
-        <Link href="/dossiers" className="stat-card">
+        <Link href="/records" className="stat-card">
           <Folder className="stat-icon" size={22} strokeWidth={1.5} />
-          <span>DOSSIERS</span>
-          <h2>001</h2>
-          <p>Active Investigation</p>
+          <span>RECORDS</span>
+          <h2>{String(records.length).padStart(3, "0")}</h2>
+          <p>Public Catalogue Records</p>
         </Link>
 
-        <Link href="/books" className="stat-card">
+        <Link href="/recoveries" className="stat-card">
           <BookOpen className="stat-icon" size={22} strokeWidth={1.5} />
-          <span>BOOKS</span>
-          <h2>012</h2>
-          <p>Recovered Volumes</p>
+          <span>PUBLIC RECOVERIES</span>
+          <h2>{publicFeed.connected ? String(publicFeed.recoveries.length).padStart(3, "0") : "—"}</h2>
+          <p>{publicFeed.connected ? "Approved Public Releases" : "Feed Awaiting Connection"}</p>
         </Link>
 
-        <Link href="/dossier" className="stat-card">
+        <Link href="/entities" className="stat-card">
           <Fingerprint className="stat-icon" size={22} strokeWidth={1.5} />
-          <span>ARCHIVE ID</span>
-          <h2>0001</h2>
-          <p>Root Record</p>
+          <span>PEOPLE & ENTITIES</span>
+          <h2>{publicFeed.connected ? String(publicFeed.entities.length).padStart(3, "0") : "—"}</h2>
+          <p>{publicFeed.connected ? "Approved Public Profiles" : "Register Awaiting Connection"}</p>
         </Link>
-
       </section>
 
       <section className="collection-section">
@@ -137,12 +170,12 @@ export default function HomePage() {
             <div className="collection-meta">
               <div>
                 <span>RECORDS</span>
-                <p>048</p>
+                <p>{String(records.length).padStart(3, "0")}</p>
               </div>
 
               <div>
                 <span>COLLECTIONS</span>
-                <p>005</p>
+                <p>{String(collections.length).padStart(3, "0")}</p>
               </div>
             </div>
 
@@ -151,25 +184,47 @@ export default function HomePage() {
             </div>
           </Link>
 
-          <Link href="/dossiers" className="collection-card">
+          <Link href="/recoveries" className="collection-card">
             <div className="collection-label">
-              DOSSIERS
+              RECOVERIES
             </div>
 
             <div className="collection-meta">
               <div>
-                <span>STATUS</span>
-                <p>ACTIVE</p>
+                <span>PUBLIC RELEASES</span>
+                <p>{publicFeed.connected ? String(publicFeed.recoveries.length).padStart(3, "0") : "PENDING"}</p>
               </div>
 
               <div>
-                <span>DOSSIERS</span>
-                <p>001</p>
+                <span>ACCESS</span>
+                <p>PUBLIC</p>
               </div>
             </div>
 
             <div className="collection-enter">
-              ENTER DOSSIERS →
+              ENTER RECOVERY STREAM →
+            </div>
+          </Link>
+
+          <Link href="/entities" className="collection-card">
+            <div className="collection-label">
+              PEOPLE & ENTITIES
+            </div>
+
+            <div className="collection-meta">
+              <div>
+                <span>APPROVED PROFILES</span>
+                <p>{publicFeed.connected ? String(publicFeed.entities.length).padStart(3, "0") : "PENDING"}</p>
+              </div>
+
+              <div>
+                <span>ACCESS</span>
+                <p>PUBLIC</p>
+              </div>
+            </div>
+
+            <div className="collection-enter">
+              ENTER ENTITY REGISTER →
             </div>
           </Link>
 
@@ -185,13 +240,57 @@ export default function HomePage() {
               </div>
 
               <div>
-                <span>STATUS</span>
-                <p>RECOVERED</p>
+                <span>CATALOGUE STATUS</span>
+                <p>PUBLIC LISTINGS</p>
               </div>
             </div>
 
             <div className="collection-enter">
               ENTER LIBRARY →
+            </div>
+          </Link>
+
+          <Link href="/partnerships" className="collection-card">
+            <div className="collection-label">
+              INSTITUTIONAL PARTNERSHIPS
+            </div>
+
+            <div className="collection-meta">
+              <div>
+                <span>FRAMEWORK</span>
+                <p>PROPOSED</p>
+              </div>
+
+              <div>
+                <span>FOCUS</span>
+                <p>SHARED PROSPERITY</p>
+              </div>
+            </div>
+
+            <div className="collection-enter">
+              EXPLORE PARTNERSHIPS →
+            </div>
+          </Link>
+
+          <Link href="/contribute" className="collection-card">
+            <div className="collection-label">
+              CONTRIBUTE TO THE ARCHIVE
+            </div>
+
+            <div className="collection-meta">
+              <div>
+                <span>GUIDANCE</span>
+                <p>AVAILABLE</p>
+              </div>
+
+              <div>
+                <span>INTAKE</span>
+                <p>NOT YET OPEN</p>
+              </div>
+            </div>
+
+            <div className="collection-enter">
+              EXPLORE CONTRIBUTOR PATHWAYS →
             </div>
           </Link>
 

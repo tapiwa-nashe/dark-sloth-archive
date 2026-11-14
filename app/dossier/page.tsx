@@ -1,60 +1,23 @@
+import Link from "next/link";
+
 export default function DossierPage() {
   return (
-    <div className="archive-derived-page">
-
-      <div className="page-header">
-
-        <div className="section-label">
-          ARCHIVE IDENTITY
-        </div>
-
-        <h1 className="page-title">
-          ARCH-0001
-        </h1>
-
-        <p className="page-description">
-          Archive Identity is the persistent record layer of the Archive.
-          Each participant will eventually possess a unique identity preserving
-          recoveries, contributions, observations, and progression.
-          The identity displayed below is a reference record.
+    <main className="archive-derived-page mx-auto max-w-6xl px-6 py-16">
+      <header className="mb-12">
+        <p className="mb-4 text-xs tracking-[0.4em] text-zinc-500">ARCHIVE DOSSIER SYSTEM</p>
+        <h1 className="mb-6 text-5xl font-bold">Dossiers</h1>
+        <p className="max-w-3xl text-zinc-400 leading-relaxed">
+          A dossier is an organised investigation that brings records, recoveries, relationships, observations, and open questions into a traceable evidence structure.
         </p>
-
-      </div>
-
-      <div className="platform-status">
-
-        <div>
-          <span>ARCHIVE ID</span>
-          <p>ARCH-0001</p>
-        </div>
-
-        <div>
-          <span>CLASSIFICATION</span>
-          <p>OBSERVER</p>
-        </div>
-
-        <div>
-          <span>RANK</span>
-          <p>ROOT GUARDIAN</p>
-        </div>
-
-        <div>
-          <span>RECOVERIES</span>
-          <p>048</p>
-        </div>
-
-        <div>
-          <span>WITNESSES</span>
-          <p>000</p>
-        </div>
-
-        <div>
-          <span>CONTRIBUTIONS</span>
-          <p>051</p>
-        </div>
-
-      </div>
-
-    </div>
+      </header>
+      <section className="mb-8 border border-zinc-800 p-7">
+        <p className="text-xs tracking-[0.3em] text-zinc-500">DOSSIER PRINCIPLE</p>
+        <h2 className="mt-4 text-2xl font-semibold">A connection is not automatically a conclusion.</h2>
+        <p className="mt-4 max-w-3xl text-zinc-400 leading-relaxed">
+          Public dossiers distinguish source records from interpretation and unresolved questions. Participant-specific and restricted dossiers remain within the authenticated Platform.
+        </p>
+      </section>
+      <Link href="/dossiers" className="inline-flex border border-zinc-700 px-5 py-3 text-xs tracking-[0.2em] uppercase transition hover:border-zinc-400">Browse public dossiers →</Link>
+    </main>
   );
 }

@@ -1,7 +1,8 @@
 import type {
   Entity,
-  Relationship
-} from "@dark-sloth/types";
+  Relationship,
+  Engine
+} from "@dark-sloth/core";
 
 
 export interface KnowledgeGraphMemory {
@@ -14,12 +15,34 @@ export interface KnowledgeGraphMemory {
 
 
 
-export class KnowledgeGraphQueryEngine {
+export class KnowledgeGraphQueryEngine implements Engine {
 
+
+  readonly identity = {
+    id: "knowledge-graph.query",
+    name: "Knowledge Graph Query Engine",
+    version: "1.0.0"
+  };
+
+  readonly capabilities = [
+    {
+      id: "knowledge-graph.query",
+      name: "Knowledge Graph Query",
+      description:
+        "Query entities, relationships, references, and identity traces from the Archive knowledge graph."
+    }
+  ];
 
   constructor(
     private memory: KnowledgeGraphMemory
   ) {}
+
+  health() {
+    return {
+      healthy: true,
+      message: `Knowledge graph available: ${this.memory.entities.length} entities, ${this.memory.relationships.length} relationships.`
+    };
+  }
 
 
 

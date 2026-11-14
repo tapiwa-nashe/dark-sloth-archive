@@ -1,42 +1,9 @@
-import {
-  publishArchiveCollection
-} from "@/lib/publishing/archivePublisher";
+import { NextResponse } from "next/server";
 
-
-export async function GET(
-  request: Request,
-  context: {
-    params: Promise<{
-      collection: string;
-    }>;
-  }
-) {
-
-  const {
-    collection
-  } = await context.params;
-
-
-  const decoded =
-    decodeURIComponent(
-      collection
-    );
-
-
-  const outputs =
-    await publishArchiveCollection(
-      decoded
-    );
-
-
-  return Response.json({
-
-    success: true,
-
-    collection: decoded,
-
-    outputs
-
-  });
-
+/** Publishing is an authenticated Platform operation, never a public GET side effect. */
+export async function GET() {
+  return NextResponse.json(
+    { error: "Publishing operations are available only in the authenticated Archive Platform." },
+    { status: 404 },
+  );
 }

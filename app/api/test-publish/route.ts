@@ -1,17 +1,6 @@
-import {
-  publishCollection
-} from "@/lib/publishing/archivePublisher";
+import { NextResponse } from "next/server";
 
+/** Test publication endpoint intentionally disabled on the public application. */
 export async function GET() {
-
-  const outputs =
-    await publishCollection(
-      "ARCHIVE PHILOSOPHY"
-    );
-
-  return Response.json({
-    success: true,
-    outputs
-  });
-
+  return NextResponse.json({ error: "Not found" }, { status: 404 });
 }

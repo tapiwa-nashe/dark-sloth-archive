@@ -1,6 +1,6 @@
 import {
-  KnowledgeGraph
-} from "@dark-sloth/graph";
+  ArchivePublicationGraph
+} from "./publicationGraph";
 
 
 import {
@@ -18,7 +18,7 @@ export function loadStoredGraph() {
 
 
   const graph =
-    new KnowledgeGraph();
+    new ArchivePublicationGraph();
 
 
 

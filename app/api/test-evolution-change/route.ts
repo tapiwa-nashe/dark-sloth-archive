@@ -11,11 +11,15 @@ import {
 
 import {
   createRelationship
-} from "@dark-sloth/types";
+} from "@dark-sloth/core";
 
 
 
 export async function GET() {
+  if (process.env.NODE_ENV === "production") {
+    return new Response(null, { status: 404 });
+  }
+
 
 
   const snapshot:any =

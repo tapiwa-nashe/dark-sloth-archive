@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import Link from "next/link";
 
 import ExportActions from "@/components/creator/ExportActions";
@@ -21,6 +22,7 @@ export default async function ManuscriptWorkspace(
     params
   }:Props
 ) {
+  if (process.env.NODE_ENV === "production") notFound();
 
   const {
     id
@@ -107,6 +109,8 @@ export default async function ManuscriptWorkspace(
 
 
         </section>
+
+
 
 
 

@@ -137,6 +137,51 @@ export default function BooksPage() {
           </p>
         </div>
 
+        <section
+          aria-labelledby="catalogue-guide"
+          className="mb-16 grid gap-5 border-y border-neutral-800 py-8 md:grid-cols-3"
+        >
+          <div>
+            <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-neutral-500 mb-2">
+              01 / Published books
+            </p>
+            <h2 id="catalogue-guide" className="text-lg font-semibold mb-2">
+              The Codex and Archive Documents
+            </h2>
+            <p className="text-sm leading-7 text-neutral-400">
+              Public-facing book listings with links to their retailer editions.
+              A listing describes a publication, not the approval status of every
+              idea or framework discussed within it.
+            </p>
+          </div>
+          <div>
+            <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-neutral-500 mb-2">
+              02 / Institutional material
+            </p>
+            <h2 className="text-lg font-semibold mb-2">
+              Standards and working documents
+            </h2>
+            <p className="text-sm leading-7 text-neutral-400">
+              Constitutional drafts, proposed agreements, and working standards
+              are not represented as ratified policy or published downloads.
+              They enter this public catalogue only after explicit release review.
+            </p>
+          </div>
+          <div>
+            <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-neutral-500 mb-2">
+              03 / Publishing Studio
+            </p>
+            <h2 className="text-lg font-semibold mb-2">
+              Verified public editions
+            </h2>
+            <p className="text-sm leading-7 text-neutral-400">
+              Generated editions appear separately and only when their release
+              metadata, approval, provenance, and declared public files pass
+              the Archive&apos;s public-release checks.
+            </p>
+          </div>
+        </section>
+
         <BookSeries
           title="The Dark Sloth Codex"
           subtitle="Field logs, recovered language, Wilds records, substrate fragments, and vault investigations."
@@ -157,7 +202,7 @@ export default function BooksPage() {
               <div className="mb-8">
 
                 <p className="font-mono text-xs tracking-[0.25em] text-neutral-500 uppercase mb-3">
-                  Publishing Studio
+                  Publishing Studio / Public release catalogue
                 </p>
 
                 <h2 className="text-3xl md:text-5xl font-semibold mb-4">
@@ -179,7 +224,7 @@ export default function BooksPage() {
 
                       <Link
                         key={book.id}
-                        href={`/studios/publishing/${encodeURIComponent(book.title)}`}
+                        href={`/studios/publishing/${encodeURIComponent(book.id)}`}
                         className="border border-neutral-800 bg-black/70 rounded-lg p-5 hover:border-neutral-500 transition"
                       >
 
@@ -199,7 +244,7 @@ export default function BooksPage() {
 
 
                         <p className="text-neutral-500 text-sm mb-2">
-                          Collection: {book.title}
+                          Collection: {book.collection}
                         </p>
 
 
@@ -269,7 +314,7 @@ function BookSeries({
     <section className="mb-20">
       <div className="mb-8">
         <p className="font-mono text-xs tracking-[0.25em] text-neutral-500 uppercase mb-3">
-          Publication Line
+          Published Book Series
         </p>
 
         <h2 className="text-3xl md:text-5xl font-semibold mb-4">{title}</h2>
@@ -306,8 +351,8 @@ function BookSeries({
             </p>
 
             <div className="mt-6 flex items-center justify-between gap-4">
-              <span className="font-mono text-[10px] tracking-[0.18em] uppercase text-neutral-600">
-                Status: Recovered
+              <span className="font-mono text-[10px] tracking-[0.18em] uppercase text-neutral-500">
+                Retail edition listing
               </span>
 
               <a
@@ -316,7 +361,7 @@ function BookSeries({
                 rel="noopener noreferrer"
                 className="font-mono text-[10px] tracking-[0.18em] uppercase text-white border border-neutral-700 px-3 py-2 hover:bg-white hover:text-black transition whitespace-nowrap"
               >
-                Recover Book →
+                View publication →
               </a>
             </div>
           </article>

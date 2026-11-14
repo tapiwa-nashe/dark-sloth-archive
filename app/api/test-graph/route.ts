@@ -6,6 +6,10 @@ import fs from "node:fs";
 
 
 export async function GET() {
+  if (process.env.NODE_ENV === "production") {
+    return new Response(null, { status: 404 });
+  }
+
 
   const manifest =
     JSON.parse(
