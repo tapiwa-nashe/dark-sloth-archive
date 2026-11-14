@@ -12,6 +12,12 @@ export default async function PublicEntityPage({ params }: Props) {
   const entity = feed.entities.find((item) => item.slug === slug);
   if (!entity) notFound();
 
+  const publicationDate = entity.publishedAt ? new Date(entity.publishedAt) : null;
+  const publishedLabel =
+    publicationDate && !Number.isNaN(publicationDate.getTime())
+      ? publicationDate.toLocaleDateString("en-ZA")
+      : "Publication date not supplied";
+
   return (
     <main className="archive-derived-page mx-auto max-w-4xl px-6 py-16">
       <Link href="/entities" className="mb-10 inline-flex text-sm text-zinc-500 hover:text-zinc-200">← People & Entities</Link>
@@ -28,7 +34,7 @@ export default async function PublicEntityPage({ params }: Props) {
       <section className="border-t border-zinc-800 pt-6">
         <p className="mb-2 text-xs tracking-[0.3em] text-zinc-500">SOURCE AND CANON REFERENCES</p>
         <p className="text-sm text-zinc-400">{entity.canonReferences.length ? entity.canonReferences.join(" · ") : "No additional public canon references supplied."}</p>
-        <p className="mt-4 text-xs text-zinc-600">Published {new Date(entity.publishedAt).toLocaleDateString("en-ZA")}</p>
+        <p className="mt-4 text-xs text-zinc-600">Published {publishedLabel}</p>
       </section>
     </main>
   );
