@@ -21,6 +21,11 @@ export default async function RecoveriesPage() {
         <section className="grid gap-5 md:grid-cols-2">
           {feed.recoveries.map((recovery) => {
             const participation = feed.participationSummaries.find((item) => item.targetCanonicalId === recovery.canonicalId);
+            const publicationDate = recovery.publishedAt ? new Date(recovery.publishedAt) : null;
+            const publishedLabel =
+              publicationDate && !Number.isNaN(publicationDate.getTime())
+                ? publicationDate.toLocaleDateString("en-ZA")
+                : "Publication date not supplied";
             return (
               <article key={recovery.canonicalId} className="border border-zinc-800 p-6">
                 <p className="mb-3 text-xs tracking-[0.3em] text-zinc-500">{recovery.canonicalId}</p>
@@ -29,7 +34,7 @@ export default async function RecoveriesPage() {
                 <div className="mt-5 flex flex-wrap gap-4 text-xs text-zinc-500">
                   <span>{recovery.recoveryType}</span>
                   {participation ? <span>{participation.witnessCount} witnesses</span> : null}
-                  <span>Published {new Date(recovery.publishedAt).toLocaleDateString("en-ZA")}</span>
+                  <span>Published {publishedLabel}</span>
                 </div>
                 {recovery.narrative ? <details className="mt-6"><summary className="cursor-pointer text-sm text-zinc-300">Read recovered narrative</summary><div className="mt-4 whitespace-pre-wrap text-sm leading-7 text-zinc-400">{recovery.narrative}</div></details> : null}
               </article>
