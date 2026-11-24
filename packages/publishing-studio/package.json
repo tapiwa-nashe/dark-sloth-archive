@@ -1,12 +1,18 @@
 {
   "name": "publishing-studio",
   "version": "0.1.0",
+  "private": true,
   "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "dependencies": {
+    "docx": "^9.7.1",
+    "pdf-lib": "^1.17.1",
+    "@dark-sloth/types": "0.1.0",
+    "mammoth": "^1.12.1"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
       "default": "./dist/index.js"
     }
   }

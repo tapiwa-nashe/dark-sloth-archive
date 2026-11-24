@@ -1,4 +1,5 @@
-import type { Entity, Relationship } from "./index.js";
+import type { Entity } from "./entities.js";
+import type { Relationship } from "./relationships.js";
 export interface ArchiveSource {
     id: string;
     title: string;
@@ -30,3 +31,4 @@ export interface ArchiveRecord {
     relationships: Relationship[];
     createdAt: string;
 }
+//# sourceMappingURL=records.d.ts.map

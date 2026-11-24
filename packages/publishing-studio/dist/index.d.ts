@@ -49,3 +49,7 @@ export * from "./factory/createPublicationRunner.js";
 export * from "./factory/createPublicationRunner.js";
 export * from "./factory/createPublicationRunner.js";
 export * from "./input/MemoryPublicationLoader.js";
+export * from "./layout/PageDocument.js";
+export * from "./layout/PaginationEngine.js";
+export * from "./adapters/archive/ArchiveBookAdapter.js";
+export * from "./adapters/archive/ArchiveEventAdapter.js";

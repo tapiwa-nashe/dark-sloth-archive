@@ -1,9 +1,11 @@
+import { notFound } from "next/navigation";
 import Link from "next/link";
 
 import ManuscriptForge from "@/components/creator/ManuscriptForge";
 
 
 export default function CreatorPublishingPage() {
+  if (process.env.NODE_ENV === "production") notFound();
 
   return (
 

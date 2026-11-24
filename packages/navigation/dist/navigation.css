@@ -1,0 +1,166 @@
+:root {
+  --ds-nav-width: 48px;
+  --ds-nav-expanded: 220px;
+}
+
+.ds-navigation-rail {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+
+  z-index: 1000;
+
+  width: var(--ds-nav-width);
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  transition: width 180ms ease;
+}
+
+.ds-navigation-trigger {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.ds-navigation-trigger span {
+  width: 16px;
+  height: 1px;
+
+  background: rgba(255,255,255,0.8);
+}
+
+.ds-navigation-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ds-navigation-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ds-navigation-group-label {
+  opacity: 0;
+  transform: translateX(-8px);
+
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.ds-navigation-item {
+  width: 42px;
+  min-height: 40px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  border: 0;
+  background: transparent;
+
+  color: rgba(255,255,255,0.85);
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition:
+    background 140ms ease,
+    width 180ms ease;
+}
+
+.ds-navigation-icon {
+  width: 28px;
+  min-width: 28px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.ds-navigation-label {
+  opacity: 0;
+  max-width: 0;
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  transition:
+    opacity 160ms ease,
+    max-width 160ms ease;
+}
+
+.ds-navigation-item:hover,
+.ds-navigation-item:focus-visible {
+  background: rgba(255,255,255,0.08);
+}
+
+.ds-navigation-rail:hover {
+  width: var(--ds-nav-width);
+}
+
+.ds-navigation-label,
+.ds-navigation-group-label {
+  opacity: 0;
+  max-width: 0;
+  transform: translateX(-8px);
+}
+
+.ds-navigation-item.is-active {
+  background: rgba(255,255,255,0.12);
+}
+
+
+/* STAGE 0 — dormant state */
+.ds-navigation-content {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
+
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+/* STAGE 1 — icon rail reveal */
+.ds-navigation-rail:hover .ds-navigation-content {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+
+/* STAGE 2 — reveal all labels when an icon is engaged */
+
+.ds-navigation-label,
+.ds-navigation-group-label {
+  transition:
+    opacity 180ms ease 900ms,
+    max-width 180ms ease 900ms,
+    transform 180ms ease 900ms;
+}
+
+.ds-navigation-rail:has(.ds-navigation-item:hover) .ds-navigation-label,
+.ds-navigation-rail:has(.ds-navigation-item:hover) .ds-navigation-label,
+.ds-navigation-rail:has(.ds-navigation-item:hover) .ds-navigation-group-label,
+.ds-navigation-rail:has(.ds-navigation-item:hover) .ds-navigation-group-label {
+  opacity: 1;
+  max-width: 160px;
+  transform: translateX(0);
+
+  transition-delay: 0ms;
+}
+
+.ds-navigation-rail:has(.ds-navigation-item:hover) .ds-navigation-item,
+.ds-navigation-rail:has(.ds-navigation-item:hover) .ds-navigation-item {
+  width: 220px;
+}

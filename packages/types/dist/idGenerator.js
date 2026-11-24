@@ -8,3 +8,4 @@ export function generateCanonicalId(type) {
     }
     return `${type}_${String(counters[type]).padStart(6, "0")}`;
 }
+//# sourceMappingURL=idGenerator.js.map

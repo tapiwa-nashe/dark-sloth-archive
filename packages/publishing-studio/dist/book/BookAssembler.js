@@ -43,9 +43,29 @@ export class BookAssembler {
         }
         for (const chapter of publication.chapters) {
             sections.push({
-                type: "chapter",
-                title: chapter.title,
-                content: chapter.content
+                type: "chapterStart",
+                title: `CHAPTER ${chapter.number}`,
+                content: chapter.title,
+                chapterNumber: chapter.number
+            });
+            if (chapter.recovery) {
+                sections.push({
+                    type: "recovery",
+                    content: chapter.recovery,
+                    chapterNumber: chapter.number
+                });
+            }
+            if (chapter.openingQuestion) {
+                sections.push({
+                    type: "openingQuestion",
+                    content: chapter.openingQuestion,
+                    chapterNumber: chapter.number
+                });
+            }
+            sections.push({
+                type: "chapterContent",
+                content: chapter.content,
+                chapterNumber: chapter.number
             });
         }
         return {

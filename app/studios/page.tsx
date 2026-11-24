@@ -1,7 +1,27 @@
 import Link from "next/link";
 
+function platformBridge(path: string): string | null {
+  const configured = process.env.ARCHIVE_PLATFORM_URL?.trim();
+  const base = configured || (
+    process.env.NODE_ENV === "development" ? "http://localhost:3004" : ""
+  );
+  if (!base) return null;
+
+  try {
+    const parsed = new URL(base);
+    const localDevelopmentHost =
+      process.env.NODE_ENV === "development" &&
+      (parsed.hostname === "localhost" || parsed.hostname === "127.0.0.1");
+    if (parsed.protocol !== "https:" && !localDevelopmentHost) return null;
+    return new URL(path, parsed.origin).toString();
+  } catch {
+    return null;
+  }
+}
 
 export default function StudiosPage() {
+  const helmrUrl = platformBridge("/helmr-hugr");
+  const expeditionUrl = platformBridge("/expedition");
 
   return (
 
@@ -100,7 +120,7 @@ export default function StudiosPage() {
 
 
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
 
 
@@ -126,7 +146,40 @@ export default function StudiosPage() {
                 Identity System
               </p>
 
+              {helmrUrl ? (
+                <a href={helmrUrl} target="_blank" rel="noopener noreferrer"
+                  className="mt-6 inline-flex min-h-11 items-center border border-neutral-700 px-5 py-3 text-xs tracking-[0.18em] uppercase hover:bg-white hover:text-black transition">
+                  Enter HELMR HUGR ↗
+                </a>
+              ) : (
+                <p className="mt-6 text-xs leading-6 text-neutral-500">
+                  HELMR HUGR bridge is awaiting its secure Platform URL configuration.
+                </p>
+              )}
 
+            </article>
+
+            <article className="border border-neutral-800 bg-black/70 rounded-lg p-8">
+              <p className="font-mono text-xs tracking-[0.25em] text-neutral-500 uppercase mb-4">
+                Interactive Recovery
+              </p>
+              <h3 className="text-3xl font-semibold mb-4">
+                THE EXPEDITION
+              </h3>
+              <p className="text-neutral-400 leading-7 mb-6">
+                Enter the recovered world of The Whispering Wilds. Investigate,
+                reconstruct continuity and carry your Archive Identity into the field.
+              </p>
+              {expeditionUrl ? (
+                <a href={expeditionUrl} target="_blank" rel="noopener noreferrer"
+                  className="inline-flex min-h-11 items-center border border-neutral-700 px-5 py-3 text-xs tracking-[0.18em] uppercase hover:bg-white hover:text-black transition">
+                  Enter the Expedition ↗
+                </a>
+              ) : (
+                <p className="text-xs leading-6 text-neutral-500">
+                  Expedition bridge is awaiting its secure Platform URL configuration.
+                </p>
+              )}
             </article>
 
 

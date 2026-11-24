@@ -1,84 +1,41 @@
-import type {
-  Engine
-} from "../contracts/engine.js";
-
+import type { Engine } from "../contracts/engine.js";
 
 export class EngineRegistry {
+  private engines = new Map<string, Engine>();
 
+  register(engine: Engine): void {
+    this.engines.set(engine.identity.id, engine);
+  }
 
-  private engines =
-    new Map<string, Engine>();
+  unregister(id: string): boolean {
+    return this.engines.delete(id);
+  }
 
+  get(id: string): Engine | undefined {
+    return this.engines.get(id);
+  }
 
-  register(
-    engine: Engine
-  ) {
+  getAll(): Engine[] {
+    return Array.from(this.engines.values());
+  }
 
-    this.engines.set(
-      engine.identity.id,
-      engine
+  findByCapability(capabilityId: string): Engine[] {
+    return this.getAll().filter(engine =>
+      engine.capabilities.some(capability =>
+        capability.id === capabilityId
+      )
     );
-
   }
 
-
-
-  get(
-    id: string
-  ) {
-
-    return this.engines.get(
-      id
-    );
-
+  hasEngine(id: string): boolean {
+    return this.engines.has(id);
   }
 
-
-
-  getAll() {
-
-    return Array.from(
-      this.engines.values()
-    );
-
-  }
-
-
-
-  findByCapability(
-    capabilityId: string
-  ) {
-
-    return this.getAll()
-      .filter(
-        engine =>
-          engine.capabilities.some(
-            capability =>
-              capability.id === capabilityId
-          )
-      );
-
-  }
-
-
-
-  hasEngine(
-    id: string
-  ) {
-
-    return this.engines.has(
-      id
-    );
-
-  }
-
-
-
-  count() {
-
+  count(): number {
     return this.engines.size;
-
   }
 
-
+  clear(): void {
+    this.engines.clear();
+  }
 }

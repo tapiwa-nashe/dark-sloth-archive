@@ -1,439 +1,72 @@
 import Link from "next/link";
-
-import {
-  getEdition
-} from "@/lib/publishing/edition";
-
-import GenerateEditionButton from "@/components/publishing/GenerateEditionButton";
-
-export const dynamic = "force-dynamic";
-
+import { notFound } from "next/navigation";
+import { getEdition } from "@/lib/publishing/edition";
 
 type Props = {
-
-  params: Promise<{
-    edition: string;
-  }>;
-
+  params: Promise<{ edition: string }>;
 };
 
+export default async function PublicEditionPage({ params }: Props) {
+  const { edition } = await params;
+  const decoded = decodeURIComponent(edition);
+  const publication = getEdition(decoded);
 
-export default async function EditionPage(
-  {
-    params
-  }: Props
-) {
-
-  const {
-    edition
-  } =
-    await params;
-
-
-  const decoded =
-    decodeURIComponent(
-      edition
-    );
-
-
-  const publication =
-    getEdition(
-      decoded
-    );
-
-
-  if (!publication) {
-
-    return (
-
-      <main className="min-h-screen bg-black text-white px-6 py-20">
-
-        <h1 className="text-4xl font-bold">
-          Edition Not Found
-        </h1>
-
-      </main>
-
-    );
-
-  }
-
+  if (!publication) notFound();
 
   return (
-
     <main className="min-h-screen bg-black text-white px-6 py-20">
-
       <section className="max-w-5xl mx-auto">
-
-
         <p className="font-mono text-xs uppercase tracking-[0.35em] text-neutral-500 mb-6">
-          Publishing Studio // Edition
+          DARK SLOTH // RELEASED EDITION
         </p>
-
-
-        <h1 className="text-5xl font-bold mb-6">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6">
           {publication.title}
         </h1>
-
-
-        {
-          publication.manifest && (
-
-            <section className="border border-neutral-800 bg-neutral-950 rounded-xl p-8 mb-10">
-
-              <h2 className="text-xl font-semibold mb-6">
-                Edition Summary
-              </h2>
-
-
-              <div className="space-y-3 text-neutral-400">
-
-                <p>
-                  Collection:
-                  {" "}
-                  {publication.manifest.collection}
-                </p>
-
-
-                <p>
-                  Engine:
-                  {" "}
-                  {publication.manifest.engine}
-                </p>
-
-
-                <p>
-                  Status:
-                  {" "}
-                  {publication.manifest.status}
-                </p>
-
-
-                <p>
-                  Source Records:
-                  {" "}
-                  {publication.manifest.records?.length ?? 0}
-                </p>
-
-
-                <p>
-                  Artifacts:
-                  {" "}
-                  {publication.manifest.outputs?.length ?? 0}
-                </p>
-
-
-                <p>
-                  Generated:
-                  {" "}
-                  {publication.manifest.generated}
-                </p>
-
-              </div>
-
-            </section>
-
-          )
-        }
-
-
-        {
-          publication.manifest && (
-
-            <section className="border border-neutral-800 bg-neutral-950 rounded-xl p-8 mb-10">
-
-              <h2 className="text-xl font-semibold mb-6">
-                Edition Summary
-              </h2>
-
-
-              <div className="space-y-3 text-neutral-400">
-
-                <p>
-                  Collection:
-                  {" "}
-                  {publication.manifest.collection}
-                </p>
-
-
-                <p>
-                  Engine:
-                  {" "}
-                  {publication.manifest.engine}
-                </p>
-
-
-                <p>
-                  Status:
-                  {" "}
-                  {publication.manifest.status}
-                </p>
-
-
-                <p>
-                  Source Records:
-                  {" "}
-                  {publication.manifest.records?.length ?? 0}
-                </p>
-
-
-                <p>
-                  Artifacts:
-                  {" "}
-                  {publication.manifest.outputs?.length ?? 0}
-                </p>
-
-
-                <p>
-                  Generated:
-                  {" "}
-                  {publication.manifest.generated}
-                </p>
-
-              </div>
-
-            </section>
-
-          )
-        }
-
-
         <div className="border border-neutral-800 bg-neutral-950 rounded-xl p-8 mb-10">
-
-          <h2 className="text-xl font-semibold mb-6">
-            Publishing Controls
-          </h2>
-
-          <p className="text-neutral-400 mb-6">
-            Generate Archive edition artifacts from this collection.
+          <p className="text-neutral-400">Collection: {publication.collection}</p>
+          <p className="text-neutral-400 mt-2">Status: Published</p>
+          <p className="text-neutral-400 mt-2">
+            Released: {new Date(publication.metadata.publishedAt).toLocaleDateString()}
           </p>
-
-          <GenerateEditionButton
-            collection={publication.title}
-          />
-
         </div>
 
-
-        <div className="border border-neutral-800 bg-neutral-950 rounded-xl p-8 mb-10">
-
-          <h2 className="text-xl font-semibold mb-6">
-            Edition Status
-          </h2>
-
-
-          <p className="text-neutral-400">
-            PUBLISHED
-          </p>
-
-
-          <p className="mt-4 text-neutral-400">
-            Engine: Publishing Studio V1
-          </p>
-
-        </div>
-
-
-
         <section className="border border-neutral-800 bg-neutral-950 rounded-xl p-8 mb-10">
-
-          <h2 className="text-xl font-semibold mb-6">
-            Edition Record
-          </h2>
-
-
-          <div className="space-y-3 text-neutral-400">
-
-            <p>
-              Collection:
-              {" "}
-              {publication.title}
-            </p>
-
-
-            <p>
-              Engine:
-              {" "}
-              Publishing Studio V1
-            </p>
-
-
-            <p>
-              Status:
-              {" "}
-              VERIFIED
-            </p>
-
-          </div>
-
-        </section>
-
-
-
-        {
-          publication.manifest && (
-
-            <section className="border border-neutral-800 bg-neutral-950 rounded-xl p-8 mb-10">
-
-              <h2 className="text-xl font-semibold mb-6">
-                Archive Manifest
-              </h2>
-
-
-              <div className="space-y-3 text-neutral-400">
-
-                <p>
-                  Edition ID:
-                  {" "}
-                  {publication.manifest.id}
-                </p>
-
-
-                <p>
-                  Collection:
-                  {" "}
-                  {publication.manifest.collection}
-                </p>
-
-
-                <p>
-                  Engine:
-                  {" "}
-                  {publication.manifest.engine}
-                </p>
-
-
-                <p>
-                  Verification:
-                  {" "}
-                  {publication.manifest.status}
-                </p>
-
-
-                <p>
-                  Source Records:
-                  {" "}
-                  {publication.manifest.records?.length ?? 0}
-                </p>
-
-
-                <p>
-                  Artifacts:
-                  {" "}
-                  {publication.manifest.outputs?.length ?? 0}
-                </p>
-
-
-                <p>
-                  Generated:
-                  {" "}
-                  {publication.manifest.generated}
-                </p>
-
-              </div>
-
-            </section>
-
-          )
-        }
-
-
-
-        <section className="border border-neutral-800 bg-neutral-950 rounded-xl p-8 mb-10">
-
-          <h2 className="text-xl font-semibold mb-6">
-            Source Recoveries
-          </h2>
-
-
+          <h2 className="text-xl font-semibold mb-6">Source Records</h2>
           <div className="space-y-3">
-
-          {
-            publication.records.map(
-              record => (
-
-                <Link
-                  key={record.id}
-                  href={`/records/${record.id}`}
-                  className="block border border-neutral-800 rounded-lg p-4 hover:border-neutral-500 transition"
-                >
-
-                  <div className="font-semibold">
-                    REC-{record.id}
-                  </div>
-
-
-                  <div className="text-neutral-400 text-sm mt-1">
-                    {record.title}
-                  </div>
-
-                </Link>
-
-              )
-            )
-          }
-
+            {publication.records.map((record: { id: string; title: string }) => (
+              <Link
+                key={record.id}
+                href={`/records/${record.id}`}
+                className="block border border-neutral-800 rounded-lg p-4 hover:border-neutral-500 transition"
+              >
+                <span className="font-semibold">REC-{record.id}</span>
+                <span className="block text-neutral-400 text-sm mt-1">{record.title}</span>
+              </Link>
+            ))}
           </div>
-
         </section>
-
-
-
 
         <section className="mb-10">
-
-          <h2 className="text-2xl font-semibold mb-5">
-            Outputs
-          </h2>
-
-
+          <h2 className="text-2xl font-semibold mb-5">Released Files</h2>
           <div className="space-y-3">
-
-          {
-            publication.files.map(
-              file => (
-
-                <Link
-                  key={file}
-                  href={`/api/artifacts/${encodeURIComponent(publication.title)}/${encodeURIComponent(file)}`}
-                  target="_blank"
-                  className="flex items-center justify-between border border-neutral-800 rounded-lg p-4 hover:border-neutral-500 transition"
-                >
-
-                  <span>
-                    {file}
-                  </span>
-
-
-                  <span className="text-xs uppercase tracking-[0.2em] text-neutral-500">
-                    Open →
-                  </span>
-
-                </Link>
-
-              )
-            )
-          }
-
+            {publication.files.map((file: string) => (
+              <Link
+                key={file}
+                href={`/api/artifacts/${encodeURIComponent(decoded)}/${encodeURIComponent(file)}`}
+                target="_blank"
+                className="flex items-center justify-between border border-neutral-800 rounded-lg p-4 hover:border-neutral-500 transition"
+              >
+                <span>{file}</span>
+                <span className="text-xs uppercase tracking-[0.2em] text-neutral-500">Open →</span>
+              </Link>
+            ))}
           </div>
-
-
         </section>
 
-
-
-        <Link
-          href="/studios/publishing"
-          className="text-sm text-neutral-400 underline"
-        >
-          ← Back to Publishing Studio
+        <Link href="/studios/publishing" className="text-sm text-neutral-400 underline">
+          ← Back to released editions
         </Link>
-
-
       </section>
-
     </main>
-
   );
-
 }

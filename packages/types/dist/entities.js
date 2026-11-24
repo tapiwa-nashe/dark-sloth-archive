@@ -11,3 +11,4 @@ export function createEntity(type, name, aliases = [], description) {
         updatedAt: new Date()
     };
 }
+//# sourceMappingURL=entities.js.map

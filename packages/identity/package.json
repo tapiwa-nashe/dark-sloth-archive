@@ -2,9 +2,6 @@
   "name": "@dark-sloth/identity",
   "version": "1.0.0",
   "type": "module",
-  "dependencies": {
-    "@dark-sloth/types": "1.0.0"
-  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -12,5 +9,12 @@
     }
   },
   "main": "./dist/index.js",
-  "types": "./dist/index.d.ts"
+  "types": "./dist/index.d.ts",
+  "dependencies": {},
+  "peerDependencies": {
+    "@dark-sloth/core": "1.0.0"
+  },
+  "devDependencies": {
+    "@dark-sloth/core": "1.0.0"
+  }
 }

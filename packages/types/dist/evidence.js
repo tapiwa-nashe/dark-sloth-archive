@@ -8,3 +8,4 @@ export function createEvidence(type, source, confidence) {
         createdAt: new Date(),
     };
 }
+//# sourceMappingURL=evidence.js.map

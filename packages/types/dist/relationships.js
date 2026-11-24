@@ -10,3 +10,4 @@ export function createRelationship(from, to, type, confidence = 1, evidence = []
         createdAt: new Date(),
     };
 }
+//# sourceMappingURL=relationships.js.map

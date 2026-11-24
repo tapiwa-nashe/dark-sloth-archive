@@ -5,7 +5,6 @@ import type { AssistantSession } from "@dark-sloth/types";
 
 function createSession(): AssistantSession {
   const now = new Date();
-
   return {
     id: "archive-api-session",
     createdAt: now,
@@ -17,14 +16,18 @@ function createSession(): AssistantSession {
 }
 
 function createService() {
-  return new ArchiveService({
-    session: createSession(),
-  });
+  return new ArchiveService({ session: createSession() });
 }
 
-export async function GET(request: NextRequest) {
-  const service = createService();
+function unavailableInProduction() {
+  return NextResponse.json({ error: "Not found" }, { status: 404 });
+}
 
+/** Operational diagnostics are development-only; the public site is not the Platform API. */
+export async function GET(request: NextRequest) {
+  if (process.env.NODE_ENV === "production") return unavailableInProduction();
+
+  const service = createService();
   const { searchParams } = request.nextUrl;
   const id = searchParams.get("id");
   const type = searchParams.get("type");
@@ -41,7 +44,6 @@ export async function GET(request: NextRequest) {
 
   if (publishing === "health") {
     const applicationHealth = service.health();
-
     return NextResponse.json({
       operation: "publishing-health",
       application: {
@@ -54,10 +56,7 @@ export async function GET(request: NextRequest) {
   }
 
   if (id) {
-    return NextResponse.json({
-      operation: "findEntity",
-      result: service.findEntity(id) ?? null,
-    });
+    return NextResponse.json({ operation: "findEntity", result: service.findEntity(id) ?? null });
   }
 
   if (type) {
@@ -78,50 +77,10 @@ export async function GET(request: NextRequest) {
   });
 }
 
-
-export async function POST(request: NextRequest) {
-  const service = createService();
-  const body = await request.json();
-
-  const source = body?.source;
-  const options = body?.options ?? {};
-
-  if (source === undefined || source === null) {
-    return NextResponse.json(
-      {
-        operation: "publish",
-        error: "Missing required request field: source",
-      },
-      { status: 400 }
-    );
-  }
-
-  try {
-    const result = await service.publish(source, options);
-
-    return NextResponse.json({
-      operation: "publish",
-      result,
-    });
-  } catch (error) {
-    const message =
-      error instanceof Error
-        ? error.message
-        : "Publication failed.";
-
-    if (
-      message ===
-      "Library publication requires explicit source.series and source.volume."
-    ) {
-      return NextResponse.json(
-        {
-          operation: "publish",
-          error: message,
-        },
-        { status: 400 }
-      );
-    }
-
-    throw error;
-  }
+/** Writes are not accepted by the public Archive application, even in development. */
+export async function POST() {
+  return NextResponse.json(
+    { error: "Publishing and operational writes belong to the authenticated Archive Platform." },
+    { status: 404 },
+  );
 }

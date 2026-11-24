@@ -1,91 +1,107 @@
 import { writeFile } from "node:fs/promises";
-import { Document, HeadingLevel, Packer, PageBreak, Paragraph, TextRun } from "docx";
+import { Document, HeadingLevel, Packer, Paragraph, TextRun } from "docx";
 import { publicationFilename } from "../../util/filename.js";
 import { outputPath } from "../../util/outputPath.js";
+import { LayoutEngine } from "../../layout/LayoutEngine.js";
 export class DocxExporter {
     async export(publication) {
-        const baseName = publicationFilename(publication.publication.metadata.title);
-        const filename = `${baseName}.docx`;
+        const filename = `${publicationFilename(publication.publication.metadata.title)}.docx`;
         const folder = await outputPath(publication.publication.metadata.title);
-        const sections = [];
-        let first = true;
-        for (const section of publication.book.sections) {
-            if (!first) {
-                sections.push(new Paragraph({
-                    children: [
-                        new PageBreak()
-                    ]
-                }));
-            }
-            first = false;
-            switch (section.type) {
+        const layout = new LayoutEngine().build(publication.book);
+        const paragraphs = [];
+        for (const block of layout.blocks) {
+            switch (block.type) {
                 case "title":
-                    sections.push(new Paragraph({
+                    paragraphs.push(new Paragraph({
                         heading: HeadingLevel.TITLE,
                         children: [
                             new TextRun({
-                                text: section.title ?? "",
-                                bold: publication.profile.theme.title.bold,
-                                size: publication.profile.theme.title.size * 2
-                            })
-                        ]
-                    }), new Paragraph({
-                        children: [
-                            new TextRun({
-                                text: section.content,
-                                size: publication.profile.theme.body.size * 2
+                                text: block.text,
+                                bold: true,
+                                size: 36
                             })
                         ]
                     }));
                     break;
-                case "chapter":
-                    sections.push(new Paragraph({
+                case "chapterHeading":
+                    paragraphs.push(new Paragraph({
+                        pageBreakBefore: true,
                         heading: HeadingLevel.HEADING_1,
                         children: [
                             new TextRun({
-                                text: section.title ?? "",
-                                bold: publication.profile.theme.title.bold,
-                                size: publication.profile.theme.title.size * 2
+                                text: block.text,
+                                bold: true,
+                                size: 32
                             })
                         ]
-                    }), ...section.content
-                        .split(/\n\s*\n/)
-                        .filter(Boolean)
-                        .map(paragraph => new Paragraph({
-                        children: [
-                            new TextRun({
-                                text: paragraph.trim(),
-                                size: publication.profile.theme.body.size * 2
-                            })
-                        ]
-                    })));
+                    }));
                     break;
-                default:
-                    sections.push(new Paragraph({
-                        heading: HeadingLevel.HEADING_1,
-                        children: [
-                            new TextRun(section.type
-                                .charAt(0)
-                                .toUpperCase() +
-                                section.type.slice(1))
-                        ]
-                    }), ...section.content
-                        .split(/\n\s*\n/)
-                        .filter(Boolean)
-                        .map(paragraph => new Paragraph({
+                case "recoveryMarker":
+                    paragraphs.push(new Paragraph({
+                        heading: HeadingLevel.HEADING_2,
                         children: [
                             new TextRun({
-                                text: paragraph.trim(),
-                                size: publication.profile.theme.body.size * 2
+                                text: block.text,
+                                bold: true,
+                                size: 26
                             })
                         ]
-                    })));
+                    }));
+                    break;
+                case "openingQuestion":
+                    paragraphs.push(new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: block.text,
+                                italics: true,
+                                size: 24
+                            })
+                        ]
+                    }));
+                    break;
+                case "paragraph":
+                    paragraphs.push(new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: block.text,
+                                size: 24
+                            })
+                        ]
+                    }));
+                    break;
+                case "toc":
+                    paragraphs.push(new Paragraph({
+                        heading: HeadingLevel.HEADING_1,
+                        children: [
+                            new TextRun({
+                                text: block.title,
+                                bold: true,
+                                size: 32
+                            })
+                        ]
+                    }));
+                    for (const entry of block.entries) {
+                        paragraphs.push(new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: entry.title,
+                                    size: 24
+                                })
+                            ]
+                        }));
+                    }
+                    break;
+                case "pageBreak":
+                    paragraphs.push(new Paragraph({
+                        pageBreakBefore: true
+                    }));
+                    break;
             }
         }
         const document = new Document({
             sections: [
                 {
-                    children: sections
+                    children: paragraphs
                 }
             ]
         });

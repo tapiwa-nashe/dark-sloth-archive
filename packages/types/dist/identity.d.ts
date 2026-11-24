@@ -14,3 +14,4 @@ export interface Identity {
     createdAt: string;
     updatedAt: string;
 }
+//# sourceMappingURL=identity.d.ts.map

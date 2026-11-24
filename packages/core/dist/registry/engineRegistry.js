@@ -3,6 +3,9 @@ export class EngineRegistry {
     register(engine) {
         this.engines.set(engine.identity.id, engine);
     }
+    unregister(id) {
+        return this.engines.delete(id);
+    }
     get(id) {
         return this.engines.get(id);
     }
@@ -10,13 +13,15 @@ export class EngineRegistry {
         return Array.from(this.engines.values());
     }
     findByCapability(capabilityId) {
-        return this.getAll()
-            .filter(engine => engine.capabilities.some(capability => capability.id === capabilityId));
+        return this.getAll().filter(engine => engine.capabilities.some(capability => capability.id === capabilityId));
     }
     hasEngine(id) {
         return this.engines.has(id);
     }
     count() {
         return this.engines.size;
+    }
+    clear() {
+        this.engines.clear();
     }
 }

@@ -10,3 +10,4 @@ export interface Entity {
     updatedAt: Date;
 }
 export declare function createEntity(type: EntityType, name: string, aliases?: string[], description?: string): Entity;
+//# sourceMappingURL=entities.d.ts.map

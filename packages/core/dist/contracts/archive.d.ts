@@ -1,5 +1,17 @@
 import type { Entity } from "./entity.js";
 import type { Relationship } from "./relationship.js";
+export interface ArchiveSource {
+    id: string;
+    title: string;
+    origin: string;
+    createdAt: string;
+}
+export interface ArchiveEvidence {
+    id: string;
+    text: string;
+    sourceId: string;
+    createdAt: string;
+}
 export interface ArchiveClaim {
     id: string;
     statement: string;
@@ -12,12 +24,7 @@ export interface ArchiveClaim {
 export interface ArchiveRecord {
     id: string;
     title: string;
-    source: {
-        id: string;
-        title: string;
-        origin: string;
-        createdAt: string;
-    };
+    source: ArchiveSource;
     content: string;
     claims: ArchiveClaim[];
     entities: Entity[];

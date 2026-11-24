@@ -1,4 +1,5 @@
-import type { Entity, Relationship } from "./index.js";
+import type { Entity } from "./entities.js";
+import type { Relationship } from "./relationships.js";
 
 export interface ArchiveSource {
   id: string;

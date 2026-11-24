@@ -10,3 +10,4 @@ export interface Relationship {
     createdAt: Date;
 }
 export declare function createRelationship(from: string, to: string, type: RelationshipType, confidence?: number, evidence?: Evidence[]): Relationship;
+//# sourceMappingURL=relationships.d.ts.map

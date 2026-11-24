@@ -1,58 +1,110 @@
-import { randomUUID } from "node:crypto";
+import { createHash } from "node:crypto";
+function stableId(title) {
+    return createHash("sha1")
+        .update(title.trim().toLowerCase())
+        .digest("hex")
+        .slice(0, 12);
+}
+function wordCount(value) {
+    return value.split(/\s+/).filter(Boolean).length;
+}
 export class MarkdownPublicationParser {
     parse(content) {
         const lines = content.split(/\r?\n/);
         const chapters = [];
-        let currentTitle = "Introduction";
+        let chapterNumber = 0;
+        let title = "Introduction";
+        let recovery;
+        let openingQuestion;
         let currentPart;
         let buffer = [];
-        let number = 1;
         const pushChapter = () => {
             const body = buffer.join("\n").trim();
-            if (body.length === 0 &&
-                currentTitle === "Introduction") {
-                return;
+            if (chapterNumber > 0 &&
+                (body || title)) {
+                chapters.push({
+                    id: `chapter-${String(chapterNumber).padStart(3, "0")}`,
+                    number: chapterNumber,
+                    title: title.trim() ||
+                        `Chapter ${chapterNumber}`,
+                    recovery,
+                    openingQuestion,
+                    content: body,
+                    words: wordCount(body),
+                    part: currentPart
+                });
             }
-            chapters.push({
-                id: `chapter-${number}`,
-                number,
-                part: currentPart,
-                title: currentTitle,
-                content: body,
-                words: body
-                    .split(/\s+/)
-                    .filter(Boolean)
-                    .length
-            });
-            number++;
             buffer = [];
+            recovery = undefined;
+            openingQuestion = undefined;
         };
-        for (const line of lines) {
-            if (line.startsWith("## ")) {
-                currentPart =
-                    line.substring(3).trim();
-                continue;
-            }
-            if (line.startsWith("# ")) {
+        for (const rawLine of lines) {
+            const line = rawLine.trim();
+            const chapterMatch = line.match(/^(?:#{1,3}\s*)?CHAPTER\s+(\d+)(?:\s*[—–:-]\s*(.+))?$/i);
+            if (chapterMatch) {
                 pushChapter();
-                currentTitle =
-                    line.substring(2).trim();
+                chapterNumber =
+                    Number(chapterMatch[1]);
+                title =
+                    chapterMatch[2]?.trim() ||
+                        `Chapter ${chapterNumber}`;
                 continue;
             }
-            buffer.push(line);
+            const partMatch = line.match(/^(?:#{1,3}\s*)?PART\s+(?:[IVXLCDM]+|\d+)(?:\s*[—–:-]\s*)?(.+)?$/i);
+            if (partMatch &&
+                chapterNumber === 0) {
+                currentPart =
+                    line
+                        .replace(/^#{1,3}\s*/, "")
+                        .trim();
+                continue;
+            }
+            if (/^##\s+Recovery\b/i.test(line)) {
+                recovery =
+                    line
+                        .replace(/^##\s+Recovery\s*[:—–-]?\s*/i, "")
+                        .trim();
+                continue;
+            }
+            if (/^###\s+Opening Question\b/i.test(line)) {
+                continue;
+            }
+            if (chapterNumber > 0 &&
+                line.startsWith("**") &&
+                line.endsWith("**") &&
+                !openingQuestion) {
+                openingQuestion =
+                    line
+                        .replace(/^\*\*|\*\*$/g, "")
+                        .trim();
+                continue;
+            }
+            if (chapterNumber > 0 &&
+                /^#\s+/.test(line)) {
+                title =
+                    line
+                        .replace(/^#\s+/, "")
+                        .trim();
+                continue;
+            }
+            buffer.push(rawLine);
         }
         pushChapter();
+        const titleFromContent = lines
+            .map(line => line
+            .replace(/^#{1,3}\s*/, "")
+            .trim())
+            .find(Boolean);
+        const publicationTitle = titleFromContent ||
+            "Untitled Publication";
         return {
-            id: randomUUID(),
+            id: `pub-${stableId(publicationTitle)}`,
             metadata: {
-                title: chapters[0]?.title ??
-                    "Untitled Publication",
+                title: publicationTitle,
                 author: "Unknown",
                 edition: "1.0",
                 language: "en",
                 current: "draft",
-                publisher: undefined,
-                description: undefined,
                 keywords: []
             },
             chapters

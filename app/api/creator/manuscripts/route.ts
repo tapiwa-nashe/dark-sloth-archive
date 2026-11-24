@@ -35,6 +35,10 @@ function ensureStorage() {
 export async function POST(
   request: Request
 ) {
+  if (process.env.NODE_ENV === "production") {
+    return new Response(null, { status: 404 });
+  }
+
 
   ensureStorage();
 

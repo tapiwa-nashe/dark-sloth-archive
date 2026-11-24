@@ -1,3 +1,4 @@
+import { dirname } from "node:path";
 import { PublicationPipeline } from "../pipeline/PublicationPipeline.js";
 import { FrontMatterLoader } from "../frontmatter/FrontMatterLoader.js";
 import { ManifestLoader } from "../manifest/ManifestLoader.js";
@@ -7,6 +8,8 @@ import { PublicationOutput } from "../output/PublicationOutput.js";
 import { DefaultExportProfile } from "../profile/DefaultExportProfile.js";
 import { PublicationReporter } from "../report/PublicationReporter.js";
 import { PublishLogger } from "../report/PublishLogger.js";
+import { createLibraryPublicationHandoff } from "../bridge/LibraryHandoff.js";
+import { publishToLibrary } from "../bridge/LibraryPublisher.js";
 export class PublicationRunner {
     loader;
     renderer;
@@ -22,7 +25,7 @@ export class PublicationRunner {
         this.renderer = renderer;
         this.exporter = exporter;
     }
-    async publish(source) {
+    async publish(source, options = {}) {
         const publication = await this.loader.load(source);
         const pipeline = new PublicationPipeline(publication);
         const renderTree = pipeline.renderTree();
@@ -59,6 +62,14 @@ export class PublicationRunner {
         const outputs = await this.exporter.export(publicationPackage);
         await this.reporter.write(publicationPackage, outputs);
         await this.logger.write(publicationPackage, outputs);
+        if (options.publishToLibrary) {
+            const markdownPath = await publicationPackage
+                .output
+                .markdown;
+            const outputDirectory = dirname(markdownPath);
+            const handoff = await createLibraryPublicationHandoff(publication, outputDirectory);
+            await publishToLibrary(handoff, options.libraryRoot);
+        }
         return outputs;
     }
 }

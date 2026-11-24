@@ -1,7 +1,7 @@
 import type {
   Entity,
   Identity,
-} from "@dark-sloth/types";
+} from "@dark-sloth/core";
 
 import { randomUUID } from "node:crypto";
 

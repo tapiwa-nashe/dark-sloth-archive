@@ -11,7 +11,7 @@ import {
 import type {
   Entity,
   Identity
-} from "@dark-sloth/types";
+} from "@dark-sloth/core";
 
 
 export interface IdentityGraphResult {

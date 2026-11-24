@@ -4,13 +4,10 @@ export class LayoutEngine {
         for (const section of book.sections) {
             switch (section.type) {
                 case "title":
-                    if (section.title) {
-                        blocks.push({
-                            type: "heading",
-                            level: 1,
-                            text: section.title
-                        });
-                    }
+                    blocks.push({
+                        type: "title",
+                        text: section.title ?? "Untitled"
+                    });
                     blocks.push({
                         type: "paragraph",
                         text: section.content
@@ -23,20 +20,37 @@ export class LayoutEngine {
                         entries: section.content
                             .split("\n")
                             .filter(Boolean)
-                            .map(title => ({
-                            title,
+                            .map((title, index) => ({
+                            title: `Chapter ${index + 1} — ${title}`,
                             level: 1
                         }))
                     });
                     break;
-                case "chapter":
-                    if (section.title) {
-                        blocks.push({
-                            type: "heading",
-                            level: 1,
-                            text: section.title
-                        });
-                    }
+                case "chapterStart":
+                    blocks.push({
+                        type: "pageBreak"
+                    });
+                    blocks.push({
+                        type: "chapterHeading",
+                        text: section.title ??
+                            section.content,
+                        chapterNumber: section.chapterNumber
+                    });
+                    break;
+                case "recovery":
+                    blocks.push({
+                        type: "recoveryMarker",
+                        text: section.content,
+                        chapterNumber: section.chapterNumber
+                    });
+                    break;
+                case "openingQuestion":
+                    blocks.push({
+                        type: "openingQuestion",
+                        text: section.content
+                    });
+                    break;
+                case "chapterContent":
                     for (const paragraph of section.content
                         .split(/\n\s*\n/)
                         .filter(Boolean)) {
@@ -48,18 +62,10 @@ export class LayoutEngine {
                     break;
                 default:
                     blocks.push({
-                        type: "heading",
-                        level: 1,
-                        text: section.type
-                    });
-                    blocks.push({
                         type: "paragraph",
                         text: section.content
                     });
             }
-            blocks.push({
-                type: "pageBreak"
-            });
         }
         return {
             blocks

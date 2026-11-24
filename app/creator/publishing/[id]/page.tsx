@@ -1,6 +1,8 @@
+import { notFound } from "next/navigation";
 import Link from "next/link";
 
 import ExportActions from "@/components/creator/ExportActions";
+import CreatorPreviewer from "@/components/creator/CreatorPreviewer";
 
 import {
   getManuscript
@@ -21,6 +23,7 @@ export default async function ManuscriptWorkspace(
     params
   }:Props
 ) {
+  if (process.env.NODE_ENV === "production") notFound();
 
   const {
     id
@@ -108,6 +111,9 @@ export default async function ManuscriptWorkspace(
 
         </section>
 
+
+
+        <CreatorPreviewer manuscript={manuscript} />
 
 
         <section className="border border-neutral-800 bg-neutral-950 rounded-xl p-8 mb-8">

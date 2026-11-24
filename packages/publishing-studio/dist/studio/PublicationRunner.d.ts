@@ -1,6 +1,10 @@
 import type { PublicationLoader } from "../input/PublicationLoader.js";
 import type { Renderer } from "../rendering/Renderer.js";
 import type { ExportManager } from "../export/ExportManager.js";
+export interface PublicationRunOptions {
+    publishToLibrary?: boolean;
+    libraryRoot?: string;
+}
 export declare class PublicationRunner {
     private readonly loader;
     private readonly renderer;
@@ -12,5 +16,5 @@ export declare class PublicationRunner {
     private readonly assembler;
     private readonly layoutEngine;
     constructor(loader: PublicationLoader, renderer: Renderer, exporter: ExportManager);
-    publish(source: unknown): Promise<string[]>;
+    publish(source: unknown, options?: PublicationRunOptions): Promise<string[]>;
 }

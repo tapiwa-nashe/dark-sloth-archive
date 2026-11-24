@@ -3,7 +3,7 @@ import {
   createRelationship,
   type Entity,
   type Relationship
-} from "@dark-sloth/types";
+} from "@dark-sloth/core";
 
 
 export interface PublicationManifest {

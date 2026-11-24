@@ -40,3 +40,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 output/
+# Local/private manuscript working data
+/data/manuscripts/
+
+# Temporary type-consolidation audit snapshots
+.*types-consolidation*
