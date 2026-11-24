@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getPublicArchiveFeed } from "@/lib/public-content/client";
+import PublicArchiveQrCard from "@/components/PublicArchiveQrCard";
 
 export const dynamic = "force-dynamic";
 
@@ -31,6 +32,7 @@ export default async function RecoveriesPage() {
                 <p className="mb-3 text-xs tracking-[0.3em] text-zinc-500">{recovery.canonicalId}</p>
                 <h2 className="mb-3 text-2xl font-semibold">{recovery.title}</h2>
                 <p className="text-zinc-400 leading-relaxed">{recovery.summary}</p>
+                <PublicArchiveQrCard canonicalId={recovery.canonicalId} title={recovery.title} />
                 <div className="mt-5 flex flex-wrap gap-4 text-xs text-zinc-500">
                   <span>{recovery.recoveryType}</span>
                   {participation ? <span>{participation.witnessCount} witnesses</span> : null}

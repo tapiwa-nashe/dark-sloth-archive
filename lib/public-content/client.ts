@@ -54,9 +54,12 @@ export async function getPublicArchiveFeed(): Promise<PublicArchiveFeed> {
   }
 
   try {
+    const bypass = process.env.ARCHIVE_PLATFORM_PUBLIC_API_BYPASS;
+    const headers: Record<string, string> = { Accept: "application/json" };
+    if (bypass) headers["x-vercel-protection-bypass"] = bypass;
     const response = await fetch(new URL("/api/public/archive", origin), {
       method: "GET",
-      headers: { Accept: "application/json" },
+      headers,
       cache: "no-store",
       signal: AbortSignal.timeout(5000),
     });

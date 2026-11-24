@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getEdition } from "@/lib/publishing/edition";
+import PublicArchiveQrCard from "@/components/PublicArchiveQrCard";
 
 type Props = {
   params: Promise<{ edition: string }>;
@@ -22,6 +23,7 @@ export default async function PublicEditionPage({ params }: Props) {
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
           {publication.title}
         </h1>
+        <PublicArchiveQrCard canonicalId={"BOOK-" + decoded} title={publication.title} />
         <div className="border border-neutral-800 bg-neutral-950 rounded-xl p-8 mb-10">
           <p className="text-neutral-400">Collection: {publication.collection}</p>
           <p className="text-neutral-400 mt-2">Status: Published</p>

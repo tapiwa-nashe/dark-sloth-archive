@@ -8,6 +8,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/collections",
     "/atlas",
+    "/knowledge-graph",
+    "/engines",
     "/research",
     "/records",
     "/books",

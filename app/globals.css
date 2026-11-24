@@ -5220,3 +5220,33 @@ margin-bottom:40px;
 .archive-sidebar:hover,.archive-sidebar:focus-within,.archive-sidebar.is-open{overflow-y:auto!important;scrollbar-width:thin;scrollbar-color:#444 transparent}
 .archive-sidebar::-webkit-scrollbar{width:4px}
 .archive-sidebar::-webkit-scrollbar-thumb{background:#444}
+
+
+/* PUBLIC RECORD QR AND PARTICIPATION GATEWAY V1 */
+.record-qr-card,.record-platform-gate{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:center;border:1px solid #292929;background:linear-gradient(120deg,#101010,#050505);padding:clamp(24px,4vw,44px);margin:40px 0 56px}
+.record-feature-kicker{font-size:10px;letter-spacing:.28em;color:#a6a096;margin-bottom:14px}
+.record-qr-copy h2,.record-platform-gate h2{font-size:clamp(24px,3vw,38px);line-height:1.1;font-weight:600;margin-bottom:12px}
+.record-qr-copy>p:not(.record-feature-kicker),.record-platform-gate p:not(.record-feature-kicker){max-width:620px;color:#aaa;line-height:1.8}
+.record-qr-copy code{display:block;margin-top:18px;color:#e6e0d6;font-size:13px}
+.record-qr-url{display:block;margin-top:8px;color:#888;font-size:12px;overflow-wrap:anywhere}
+.record-qr-download{display:inline-flex;margin-top:22px;padding:12px 16px;border:1px solid #777;color:#fff;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.record-qr-image{display:flex;flex-direction:column;align-items:center;gap:10px;background:#fff;color:#111;padding:12px;min-width:204px}
+.record-qr-image img{display:block;width:180px;height:180px;image-rendering:pixelated}
+.record-qr-image small{font-size:9px;letter-spacing:.16em}
+.record-qr-preview-note{display:block;margin-top:16px;color:#9c958a;font-size:11px;line-height:1.5}
+.record-platform-gate{grid-template-columns:minmax(0,1fr) auto;background:#0a0a0a}
+.record-platform-gate small{display:block;margin-top:14px;color:#8b8b8b;line-height:1.6;max-width:680px}
+.record-platform-gate>a{display:inline-flex;white-space:nowrap;border:1px solid #777;padding:14px 18px;color:#fff;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.record-graph-link{margin:32px 0;color:#d2cabe}
+.public-graph-list{border-top:1px solid #303030}
+.public-graph-list article{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:18px;align-items:center;padding:20px 0;border-bottom:1px solid #252525}
+.public-graph-list article a{display:grid;gap:7px;color:#eee}
+.public-graph-list article a span,.archive-graph-nodes a span{font-size:10px;letter-spacing:.18em;color:#a49d91}
+.public-graph-list article a strong{font-size:15px;font-weight:500}
+.public-graph-relation{font-size:9px;letter-spacing:.16em;color:#aaa}
+.archive-graph-nodes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid #292929;border-left:1px solid #292929}
+.archive-graph-nodes a{display:grid;gap:9px;align-content:start;min-height:125px;padding:18px;border-right:1px solid #292929;border-bottom:1px solid #292929;color:#eee}
+.archive-graph-nodes a.is-connected{background:#111}
+.archive-graph-nodes a strong{font-size:14px;font-weight:500}
+.archive-graph-nodes a small{font-size:9px;letter-spacing:.12em;color:#89847b}
+@media(max-width:700px){.record-qr-card,.record-platform-gate{grid-template-columns:1fr}.record-qr-image{justify-self:start}.record-platform-gate>a{justify-self:start;white-space:normal}.public-graph-list article{grid-template-columns:1fr;gap:10px}.public-graph-relation{padding-left:12px}.archive-graph-nodes{grid-template-columns:repeat(2,minmax(0,1fr))}}

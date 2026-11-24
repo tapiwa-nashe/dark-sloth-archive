@@ -6,6 +6,8 @@ import { records } from "../../../lib/records";
 import { collections } from "../../../lib/collections";
 import { getRecordContent } from "../../../lib/archive";
 import { getRecordProvenance } from "../../../lib/record-provenance";
+import RecordQrCard from "../../../components/RecordQrCard";
+import PlatformFeatureGate from "../../../components/PlatformFeatureGate";
 
 export default async function RecordPage({
   params,
@@ -52,6 +54,8 @@ export default async function RecordPage({
         <h1 className="record-title">{data.title || record.title}</h1>
         <p className="record-detail-classification">{record.classification}</p>
       </header>
+
+      <RecordQrCard recordId={record.id} title={data.title || record.title} />
 
       <section className="record-dossier" aria-label="Record information">
         <div>
@@ -174,13 +178,14 @@ export default async function RecordPage({
         </div>
       </section>
 
+      <PlatformFeatureGate feature="Witness this record" description="Participants can add a witness action, contribute annotations and support the record’s continuing examination through the Archive Platform. These actions are not submitted from this public page." />
+
       <section className="record-participation-note" aria-label="Public participation status">
-        <p>WITNESSING &amp; ANNOTATIONS</p>
-        <span>
-          Public participation data is not connected to this record page. No witness count,
-          participant identity, or annotation excerpt is displayed here.
-        </span>
+        <p>PUBLIC PARTICIPATION STATUS</p>
+        <span>Public witness counts, participant identities and annotation excerpts are not currently connected to this public record page.</span>
       </section>
+
+      <p className="record-graph-link"><Link href="/knowledge-graph">Explore the public Knowledge Graph →</Link></p>
 
       <footer className="record-detail-footer">
         <Link href="/records">← RETURN TO RECORDS</Link>

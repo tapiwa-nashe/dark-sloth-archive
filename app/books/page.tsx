@@ -182,6 +182,13 @@ export default function BooksPage() {
           </div>
         </section>
 
+        <section className="mb-14 border border-neutral-800 bg-black/60 p-6 md:p-8">
+          <p className="font-mono text-[10px] tracking-[0.22em] uppercase text-neutral-500 mb-3">PUBLIC LIBRARY / CATALOGUE ACCESS</p>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-3">Browse the collection. Read inside the Platform.</h2>
+          <p className="max-w-3xl text-sm leading-7 text-neutral-400 mb-5">This public catalogue lets visitors discover books, inspect covers and publication details, and view released artifacts. The full digital reading experience, chapter navigation and participant reading tools are reserved for the Archive Platform.</p>
+          <Link href="/platform" className="inline-flex items-center border border-neutral-600 px-5 py-3 text-xs tracking-[0.16em] uppercase hover:bg-white hover:text-black transition">Continue to the Archive Platform →</Link>
+        </section>
+
         <BookSeries
           title="The Dark Sloth Codex"
           subtitle="Field logs, recovered language, Wilds records, substrate fragments, and vault investigations."
@@ -350,18 +357,20 @@ function BookSeries({
               {book.description}
             </p>
 
-            <div className="mt-6 flex items-center justify-between gap-4">
-              <span className="font-mono text-[10px] tracking-[0.18em] uppercase text-neutral-500">
-                Retail edition listing
-              </span>
-
+            <div className="mt-6 grid gap-2">
+              <Link
+                href="/platform"
+                className="inline-flex items-center justify-center border border-neutral-500 px-3 py-3 font-mono text-[10px] tracking-[0.16em] uppercase text-white transition hover:bg-white hover:text-black"
+              >
+                Continue to Platform reading →
+              </Link>
               <a
                 href={book.amazon}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-[10px] tracking-[0.18em] uppercase text-white border border-neutral-700 px-3 py-2 hover:bg-white hover:text-black transition whitespace-nowrap"
+                className="inline-flex items-center justify-center border border-neutral-800 px-3 py-2 font-mono text-[10px] tracking-[0.16em] uppercase text-neutral-400 transition hover:border-neutral-500 hover:text-white"
               >
-                View publication →
+                View external publication listing ↗
               </a>
             </div>
           </article>
