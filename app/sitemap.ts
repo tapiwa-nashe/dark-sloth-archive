@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/engines",
     "/research",
     "/records",
-    "/books",
+    "/library",
     "/recoveries",
     "/entities",
     "/first-recovery",

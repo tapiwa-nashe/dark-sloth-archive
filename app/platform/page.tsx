@@ -27,6 +27,14 @@ export default function PlatformPage() {
         <div className="archive-page-meta"><span>SEPARATE INSTITUTIONAL SYSTEM</span><span>AUTHORISED PARTICIPATION</span></div>
       </header>
 
+      {!platformBase && (
+        <section className="mx-auto mb-10 max-w-6xl border border-amber-900/60 bg-amber-950/20 px-6 py-5 md:px-8" aria-live="polite">
+          <p className="archive-page-kicker">PLATFORM RELEASE / ACCESS NOTICE</p>
+          <h2 className="mt-2 text-xl font-semibold">The Platform download and sign-in destination are being prepared.</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-7 text-neutral-400">You can explore the public Library and Archive without an account. When the production Platform release is ready, this page will provide its verified download or launch link. We will not send you to an unfinished or staging environment.</p>
+        </section>
+      )}
+
       <section className="archive-platform-intro">
         <div><p className="archive-page-kicker">THE TWO LAYERS</p><h2>The Archive is where knowledge is discovered. The Platform is where authorised participation takes place.</h2></div>
         <p>The public website remains independently accessible. The Platform supports participant identity, contribution workflows, private dossiers, witnessing, annotations, full book reading and institutional operations under their own permissions and governance.</p>

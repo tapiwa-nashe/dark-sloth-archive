@@ -35,7 +35,7 @@ const groups = [
       { label: "KNOWLEDGE GRAPH", icon: Network, href: "/knowledge-graph" },
       { label: "RECOVERIES", icon: ArchiveRestore, href: "/recoveries" },
       { label: "PEOPLE & ENTITIES", icon: Users, href: "/entities" },
-      { label: "BOOKS & PUBLICATIONS", icon: BookOpen, href: "/books" },
+      { label: "LIBRARY", icon: BookOpen, href: "/library" },
       { label: "DOSSIERS", icon: FolderOpen, href: "/dossiers" },
     ],
   },
