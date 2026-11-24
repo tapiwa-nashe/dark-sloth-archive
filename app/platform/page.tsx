@@ -12,7 +12,10 @@ const experiences = [
 
 export default function PlatformPage() {
   const configuredBase = process.env.NEXT_PUBLIC_ARCHIVE_PLATFORM_URL?.trim();
-  const platformBase = configuredBase
+  const isUnreleasedDestination = Boolean(
+    configuredBase && /staging|preview|localhost/i.test(configuredBase),
+  );
+  const platformBase = configuredBase && !isUnreleasedDestination
     ? configuredBase.replace(/\/+$/, "")
     : process.env.NODE_ENV === "development"
       ? "http://localhost:3004"
